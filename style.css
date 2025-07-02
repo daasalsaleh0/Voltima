@@ -1,0 +1,44 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f4f4; /* خلفية الصفحة */
+}
+
+.image-box {
+  background-color: #ffffff; /* خلفية خلف الصورة */
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #ddd; /* إطار خفيف */
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل داخل الصورة */
+  transition: transform 0.3s ease;
+}
+
+.image-box:hover {
+  transform: translateY(-5px);
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #444;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
