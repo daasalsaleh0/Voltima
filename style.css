@@ -27,7 +27,7 @@
 }
 
 .image-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(+10px);
 }
 
 .image-box img:hover {
