@@ -8,7 +8,7 @@
 }
 
 .image-box {
-  background-color: #2F2F85; /* خلفية خلف الصورة */
+  background-color: #ff0000; /* خلفية خلف الصورة */
   padding: 12px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
