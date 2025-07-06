@@ -25,7 +25,7 @@
 }
 
 .image-box img {
-  width: 100%;
+  width: auto;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل داخل الصورة */
