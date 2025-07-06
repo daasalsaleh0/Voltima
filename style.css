@@ -1,26 +1,33 @@
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  background-color: #ff0000;
- font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px #1D4D77;
-  max-width:100%;
-  margin: auto;
-  color: #ffffff;
+  padding: 20px;
+  background-color: #f4f4f4; /* خلفية الصفحة */
 }
 
 .image-box {
-      background: #ff0000;
-      padding: 10px;
-      border: 3px solid #1900ffe8;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ff0000; /* خلفية خلف الصورة */
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #ddd; /* إطار خفيف */
 }
 
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل داخل الصورة */
+  transition: transform 0.3s ease;
+}
 
 .image-box:hover {
-  transform: translateY(+10px);
+  transform: translateY(-5px);
 }
 
 .image-box img:hover {
@@ -30,8 +37,8 @@
 .caption {
   margin-top: 10px;
   font-size: 20px;
-  color: #1900ffe8;
+  color:#1900ffe8;
   font-weight: 600;
- font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
