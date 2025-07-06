@@ -11,14 +11,11 @@
 }
 
 .image-box {
-  background-color: #ff0000; /* خلفية خلف الصورة */
-  padding: 12px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  
+      background: #ff0000;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image-box img {
