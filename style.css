@@ -12,7 +12,7 @@
   padding: 12px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
-  width: 300px;
+  width: 100%;
   text-align: center;
   transition: transform 0.3s ease;
   border: 1px solid #ddd; /* إطار خفيف */
