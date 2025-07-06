@@ -1,7 +1,4 @@
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
   background-color: #ff0000;
  font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
