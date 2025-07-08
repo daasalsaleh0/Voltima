@@ -1,12 +1,10 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  padding: 20px;
   background-color: #ff0000; /* خلفية الصفحة */
   height:70%;
-  border-radius: 10px;
+ 
 }
 
 .image-box {
