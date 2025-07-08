@@ -7,6 +7,16 @@
   margin: 0px;
  
 }
+.info-bar {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-family: sans-serif;
+      direction: rtl;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
 .image-box {
   background-color: #ffffff; /* خلفية خلف الصورة */
