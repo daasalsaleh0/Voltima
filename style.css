@@ -4,6 +4,7 @@
   justify-content: center;
   background-color: #ff0000; /* خلفية الصفحة */
   height:70%;
+  margin: 0px;
  
 }
 
@@ -15,6 +16,7 @@
   width: 200px;
   text-align: center;
   transition: transform 0.3s ease;
+  margin: 15px
  
 }
 
