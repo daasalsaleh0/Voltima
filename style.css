@@ -4,13 +4,13 @@
   gap: 20px;
   justify-content: center;
   padding: 20px;
-  background-color: #1010ca; /* خلفية الصفحة */
+  background-color: #ff0000; /* خلفية الصفحة */
   height:70%;
   border-radius: 10px;
 }
 
 .image-box {
-  background-color: #ff0000; /* خلفية خلف الصورة */
+  background-color: #ffffff; /* خلفية خلف الصورة */
   padding: 12px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
