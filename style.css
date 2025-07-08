@@ -10,13 +10,14 @@
 
 .image-box {
   background-color: #ffffff; /* خلفية خلف الصورة */
-  padding: 12px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
   width: 200px;
   text-align: center;
   transition: transform 0.3s ease;
-  margin: 15px;
+  border: 2px solid #000;
+  margin: 30px; /* فراغ حول العنصر */
+  padding: 15px; /* فراغ داخل العنصر */
  
 }
 
