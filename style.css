@@ -126,4 +126,38 @@
     --highlight: rgba(255, 255, 255, 0.15);
   }
 }
+.slider {
+      width: 250px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: white;
+      border-radius: 12px;
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
+    .navigation {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .nav-btn {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
 
