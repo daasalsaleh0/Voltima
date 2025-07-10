@@ -17,66 +17,65 @@
       width: auto;
     }
 
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
 
-    .slides a {
-      flex: 0 0 100%;
-      text-align: center;
-      text-decoration: none;
-      color: #000;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+.slides a {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: red; /* خلفية الصور */
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-    .slides img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+.slides img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: white;
+}
 
-    .caption {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 18px;
-    }
+.caption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
 
-    .navigation {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
 
-    .nav-btn {
-      background-color: rgba(0,0,0,0.4);
-      color: white;
-      border: none;
-      font-size: 24px;
-      padding: 10px;
-      cursor: pointer;
-    }
+.nav-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
 
-    .nav-btn:hover {
-      background-color: rgba(0,0,0,0.7);
-    }
+.nav-btn:hover {
+  background-color: rgba(0
 
-    @media (max-width: 600px) {
-      .caption {
-        font-size: 16px;
-      }
-    }
