@@ -14,7 +14,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* ظل حول الحاوية */
   width: 200px;
   text-align: center;
-  transition: transform 0.3s ease;
   border: 2px solid #000;
   margin: 30px; /* فراغ حول العنصر */
   padding: 15px; /* فراغ داخل العنصر */
@@ -47,8 +46,8 @@
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: max-content;
+  transition: transform 5s ease-in-out;
+  width:40%;
 }
 
 .slides a {
@@ -59,13 +58,6 @@
   justify-content: center;
   text-decoration: none;
   color: black;
-}
-
-.caption {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .nav-btn {
