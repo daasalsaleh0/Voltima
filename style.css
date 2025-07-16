@@ -97,3 +97,161 @@
   box-shadow: 0 0 10px #00eeff, 0 0 20px #00eeff, 0 0 40px #00eeff;
 }
 
+:root {
+  --nav-height: 70px;
+  --nav-bg: #ffffff;
+  --nav-bg-scrolled: #ffffff;
+  --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --nav-text: #333333;
+  --nav-text-hover: #4a6cf7;
+  --nav-transition: all 0.3s ease;
+  --nav-logo-size: 1.5rem;
+  --nav-active-indicator: 2px solid #4a6cf7;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-bg: #121212;
+    --nav-bg-scrolled: #1a1a1a;
+    --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --nav-text: #e1e1e1;
+    --nav-text-hover: #6c8fff;
+    --nav-active-indicator: 2px solid #6c8fff;
+  }
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--nav-bg);
+  transition: var(--nav-transition);
+  z-index: 1000;
+}
+
+.sticky-nav.scrolled {
+  background-color: var(--nav-bg-scrolled);
+  box-shadow: var(--nav-shadow);
+}
+
+.sticky-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sticky-nav-logo {
+  display: flex;
+  align-items: center;
+  font-size: var(--nav-logo-size);
+  font-weight: 700;
+  color: var(--nav-text);
+}
+
+.sticky-nav-logo i {
+  margin-right: 0.5rem;
+  color: var(--nav-text-hover);
+}
+
+.sticky-nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-nav-menu li {
+  margin: 0 1rem;
+}
+
+.sticky-nav-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: var(--nav-transition);
+}
+
+.sticky-nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-text-hover);
+  transition: var(--nav-transition);
+}
+
+.sticky-nav-menu a:hover {
+  color: var(--nav-text-hover);
+}
+
+.sticky-nav-menu a:hover::after,
+.sticky-nav-menu a.active::after {
+  width: 100%;
+}
+
+.sticky-nav-menu a.active {
+  color: var(--nav-text-hover);
+}
+
+.sticky-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--nav-transition);
+}
+
+.sticky-nav-toggle:hover {
+  color: var(--nav-text-hover);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sticky-nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg-scrolled);
+    box-shadow: var(--nav-shadow);
+    padding: 1rem 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: var(--nav-transition);
+  }
+  
+  .sticky-nav-menu.mobile-active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .sticky-nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sticky-nav-menu li {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .sticky-nav-menu a {
+    padding: 0.75rem 0;
+  }
+  
+  .sticky-nav-toggle {
+    display: block;
+  }
+}
