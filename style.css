@@ -10,6 +10,7 @@
       align-items: center;
       height:250px;
       width:100%;
+      border-radius: 10%;
       background-color: #ffffff;
     }
 
@@ -76,22 +77,23 @@
   cursor: pointer;
 }
 .glowing-icon-button {
-  padding: 20px;
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  color: red;
-  font-size: 32px;
-  cursor: pointer;
-  box-shadow: 0 0 5px red, 0 0 15px red;
-  transition: all 0.4s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  border-radius: 10%;
+  color: red;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 5px red, 0 0 15px red;
+  transition: all 0.4s ease;
+
 }
 
 .glowing-icon-button:hover {
-  color: #00eeff;
+  color: #003cff;
   box-shadow: 0 0 10px #00eeff, 0 0 25px #00eeff, 0 0 40px #00eeff;
   transform: scale(1.1);
 }
