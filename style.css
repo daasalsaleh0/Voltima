@@ -21,10 +21,9 @@
 .slider {
   position: relative;
   width: 100%;
-  max-width: 500px;
   margin: auto;
   overflow: hidden;
-  border-radius: 10px;
+ background-color: red;
 }
 
 .slides {
