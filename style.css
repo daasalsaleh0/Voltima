@@ -86,6 +86,9 @@
   cursor: pointer;
   box-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff;
   transition: all 0.3s ease;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .glowing-button:hover {
