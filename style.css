@@ -114,8 +114,8 @@
 /* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    --nav-bg: #121212;
-    --nav-bg-scrolled: #1a1a1a;
+    --nav-bg: #ff0000;
+    --nav-bg-scrolled: #ff0000;
     --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     --nav-text: #e1e1e1;
     --nav-text-hover: #6c8fff;
@@ -139,7 +139,7 @@
 }
 
 .sticky-nav-container {
-  max-width: 1200px;
+  max-width:2000px;
   margin: 0 auto;
   padding: 0 1rem;
   height: 100%;
