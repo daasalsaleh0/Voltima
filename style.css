@@ -102,9 +102,9 @@
 :root {
   --nav-height: 70px;
   --nav-bg: #ff0000;
-  --nav-bg-scrolled: #ffffff;
+  --nav-bg-scrolled: #1100ff;
   --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --nav-text: #333333;
+  --nav-text: #ff0000;
   --nav-text-hover: #4a6cf7;
   --nav-transition: all 0.3s ease;
   --nav-logo-size: 1.5rem;
