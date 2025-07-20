@@ -115,7 +115,7 @@
 /* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    --nav-bg: #ff0000;
+     --nav-bg: #ffffff;
     --nav-bg-scrolled: #ff0000;
     --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     --nav-text: #e1e1e1;
