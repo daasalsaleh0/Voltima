@@ -30,7 +30,7 @@
 
 .slides {
   display: flex;
-  transition: transform 3s ease-in-out;
+  transition: transform 5s ease-in-out;
   width: 100%;
 }
 
@@ -108,7 +108,7 @@
   --nav-text: #ff0000;
   --nav-text-hover: #4a6cf7;
   --nav-transition: all 0.3s ease;
-  --nav-logo-size: 40%;
+  --nav-logo-size: 5%;
   --nav-active-indicator: 2px solid #4a6cf7;
 }
 
