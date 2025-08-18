@@ -30,7 +30,7 @@
 
 .slides {
   display: flex;
-  transition: transform 5s ease-in-out;
+  transition: transform 2s ease-in-out;
   width: 100%;
 }
 
