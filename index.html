@@ -24,26 +24,31 @@
         <li><a href="https://www.vteke.com.tr/tr/anasayfa/">VTEKE</a></li>
         <li><a href="https://powerandcontrol.sa/">Power and Control</a></li>
         <li><a href="Products.html">Products</a>
-        <ul>
-          <li>Automation</li>
-          <li>Electrical Measurement</li>
-          <li>Time Relays</li>
-          <li>Protection Relays</li>
-          <li>Electrical Control Components</li>
-          <li>Wiring Accessories</li>
-          <li>Busbar Accessories</li>
-          <li>Electrical Panels Accessories</li>
-          <li>Enclosures</li>
-          <li>Purpose Relays</li>
-          <li>Supply</li>
-          <li>Fuses</li>
-          <li>P.F.C Systems</li>
+    <ul>
+    <li><a href="https://www.vteke.com.tr/tr/anasayfa/">VTEKE</a></li>
+    <li><a href="https://powerandcontrol.sa/">Power and Control</a></li>
+    <li class="expandable">
+        <a href="Products.html">Products</a>
+        <ul class="submenu">
+            <li>Automation</li>
+            <li>Electrical Measurement</li>
+            <li>Time Relays</li>
+            <li>Protection Relays</li>
+            <li>Electrical Control Components</li>
+            <li>Wiring Accessories</li>
+            <li>Busbar Accessories</li>
+            <li>Electrical Panels Accessories</li>
+            <li>Enclosures</li>
+            <li>Purpose Relays</li>
+            <li>Supply</li>
+            <li>Fuses</li>
+            <li>P.F.C Systems</li>
         </ul>
-        </li>
-        <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="Catalog.html">Catalog</a></li>
-        <li><a href="News.html">News</a></li>
-      </ul>
+    </li>
+    <li><a href="Contact.html">Contact Us</a></li>
+    <li><a href="Catalog.html">Catalog</a></li>
+    <li><a href="News.html">News</a></li>
+</ul>
     </nav>
     <button class="sticky-nav-toggle">
       <i class="fas fa-bars"></i>
@@ -53,6 +58,17 @@
 <div class="content">
 
 </div>
+  <script>
+    document.querySelectorAll('.expandable > a').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault(); // منع الانتقال للرابط عند الضغط
+            const submenu = item.nextElementSibling;
+            if (submenu) {
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
+</script>
 <div class="company-description">  
 <p  >Manufacturer of industrial electrical materials as Voltima
 we manufacture products in many different fields. More than 35 countries
