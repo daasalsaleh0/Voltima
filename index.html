@@ -1,104 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voltima</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltima</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<header class="sticky-nav">
-  <div class="sticky-nav-container">
-    <div class="sticky-nav-logo">
-      <img src="PicsOfVoltima/General/Voltima.png" alt="Voltima Logo">
-    </div>
-    <nav class="navbar">
-      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-      <ul class="nav-links" id="navLinks">
+  <!-- ============ NAVBAR ============ -->
+  <nav class="sticky-nav">
+    <div class="sticky-nav-container">
+      <div class="logo">Voltima</div>
+
+      <ul class="nav-links">
         <li><a href="#">VTEKE</a></li>
         <li><a href="#">Power and Control</a></li>
         <li>
-          <a href="#">Products ▾</a>
+          <a href="#">Products ▼</a>
           <ul>
             <li><a href="#">Automation</a></li>
-            <li><a href="#">Electrical Measurement</a></li>
-            <li><a href="#">Time Relays</a></li>
-            <li><a href="#">Protection Relays</a></li>
-            <li><a href="#">Electrical Components</a></li>
-            <li><a href="#">Wiring Accessories</a></li>
-            <li><a href="#">Busbar Accessories</a></li>
-            <li><a href="#">Electrical Panels</a></li>
-            <li><a href="#">Enclosures</a></li>
+            <li><a href="#">Measurement</a></li>
             <li><a href="#">Relays</a></li>
-            <li><a href="#">Power Supply</a></li>
-            <li><a href="#">Fuses</a></li>
-            <li><a href="#">P.F.C Systems</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Systems</a></li>
           </ul>
         </li>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">Catalog</a></li>
       </ul>
-    </nav>
+
+      <!-- زر القائمة للموبايل -->
+      <div class="menu-toggle">☰</div>
+    </div>
+  </nav>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="company-description">
+    <p>
+      Manufacturer of industrial electrical materials as Voltima we manufacture
+      products in many different fields. More than 35 countries it exports to
+      many destinations, both at home and abroad we supply products to
+      prestigious projects. National and international TSE, TUV, with our
+      sustainable quality principles CE, ISO, EAC, SABER, Ministry of Industry
+      and Technology, Measuring Instruments Especially documents such as the
+      National Type Approval Certificate (Seal) and CMIM we have many
+      certifications on.
+    </p>
   </div>
-</header>
 
-<!-- Description -->
-<div class="company-description">
-  <p>
-    Manufacturer of industrial electrical materials as Voltima...
-  </p>
-</div>
+  <script>
+    // Script لفتح/إغلاق القائمة في الموبايل
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-<div class="glowing-icon-button">
-  <a href="aboutus.html"> More About Us </a>
-</div>
-
-<!-- Slider -->
-<div class="slider">
-  <div class="slides" id="slides">
-    <a href="#"><img src="PicsOfVoltima/Automation/2TCon/2.6.png"><p class="caption">Automation</p></a>
-    <a href="#"><img src="PicsOfVoltima/Electrical Measurement/1NETWORK ANALYSERS/1.2.png"><p class="caption">Electrical Measurement</p></a>
-    <a href="#"><img src="PicsOfVoltima/Time Relays/7DIGITAL MULTIFUNCTION/7.1.png"><p class="caption">Time Relays</p></a>
-  </div>
-  <div class="navigation">
-    <button class="nav-btn" onclick="prevSlide()">&#10094;</button>
-    <button class="nav-btn" onclick="nextSlide()">&#10095;</button>
-  </div>
-</div>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-
-  // Slider
-  let currentIndex = 0;
-  const slides = document.getElementById('slides');
-  const totalSlides = slides.children.length;
-
-  function showSlide(index) {
-    if (index >= totalSlides) currentIndex = 0;
-    else if (index < 0) currentIndex = totalSlides - 1;
-    else currentIndex = index;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  function nextSlide() { showSlide(currentIndex + 1); }
-  function prevSlide() { showSlide(currentIndex - 1); }
-
-  let autoSlide = setInterval(nextSlide, 3000);
-
-  document.querySelector('.slider').addEventListener('mouseenter', () => {
-    clearInterval(autoSlide);
-  });
-
-  document.querySelector('.slider').addEventListener('mouseleave', () => {
-    autoSlide = setInterval(nextSlide, 3000);
-  });
-</script>
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
