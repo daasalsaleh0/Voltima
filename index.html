@@ -46,19 +46,6 @@
   </nav>
 
   <!-- ============ CONTENT ============ -->
-  <div class="company-description">
-    <p>
-      Manufacturer of industrial electrical materials as Voltima we manufacture
-      products in many different fields. More than 35 countries it exports to
-      many destinations, both at home and abroad we supply products to
-      prestigious projects. National and international TSE, TUV, with our
-      sustainable quality principles CE, ISO, EAC, SABER, Ministry of Industry
-      and Technology, Measuring Instruments Especially documents such as the
-      National Type Approval Certificate (Seal) and CMIM we have many
-      certifications on.
-    </p>
-  </div>
-
   <script>
     // Script لفتح/إغلاق القائمة في الموبايل
     const menuToggle = document.querySelector(".menu-toggle");
@@ -68,6 +55,156 @@
       navLinks.classList.toggle("active");
     });
   </script>
+
+  <div class="company-description">  
+<p  >Manufacturer of industrial electrical materials as Voltima
+we manufacture products in many different fields. More than 35 countries
+it exports to many destinations, both at home and abroad
+we supply products to prestigious projects.
+
+National and international TSE, TUV, with our sustainable quality principles
+CE, ISO, EAC, SABER, Ministry of Industry and Technology, Measuring Instruments
+Especially documents such as the National Type Approval Certificate (Seal) and CMIM
+we have many certifications on.
+
+First of all, with our product range expanding day by day
+transformers, analog indicators, leakage current protection devices, miniature
+relays, battery chargers, power supplies, fuse types, more
+and we serve our customers with our strong stock structure.
+
+In addition to the products mentioned above, to the demands of our customers
+at the point of providing quality and fast solutions by producing special products
+we contribute to the processes.
+
+The need for demands from all over the world is wide
+always service with our product range and technical support
+we are happy to provide.</p>
+</div>
+
+<div class="glowing-icon-button" >
+ <a href="aboutus.html" > More About US </a>
+  </div>
+</div>
+
+
+
+  
+  <div class="slider">
+    <div class="slides" id="slides">
+ 
+<a href="Automation.html">
+   <img 
+    src="PicsOfVoltima/Automation/12PLC/12.1.png" 
+    alt="Automation">
+    <p class="caption ">Automation</p></a>
+
+<a href="Electrical Measurement.html">
+  <img 
+    src="PicsOfVoltima/Electrical Measurement/1NETWORK ANALYSERS/1.1.png" 
+    alt="Electrical Measurement">
+    <p class="caption ">Electrical Measurement</p></a>
+      
+<a href="Time Relays.html">
+   <img 
+    src="PicsOfVoltima/Time Relays/4Star Delta/4.2.png" 
+    alt="Time Relays">
+    <p class="caption ">Time Relays</p></a>
+
+<a href="Electrical Control Components.html">
+   <img 
+    src="PicsOfVoltima/Electrical Control Components/8MOTOR PROTECTION CIRCUIT BREAKERS/8.1.jpeg" 
+    alt="Electrical Control Components">
+    <p class="caption ">Electrical Control Components</p></a>
+
+<a href="Wiring Accessories.html">
+   <img 
+    src="PicsOfVoltima/Wiring Accessories/4Cable Ducts/4.1.jpeg" 
+    alt="Wiring Accessories">
+    <p class="caption ">Wiring Accessories</p></a>
+
+<a href="Busbar Accessories.html">
+   <img 
+    src="PicsOfVoltima/Busbar Accessories/1Bus bar insulators/1.2.png" 
+    alt="Busbar Accessories">
+    <p class="caption ">Busbar Accessories</p></a>
+
+<a href="Electrical Panels Accessories.html">
+   <img 
+    src="PicsOfVoltima/Electrical Panels Accessories/2Air Conditioning/2.1.jpg" 
+    alt="Electrical Panels Accessories">
+    <p class="caption ">Electrical Panels Accessories</p></a>
+
+<a href="Enclosures.html">
+   <img 
+    src="PicsOfVoltima/Enclosures/3Steel Wall Mount/3.1.jpg" 
+    alt="Enclosures">
+    <p class="caption ">Enclosures</p></a>
+
+<a href="Purpose Relays.html">
+   <img 
+    src="PicsOfVoltima/Purpose Relays/2Industrial plug in/2.1.jpg" 
+    alt="Purpose Relays">
+    <p class="caption ">Purpose Relays</p></a>
+<a href="Supply.html">
+   <img 
+    src="voltima/PicsOfVoltima/Supply/3Converters/3.4.jpg" 
+    alt="Supply">
+    <p class="caption ">Supply</p></a>
+<a href="Fuses.html">
+   <img 
+    src="PicsOfVoltima/Fuses/1Industrials Fuses/1.1.jpg" 
+    alt="Fuses">
+    <p class="caption ">Fuses</p></a>
+<a href="P.F.C Systems.html">
+   <img 
+    src="PicsOfVoltima/P.F.C Systems/4Shunt Reactor/4.1.jpg" 
+    alt="P.F.C Systems">
+    <p class="caption ">P.F.C Systems</p></a>
+  
+
+
+    </div>
+
+    <div class="navigation">
+      <button class="nav-btn" onclick="prevSlide()">&#10094;</button>
+      <button class="nav-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.getElementById('slides');
+  const totalSlides = slides.children.length;
+
+  function showSlide(index) {
+    if (index >= totalSlides) currentIndex = 0;
+    else if (index < 0) currentIndex = totalSlides - 1;
+    else currentIndex = index;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  let autoSlide = setInterval(nextSlide, 3000);
+
+  document.querySelector('.slider').addEventListener('mouseenter', () => {
+    clearInterval(autoSlide);
+  });
+
+  document.querySelector('.slider').addEventListener('mouseleave', () => {
+    autoSlide = setInterval(nextSlide, 3000);
+  });
+</script>
+
+
+
+  
 
 </body>
 </html>
