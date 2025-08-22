@@ -379,27 +379,56 @@ ul {
     padding: 20px;
   }
   
-  .sticky-footer-section {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 25px;
-  }
-  
-  .sticky-footer-section:last-child {
-    margin-bottom: 0;
-  }
-  
-  .sticky-layout-content {
-    padding: 20px;
-  }
-
-    .submenu {
-        display: none; /* إخفاء القوائم الفرعية افتراضياً */
-        margin-left: 20px;
-        list-style-type: circle;
-    }
-    .expandable > a {
-        cursor: pointer;
-        user-select: none;
+ /* القائمة الرئيسية */
+    nav {
+      background: #f5f5f5;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background: #ddd;
+    }
+
+    /* القوائم الفرعية */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    nav ul li ul li {
+      width: 100%;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 15px;
+      font-weight: normal;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
