@@ -19,51 +19,40 @@
     <div class="sticky-nav-logo">
           <img src="PicsOfVoltima/General/Voltima.png" style="width:35%; hight:45%;"  alt="Voltima Logo" title="Our Logo">
     </div>
-     <nav>
-    <ul>
-      <li><a href="#">VTEKE</a></li>
+<nav class="navbar">
+    <div class="logo"><b>VTEKE</b></div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#">Power and Control</a></li>
       <li>
         <a href="#">Products ▾</a>
         <ul>
-          <li><a href="Automation.html">Automation</a></li>
-          <li><a href="Electrical Measurement.html">Electrical Measurement</a></li>
-          <li><a href="Time Relays.html">Time Relays</a></li>
-          <li><a href="Protection Relays.html">Protection Relays</a></li>
-          <li><a href="Electrical Control Components.html">Electrical Components</a></li>
-          <li><a href="Wiring Accessories.html">Wiring Accessories</a></li>
-          <li><a href="Busbar Accessories.html">Busbar Accessories</a></li>
-          <li><a href="Electrical Panels Accessories.html">Electrical Panels</a></li>
-          <li><a href="Enclosures.html">Enclosures</a></li>
-          <li><a href="Purpose Relays.html">Multi-purpose Relays</a></li>
-          <li><a href="Power Supply.html">Power Supply</a></li>
-          <li><a href="Fuses.html">Fuses</a></li>
-          <li><a href="P.F.C Systems.html">P.F.C Systems</a></li>
+          <li><a href="#">Automation</a></li>
+          <li><a href="#">Electrical Measurement</a></li>
+          <li><a href="#">Time Relays</a></li>
+          <li><a href="#">Protection Relays</a></li>
+          <li><a href="#">Electrical Components</a></li>
+          <li><a href="#">Wiring Accessories</a></li>
+          <li><a href="#">Busbar Accessories</a></li>
+          <li><a href="#">Electrical Panels</a></li>
+          <li><a href="#">Enclosures</a></li>
+          <li><a href="#">Relays</a></li>
+          <li><a href="#">Power Supply</a></li>
+          <li><a href="#">Fuses</a></li>
+          <li><a href="#">P.F.C Systems</a></li>
         </ul>
       </li>
       <li><a href="#">Contact Us</a></li>
       <li><a href="#">Catalog</a></li>
     </ul>
   </nav>
-    <button class="sticky-nav-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
-<div class="content">
 
-</div>
+
   <script>
-    document.querySelectorAll('.expandable > a').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault(); // منع الانتقال للرابط عند الضغط
-            const submenu = item.nextElementSibling;
-            if (submenu) {
-                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            }
-        });
-    });
-</script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 <div class="company-description">  
 <p  >Manufacturer of industrial electrical materials as Voltima
 we manufacture products in many different fields. More than 35 countries
