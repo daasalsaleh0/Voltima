@@ -379,24 +379,37 @@ ul {
     padding: 20px;
   }
   
- /* القائمة الرئيسية */
-    nav {
-      background: #f5f5f5;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
-    nav ul {
+    /* الحاوية الرئيسية */
+    .navbar {
+      background: #f5f5f5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* قائمة الروابط */
+    .nav-links {
+      display: flex;
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
-      display: flex;
     }
 
-    nav ul li {
+    .nav-links li {
       position: relative;
     }
 
-    nav ul li a {
+    .nav-links li a {
       display: block;
       padding: 15px 20px;
       text-decoration: none;
@@ -404,31 +417,63 @@ ul {
       font-weight: bold;
     }
 
-    nav ul li a:hover {
+    .nav-links li a:hover {
       background: #ddd;
     }
 
     /* القوائم الفرعية */
-    nav ul li ul {
+    .nav-links li ul {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       background: #fff;
       min-width: 200px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 1000;
     }
 
-    nav ul li ul li {
-      width: 100%;
-    }
-
-    nav ul li ul li a {
+    .nav-links li ul li a {
       padding: 10px 15px;
       font-weight: normal;
     }
 
-    nav ul li:hover ul {
+    .nav-links li:hover ul {
       display: block;
+    }
+
+    /* زر الموبايل */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* استجابة للشاشات الصغيرة */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #f5f5f5;
+      }
+
+      .nav-links li {
+        text-align: center;
+      }
+
+      .nav-links li ul {
+        position: static;
+        box-shadow: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
     }
