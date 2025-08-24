@@ -122,13 +122,12 @@
 
   </script>
   <!-- ============ CONTENT ============ -->
-  <script>
-    // Script لفتح/إغلاق القائمة في الموبايل
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+ <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
     });
   </script>
 
