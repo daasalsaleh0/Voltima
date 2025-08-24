@@ -94,7 +94,7 @@
 }
 
 .glowing-icon-button:hover {
-  color: #003cff;
+  color: #ff0000;
   box-shadow: 0 0 10px #00eeff, 0 0 25px #00eeff, 0 0 40px #00eeff;
   transform: scale(1.1);
 }
@@ -105,7 +105,7 @@
 
 /* ================= NAVBAR ================= */
 .sticky-nav {
-  top: 0;
+
   width: 100%;
   background: #ff0000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -134,7 +134,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #000;
+  color: #ff0000;
   font-weight: 600;
 }
 
@@ -158,8 +158,8 @@
   max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
-  background: #fff;
-  color: #333;
+  background: #ff0000;
+  color: #ffffff;
   line-height: 1.6;
   font-size: 16px;
   border-radius: 10px;
