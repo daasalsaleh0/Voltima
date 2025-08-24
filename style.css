@@ -107,13 +107,16 @@
    .sticky-nav{
       position: fixed;
       top: 0;
-      left: -240px; /* مخفية خارج الشاشة */
+      left: -40px; /* مخفية خارج الشاشة */
       width: 220px;
       height: 100%;
       background: linear-gradient(180deg, #8b0000, #b22222);
       padding-top: 70px;
       box-shadow: 2px 0 5px rgba(0,0,0,0.2);
       transition: left 0.3s ease;
+    }
+   nav.open {
+      left: 0; /* تظهر */
     }
 
 .sticky-nav-container {
