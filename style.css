@@ -10,7 +10,7 @@
       justify-content: space-between; /* اللوغو يسار والزر يمين */
       align-items: center;
       padding: 10px 20px;
-      background-color: #fff;
+      background-color: #ff0000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: fixed;
       top: 0;
