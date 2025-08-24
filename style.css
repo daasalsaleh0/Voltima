@@ -32,18 +32,19 @@
       color: #1100ff;
     }
 
-    /* ====== القائمة الجانبية ====== */
     nav {
-   
-      left: -500px; /* مخفية خارج الشاشة */
+      position: fixed;
+      top: 0;
+      right: -220px; /* مخفية خارج الشاشة */
       width: 220px;
       height: 100%;
       background: linear-gradient(180deg, #8b0000, #b22222);
       padding-top: 70px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      transition: left 0.3s ease;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      transition: right 0.3s ease;
       z-index: 999;
     }
+
 
     nav.open {
       left: 0; /* تظهر */
