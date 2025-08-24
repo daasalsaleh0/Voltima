@@ -172,34 +172,38 @@ we are happy to provide.</p>
   </div>
 
 <script>
-  let currentIndex = 0;
-  const slides = document.getElementById('slides');
-  const totalSlides = slides.children.length;
+ let currentIndex = 0;
+const slides = document.getElementById('slides');
+const totalSlides = slides.children.length;
 
-  function showSlide(index) {
-    if (index >= totalSlides) currentIndex = 0;
-    else if (index < 0) currentIndex = totalSlides - 1;
-    else currentIndex = index;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
+function showSlide(index) {
+  if (index >= totalSlides) currentIndex = 0;
+  else if (index < 0) currentIndex = totalSlides - 1;
+  else currentIndex = index;
 
-  function nextSlide() {
-    showSlide(currentIndex + 1);
-  }
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-  function prevSlide() {
-    showSlide(currentIndex - 1);
-  }
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
 
-  let autoSlide = setInterval(nextSlide, 3000);
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
 
-  document.querySelector('.slider').addEventListener('mouseenter', () => {
-    clearInterval(autoSlide);
-  });
+// التشغيل التلقائي
+let autoSlide = setInterval(nextSlide, 3000);
 
-  document.querySelector('.slider').addEventListener('mouseleave', () => {
-    autoSlide = setInterval(nextSlide, 3000);
-  });
+// إيقاف/تشغيل عند المرور بالماوس
+document.querySelector('.slider').addEventListener('mouseenter', () => {
+  clearInterval(autoSlide);
+});
+
+document.querySelector('.slider').addEventListener('mouseleave', () => {
+  autoSlide = setInterval(nextSlide, 3000);
+});
+
 </script>
   <!-- ============ footer ============ -->
 <footer id="footer_snippet_2">
