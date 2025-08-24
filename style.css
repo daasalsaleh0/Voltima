@@ -29,7 +29,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: #222332;
+      color: #1100ff;
     }
 
     /* ====== القائمة الجانبية ====== */
@@ -80,10 +80,6 @@
       background: rgba(255,255,255,0.2);
     }
 
-    /* ====== المحتوى ====== */
-    main {
-      padding: 100px 20px 20px; /* مسافة تحت الترويسة */
-    }
 
 .slider {
   position: relative;
