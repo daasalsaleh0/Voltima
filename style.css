@@ -32,7 +32,7 @@
     padding-bottom: 25px;
     width: 300px;
     transition: all 0.4s ease;
-    display: block !important;
+    display: block ;
     transform: translateX(100%);
     opacity: 0;
     background-color: #ff0000;
@@ -40,7 +40,7 @@
     z-index: 1;
 }
 .navbar-collapse.collapsing {
-    height: 100% !important;
+    height: 100% ;
     right: 0;
     transition: all 0.2s ease;
 }
@@ -141,7 +141,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: red; /* خلفية الصور */
+  background-color: red; 
   padding: 20px;
   box-sizing: border-box;
 }
@@ -157,7 +157,7 @@
 .caption {
   margin-top: 10px;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 4, 255);
   text-align: center;
 }
 
@@ -189,7 +189,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: #ff0000
+  background: #ff0000;
   border: none;
   border-radius: 10%;
   color: red;
@@ -392,5 +392,4 @@
         margin-bottom: 30px;
     }
 }
-
 
