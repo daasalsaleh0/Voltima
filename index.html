@@ -14,36 +14,46 @@
       <img src="PicsOfVoltima/General/Voltima.png" style="width:35%; height:40%; " alt="Voltima">
       </div>
 
-  <ul class="nav-links">
-    <li><a href="https://www.vteke.com.tr/tr/anasayfa/">VTEKE</a></li>
-    <li><a href="https://powerandcontrol.sa/">Power and Control</a></li>
-    <li class="expandable">
-        <a href="Products.html">Products</a>
-        <ul class="submenu">
-          <li><a href="Automation.html"> Automation</a> </li>
-          <li><a href="Electrical Measurement.html"> Electrical Measurement</a></li>
-            <li><a href="Time Relays.html"> Time Relays</a></li>
-            <li><a href="Protection Relays.html">Protection Relays</a></li>
-            <li><a href="Electrical Control Components.htm">Electrical Control Components</a></li>
-            <li><a href="Wiring Accessories.html">Wiring Accessories</a></li>
-            <li><a href="Busbar Accessories.html">Busbar Accessories</a></li>
-            <li><a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
-            <li><a href="Enclosures.html">Enclosures</a></li>
-            <li><a href="Purpose Relays.html">Purpose Relays</a></li>
-            <li><a href="Supply.html">Supply</a></li>
-            <li><a href="Fuses.html">Fuses</a></li>
-            <li><a href="P.F.C Systems.html">P.F.C Systems</a></li>
-        </ul>
-    </li>
-    <li><a href="Contact.html">Contact Us</a></li>
-    <li><a href="Catalog.html">Catalog</a></li>
-    <li><a href="News.html">News</a></li>
-</ul>
+<!-- SVG Filter for Glass Distortion -->
+<svg style="display: none">
+  <filter id="glass-distortion">
+    <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+  </filter>
+</svg>
 
-
-      <!-- زر القائمة للموبايل -->
-      <div class="menu-toggle">☰</div>
+<div class="glass-sidebar">
+  <div class="glass-filter"></div>
+  <div class="glass-overlay"></div>
+  <div class="glass-specular"></div>
+  <div class="glass-content">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
     </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-chart-bar"></i>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-envelope"></i>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </div>
+</div>
   </nav>
 
   <!-- ============ CONTENT ============ -->
