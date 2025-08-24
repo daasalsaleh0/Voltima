@@ -124,12 +124,22 @@
 
   </script>
   <!-- ============ CONTENT ============ -->
- <script>
-    const toggleBtn = document.querySelector(".menu-toggle");
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle i");
     const sidebar = document.getElementById("sidebar");
 
-    toggleBtn.addEventListener("click", () => {
+    toggleBtn.parentElement.addEventListener("click", () => {
       sidebar.classList.toggle("open");
+
+      // تبديل الأيقونة ☰ ↔ ×
+      if (sidebar.classList.contains("open")) {
+        toggleBtn.classList.remove("fa-bars");
+        toggleBtn.classList.add("fa-times");
+      } else {
+        toggleBtn.classList.remove("fa-times");
+        toggleBtn.classList.add("fa-bars");
+      }
     });
   </script>
 
