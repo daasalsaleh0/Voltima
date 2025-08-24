@@ -18,13 +18,13 @@
 }
 #header_9 nav .button a{
     text-decoration: none;
-    color: #fff;
+    color: #ff0000;
     text-transform: capitalize;
     display: inline-block;
     font-weight: 600;
 }
 #header_9 nav .navbar-brand{
-    color: #fff;
+    color: #ff0000;
     font-weight: 600;
     font-size: 30px;
 }
@@ -85,7 +85,7 @@
     line-height: 30px;
     font-weight: 600;
     font-size: 20px;
-    color: #fff;
+    color: #ff0000;
     letter-spacing: 1px;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     margin-bottom: 10px;
@@ -100,7 +100,7 @@
     position: absolute;
     right: 0;
     border: 0;
-    color: #a9a9a9;
+    color: #ff0000;
 }
 #header_9 .collapse ul li .dropdown-toggle.show::after{
     content: "\f63b";
