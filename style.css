@@ -1,23 +1,22 @@
-.body {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ff0000;
+      background-color: #ff0000; /* خلفية فاتحة */
     }
 
-    .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-      height:250px;
-      width:50%;
-      border-radius: 50%;
-      background-color: #ff0000;
-      margin:5%;
+  header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1000;
     }
 
-    .header img {
-      max-height: 200px;
-      width: auto;
+    header img {
+      height: 250px; /* حجم اللوغو */
     }
 
 .slider {
@@ -104,13 +103,18 @@
 
 
 /* ================= NAVBAR ================= */
-.sticky-nav {
-
-  width: 100%;
-  background: #ff0000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
+    /* ====== القائمة الجانبية ====== */
+   .sticky-nav{
+      position: fixed;
+      top: 0;
+      left: -240px; /* مخفية خارج الشاشة */
+      width: 220px;
+      height: 100%;
+      background: linear-gradient(180deg, #8b0000, #b22222);
+      padding-top: 70px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+    }
 
 .sticky-nav-container {
   align-items: center;
@@ -185,11 +189,13 @@
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 22px;
-  }
+    /* زر القائمة (hamburger) */
+    .menu-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 }
 
 /* Desktop */
