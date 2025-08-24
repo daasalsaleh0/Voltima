@@ -1,7 +1,7 @@
    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #ff0000;
     }
 
     /* ====== الترويسة ====== */
@@ -34,9 +34,8 @@
 
     /* ====== القائمة الجانبية ====== */
     nav {
-      position: fixed;
-      top: 0;
-      left: -240px; /* مخفية خارج الشاشة */
+   
+      left: -500px; /* مخفية خارج الشاشة */
       width: 220px;
       height: 100%;
       background: linear-gradient(180deg, #8b0000, #b22222);
