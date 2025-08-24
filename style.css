@@ -1,22 +1,89 @@
-    body {
+   body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color:#ff0000; /* خلفية فاتحة */
+      background-color: #f4f4f4;
     }
 
-  header {
+    /* ====== الترويسة ====== */
+    header {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* اللوغو يسار والزر يمين */
       align-items: center;
       padding: 10px 20px;
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
     }
 
     header img {
-      height: 250px; /* حجم اللوغو */
+      height: 50px;
+    }
+
+    /* زر القائمة (hamburger) */
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #8b0000;
+    }
+
+    /* ====== القائمة الجانبية ====== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: -240px; /* مخفية خارج الشاشة */
+      width: 220px;
+      height: 100%;
+      background: linear-gradient(180deg, #8b0000, #b22222);
+      padding-top: 70px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+
+    nav.open {
+      left: 0; /* تظهر */
+    }
+
+    nav h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ====== المحتوى ====== */
+    main {
+      padding: 100px 20px 20px; /* مسافة تحت الترويسة */
     }
 
 .slider {
@@ -98,65 +165,6 @@
   transform: scale(1.1);
 }
 
-
-
-
-
-/* ================= NAVBAR ================= */
-    /* ====== القائمة الجانبية ====== */
-   .sticky-nav{
-     position: absolute;
-      width: 220px;
-      height: 100%;
-      background: linear-gradient(180deg, #8b0000, #b22222);
-      padding-top: 70px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      transition: left 0.3s ease;
-    }
-   nav.open {
-      left: 0; /* تظهر */
-    }
-
-.sticky-nav-container {
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #ff0000;
-  font-weight: 600;
-}
-
-.nav-links ul {
-  display: none;
-  position: absolute;
-  background: #ff0000;
-  top: 100%;
-  left: 0;
-  list-style: none;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.nav-links li:hover ul {
-  display: block;
-}
 
 /* ================= DESCRIPTION ================= */
 .company-description {
