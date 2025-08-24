@@ -4,10 +4,10 @@
       background-color: #ff0000;
     }
 
-    /* ====== الترويسة ====== */
+     /* ====== الترويسة ====== */
     header {
       display: flex;
-      justify-content: space-between; /* اللوغو يسار والزر يمين */
+      justify-content: space-between; /* اللوغو يسار - الزر يمين */
       align-items: center;
       padding: 10px 20px;
       background-color: #ff0000;
