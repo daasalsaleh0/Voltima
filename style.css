@@ -12,7 +12,7 @@ body {
   max-width: 100vw;
 }
 #header_9{
-  background-image: url('PicsOfVoltima/General/photo_2025-08-25_19-35-09.jpg'); 
+  background-image:   <img src="PicsOfVoltima/General/photo_2025-08-25_19-35-09.jpg" alt="pic">; 
   background-size: cover;       /* لتغطية كامل الهيدر */
   background-position: center;  /* لمركز الصورة */
   height: 200px;                /* ارتفاع الهيدر */
