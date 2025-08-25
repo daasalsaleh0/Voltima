@@ -17,10 +17,6 @@ body {
   background-position: center;  /* لمركز الصورة */
   height: 200px;                /* ارتفاع الهيدر */
   color: white;                 /* لون النص */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   margin: 0;
   padding: 0;      
   overflow-x: hidden;
@@ -207,7 +203,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   padding: 15px;
-  background: #f9f9f9;
+  background: #ff0000;
 }
 
 .nav-btn:hover {
