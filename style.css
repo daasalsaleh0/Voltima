@@ -142,46 +142,39 @@ body {
     }
 }
 
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.slides a {
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: red; 
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.slides img {
-  max-width: 100%;
-  max-height: 250px;
-  object-fit: contain;
-  border-radius: 10px;
-  background-color:#ff0000;
-}
-
-.caption {
-  margin-top: 10px;
-  font-weight: bold;
-  color: rgb(0, 4, 255);
-  text-align: center;
-}
-
 .slider {
-  position: relative;   /* عشان الأزرار تتموضع داخله */
+  position: relative;
   width: 100%;
-  max-width: 800px;     /* حجم السلايدر */
+  max-width: 1000px; /* أو الحجم اللي يناسبك */
   margin: auto;
   overflow: hidden;
 }
 
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* أزرار التنقل */
 .navigation {
   position: absolute;
   top: 50%;
@@ -191,13 +184,13 @@ body {
   justify-content: space-between;
   align-items: center;
   transform: translateY(-50%);
-  padding: 0 15px; /* يبعد الأزرار عن الحافة شوي */
-  box-sizing: border-box;
+  padding: 0 15px;
 }
+
 .nav-btn {
   background: rgba(0,0,0,0.5);
   border: none;
-  color: #fff;
+  color: white;
   font-size: 24px;
   cursor: pointer;
   padding: 10px 15px;
@@ -208,6 +201,7 @@ body {
 .nav-btn:hover {
   background: rgba(0,0,0,0.8);
 }
+
 .glowing-icon-button {
   display: flex;
   justify-content: center;
