@@ -168,8 +168,8 @@ body {
 }
 
 .slide img {
-  max-width: 100%;
-  max-height: 400px;       /* يمنع الصورة من أن تكبر كثير */
+  max-width: 60%;
+  max-height: 300px;       /* يمنع الصورة من أن تكبر كثير */
   object-fit: contain;     /* تبقى كاملة ضمن الإطار */
   border-radius: 15px;     /* حواف ناعمة */
   border: 2px solid #ddd;  /* إطار خفيف للصورة */
