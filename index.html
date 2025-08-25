@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" lang="ar" >
+<html lang="en" lang="ar">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voltima</title>
-  <link rel="stylesheet" href="style.css">
+
+  
+<link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  
 <header  id="header_9">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-             <img src="PicsOfVoltima/General/Voltima _ White.png" style="width:25%; height:30%;" loading="eager" alt="Voltima">
+             <img src="PicsOfVoltima/General/Voltima.png" style="width:25%; height:30%;" loading="eager" alt="Voltima">
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                 <span class="close-btn" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <i class="bi bi-x-lg"></i>
@@ -222,38 +227,34 @@ we are happy to provide.</p>
   </div>
 
 <script>
- let currentIndex = 0;
-const slides = document.getElementById('slides');
-const totalSlides = slides.children.length;
+  let currentIndex = 0;
+  const slides = document.getElementById('slides');
+  const totalSlides = slides.children.length;
 
-function showSlide(index) {
-  if (index >= totalSlides) currentIndex = 0;
-  else if (index < 0) currentIndex = totalSlides - 1;
-  else currentIndex = index;
+  function showSlide(index) {
+    if (index >= totalSlides) currentIndex = 0;
+    else if (index < 0) currentIndex = totalSlides - 1;
+    else currentIndex = index;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
 
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
 
-function nextSlide() {
-  showSlide(currentIndex + 1);
-}
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
 
-function prevSlide() {
-  showSlide(currentIndex - 1);
-}
+  let autoSlide = setInterval(nextSlide, 3000);
 
-// التشغيل التلقائي
-let autoSlide = setInterval(nextSlide, 3000);
+  document.querySelector('.slider').addEventListener('mouseenter', () => {
+    clearInterval(autoSlide);
+  });
 
-// إيقاف/تشغيل عند المرور بالماوس
-document.querySelector('.slider').addEventListener('mouseenter', () => {
-  clearInterval(autoSlide);
-});
-
-document.querySelector('.slider').addEventListener('mouseleave', () => {
-  autoSlide = setInterval(nextSlide, 3000);
-});
-
+  document.querySelector('.slider').addEventListener('mouseleave', () => {
+    autoSlide = setInterval(nextSlide, 3000);
+  });
 </script>
   <!-- ============ footer ============ -->
 <footer id="footer_snippet_2">
@@ -261,7 +262,7 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="about">
-                        <img src="PicsOfVoltima/General/Voltima _ Black.png" alt="">
+                        <img src="PicsOfVoltima/General/Voltima _ White.png" alt="">
                         <ul>
                             <li><a href="#0" class=""><i class="bi bi-whatsapp"></i></a></li>
                             <li><a href="#0" class=""><i class="bi bi-facebook"></i></a></li>
@@ -275,8 +276,8 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
                         <h4>Usefull Link</h4>
                         <ul>
                             <li><a href="#0"><i class="bi bi-chevron-right"></i> Home</a></li>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i> About</a></li>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i>Sister Company</a></li>
+                            <li><a href="aboutus.html"><i class="bi bi-chevron-right"></i> About</a></li>
+                            <li><a href=""><i class="bi bi-chevron-right"></i>Sister Company</a></li>
                             <li><a href="#0"><i class="bi bi-chevron-right"></i> Contact us</a></li>
                         </ul>
                     </div>
@@ -285,7 +286,6 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
                     <div class="column">
                         <h4>Support Desk</h4>
                         <ul>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i> Forum Support</a></li>
                             <li><a href="#0"><i class="bi bi-chevron-right"></i> Help & FAQ</a></li>
                             <li><a href="#0"><i class="bi bi-chevron-right"></i>Catalog</a></li>
                         </ul>
@@ -298,10 +298,6 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
                             <li><a href="#0" class=""><i class="bi bi-telephone"></i>+963 982804327</a></li>
                             <li><a href="#0" class=""><i class="bi bi-envelope"></i> voltima.com</a></li>
                         </ul>
-                        <form action="">
-                            <input type="text" placeholder="Enter your email" name="subscribe" />
-                            <button type="submit"><i class="bi bi-send"></i></button>
-                        </form>
                     </div>
                 </div>
             </div>
