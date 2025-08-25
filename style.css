@@ -12,10 +12,10 @@ body {
   max-width: 100vw;
 }
 #header_9{
-  background-image: url("PicsOfVoltima/Automation/12PLC/12.1.png"); /* مسار الصورة */
-  background-size: cover;       /* يجعل الصورة تغطي كل المساحة */
-  background-position: center;  /* يضع الصورة في المنتصف */
-  background-repeat: no-repeat; /* يمنع التكرار */
+  background-image: url("PicsOfVoltima/General/photo_2025-08-25_19-35-09.jpg"); 
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat; 
   margin: 0;
   padding: 0;      
   overflow-x: hidden;
