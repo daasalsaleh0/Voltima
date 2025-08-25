@@ -27,13 +27,13 @@ body {
 }
 #header_9 nav .button a{
     text-decoration: none;
-    color: #ff0000;
+    color: #ffffff;
     text-transform: capitalize;
     display: inline-block;
     font-weight: 600;
 }
 #header_9 nav .navbar-brand{
-    color: #ff0000;
+    color: #ffffff;
     font-weight: 600;
     font-size: 30px;
 }
@@ -75,7 +75,7 @@ body {
     padding-top: 10px;
 }
 #header_9 nav button{
-    color: #000;
+    color: #ffffff;
     border-radius: 0;
     padding: 25px;
     background: #ff0000;
@@ -144,14 +144,14 @@ body {
 
 .slider {
   position: relative;
-  width: 60%;              
-  max-width: 600px;        
-  margin: 40px auto;       
+  width: 90%;
+  max-width: 900px;        /* أقصى عرض للسلايدر */
+  margin: 40px auto;
   overflow: hidden;
-  border: 3px solid #444;  
-  border-radius: 15px;    
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
-  background: #ff0000;       
+  border: 3px solid #444;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: #fff;
 }
 
 .slides {
@@ -160,24 +160,26 @@ body {
 }
 
 .slide {
-  min-width: 600%;
+  min-width: 100%;
   box-sizing: border-box;
   text-align: center;
-  padding: 20px;           /* مسافة داخلية */
-  background: #ff0000;     /* خلفية خفيفة */
+  padding: 15px;
+  background: #f9f9f9;
 }
 
+/* ✅ الصور موحدة ومتناسبة */
 .slide img {
-  width: 100%;             
-  height: 400px;
-  object-fit: contain;     
-  border-radius: 15px;     
-  border: 15px solid #ff0000;  
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  width: 100%;
+  height: 300px;           /* ارتفاع ثابت متناسق */
+  object-fit: cover;       /* يملأ الإطار بشكل أنيق */
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+/* ✅ النص أسفل الصور */
 .caption {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #333;
   margin-top: 10px;
@@ -198,9 +200,9 @@ body {
   background: rgba(0,0,0,0.5);
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 50%;
   transition: background 0.3s;
 }
@@ -208,6 +210,17 @@ body {
 .nav-btn:hover {
   background: rgba(0,0,0,0.8);
 }
+
+/* ✅ تحسين للموبايل */
+@media (max-width: 600px) {
+  .slide img {
+    height: 200px;   /* الصور أصغر في الشاشات الصغيرة */
+  }
+  .caption {
+    font-size: 14px;
+  }
+}
+
 
 .glowing-icon-button {
   display: flex;
