@@ -171,7 +171,7 @@ body {
 .slide img {
   width: 100%;
   height: 300px;           /* ارتفاع ثابت متناسق */
-  object-fit: cover;       /* يملأ الإطار بشكل أنيق */
+  object-fit: contain;;       /* يملأ الإطار بشكل أنيق */
   border-radius: 10px;
   border: 2px solid #ddd;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
