@@ -20,7 +20,7 @@ body {
   padding: 0;      
   overflow-x: hidden;
   overflow-y: auto;
-  height: 300px;
+  
        
 }
 #header_9 nav{
@@ -260,7 +260,7 @@ body {
   margin: 30px auto;
   padding: 20px;
   background: #ffffff;
-  color: #ff0000;
+  color: #000000;
   line-height: 1.6;
   font-size: 18px;
   border-radius: 15px;
