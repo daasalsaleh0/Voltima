@@ -144,14 +144,14 @@ body {
 
 .slider {
   position: relative;
-  width: 60%;              /* السلايدر يأخذ 90% من عرض الصفحة */
+  width: 60%;              
   max-width: 600px;        /* أقصى عرض */
   margin: 40px auto;       /* وسط الصفحة مع مسافة فوق وتحت */
   overflow: hidden;
   border: 3px solid #444;  /* إطار خارجي */
   border-radius: 15px;     /* زوايا دائرية */
   box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* ظل احترافي */
-  background: #fff;        /* خلفية بيضاء للإطار */
+  background: #ff0000;        /* خلفية بيضاء للإطار */
 }
 
 .slides {
@@ -160,7 +160,7 @@ body {
 }
 
 .slide {
-  min-width: 100%;
+  min-width: 600%;
   box-sizing: border-box;
   text-align: center;
   padding: 20px;           /* مسافة داخلية */
@@ -172,7 +172,7 @@ body {
   max-height: 300px;       /* يمنع الصورة من أن تكبر كثير */
   object-fit: contain;     /* تبقى كاملة ضمن الإطار */
   border-radius: 15px;     /* حواف ناعمة */
-  border: 2px solid #ddd;  /* إطار خفيف للصورة */
+  border: 10px solid #ddd;  /* إطار خفيف للصورة */
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
