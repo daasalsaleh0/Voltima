@@ -144,10 +144,14 @@ body {
 
 .slider {
   position: relative;
-  width: 100%;
-  max-width: 1000px; /* أو الحجم اللي يناسبك */
-  margin: auto;
+  width: 90%;              /* السلايدر يأخذ 90% من عرض الصفحة */
+  max-width: 800px;        /* أقصى عرض */
+  margin: 40px auto;       /* وسط الصفحة مع مسافة فوق وتحت */
   overflow: hidden;
+  border: 3px solid #444;  /* إطار خارجي */
+  border-radius: 15px;     /* زوايا دائرية */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* ظل احترافي */
+  background: #fff;        /* خلفية بيضاء للإطار */
 }
 
 .slides {
@@ -159,22 +163,26 @@ body {
   min-width: 100%;
   box-sizing: border-box;
   text-align: center;
+  padding: 20px;           /* مسافة داخلية */
+  background: #f9f9f9;     /* خلفية خفيفة */
 }
 
 .slide img {
-  width: 100%;
-  height: auto;
-  display: block;
+  max-width: 100%;
+  max-height: 400px;       /* يمنع الصورة من أن تكبر كثير */
+  object-fit: contain;     /* تبقى كاملة ضمن الإطار */
+  border-radius: 10px;     /* حواف ناعمة */
+  border: 2px solid #ddd;  /* إطار خفيف للصورة */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .caption {
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
-/* أزرار التنقل */
 .navigation {
   position: absolute;
   top: 50%;
@@ -182,7 +190,6 @@ body {
   right: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   transform: translateY(-50%);
   padding: 0 15px;
 }
