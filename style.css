@@ -259,12 +259,22 @@ body {
   max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
-  background: #ffffff;
-  color: #000000;
-  line-height: 1.6;
+  background: radial-gradient(circle, #ffffff 70%, #b30000 100%);
+  
+  color: #222;
+  line-height: 1.8;
   font-size: 18px;
-  border-radius: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.company-description:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* ================= RESPONSIVE ================= */
