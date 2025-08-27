@@ -129,6 +129,17 @@ body {
                                         justify-content: center; } 
                           #header_9 nav .container{ flex: auto; width: fit-content; } }
 
+#fullMenu a {
+  transition: all 0.3s ease;
+}
+#fullMenu a:hover {
+  color: #ffcc00 !important;  
+  transform: translateX(5px);
+}
+#fullMenu .collapse ul li {
+  padding: 5px 0;
+}
+
 .slider {
       position: relative;
       width: 90%;
