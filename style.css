@@ -121,14 +121,21 @@ body {
 #header_9 .collapse > ul > li .dropdown-menu a:hover, 
 #header_9 .collapse > ul > li .dropdown-menu a:focus{ color: #000;
                                                      background-color: #ff0000; } 
-@media (max-width: 820px){ #header_9 nav .button {
+@media (max-width: 820px){ 
+       #header_9 nav .button {
        display: none;} 
-                          #header_9 nav{ display: flex;
+       #header_9 nav{ display: flex;
                                         flex-direction: row;
                                         align-items: center;
                                         justify-content: center; } 
-                          #header_9 nav .container{ flex: auto; width: fit-content; } }
-
+       #header_9 nav .container{ flex: auto; width: fit-content; 
+                               }
+}
+#fullMenu {
+  background: url("PicsOfVoltima/General/Card1.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh; 
+}
 #fullMenu a {
   transition: all 0.3s ease;
 }
@@ -139,6 +146,7 @@ body {
 #fullMenu .collapse ul li {
   padding: 5px 0;
 }
+
 
 .slider {
       position: relative;
