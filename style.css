@@ -11,26 +11,32 @@ body {
 {
   max-width: 100vw;
 }
-#header_9{
-  background-image: <img src="PicsOfVoltima/General/photo_2025-08-25_19-35-02.jpg" style="width:100%; height:100%;" loading="eager" >; 
-  background-size: cover;     
+#header_9 {
+  background-image: url("PicsOfVoltima/General/photo_2025-08-25_19-35-02.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
-  padding: 0;      
-  overflow-x: hidden;
-  overflow-y: auto;
-  overflow: hidden;
+  padding: 0;
   position: relative;
   width: 100%;
-  height: 100%;
-       
+  height: 100vh; /* يغطي الشاشة كاملة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.main-header .overlay {
+
+/* طبقة شفافة فوق الصورة */
+#header_9 .overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); /* أسود شفاف */
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
+
 
 #header_9 nav{
    background-color: #ff0000 ;
