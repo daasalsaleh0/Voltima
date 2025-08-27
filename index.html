@@ -15,64 +15,59 @@
 
 <header id="header_9">
   <nav class="navbar navbar-dark bg-dark">
-    
-    <div class="container">
-      <div class="logo">
+    <div class="container-fluid">
+
+   
       <a class="navbar-brand" href="index.html">
         <img src="PicsOfVoltima/General/Voltima.png" style="width:250px; height:auto;" alt="Voltima Logo">
       </a>
-       </div>
-    </div>     
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="#0">About Us</a>
-                    </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="#0">Catalog</a>
-                    </li>
-                    
-                  <li class="nav-item">
-                        <a class="nav-link" href="#0">Contact Us</a>
-                    </li> 
-                  
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#0" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="Automation.html">Automation</a></li>
-                            <li><a class="dropdown-item" href="Electrical Measurement.html">Electrical Measurement</a></li>
-                            <li><a class="dropdown-item" href="Time Relays.html">Time Relays</a></li>
-                            <li><a class="dropdown-item" href="Protection Relays.html">Protection Relays</a></li>
-                            <li><a class="dropdown-item" href="Electrical Control Components.html">Electrical Control Components</a></li>
-                            <li><a class="dropdown-item" href="Wiring Accessories.html">Wiring Accessories</a></li>
-                            <li><a class="dropdown-item" href="Busbar Accessories.html">Busbar Accessories</a></li>
-                            <li><a class="dropdown-item" href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
-                            <li><a class="dropdown-item" href="Enclosures.html">Enclosures</a></li>
-                            <li><a class="dropdown-item" href="Purpose Relays.html">Purpose Relays</a></li>
-                            <li><a class="dropdown-item" href="Supply.html">Supply</a></li>
-                            <li><a class="dropdown-item" href="Fuses.html">Fuses</a></li>
-                            <li><a class="dropdown-item" href="P.F.C Systems.html">P.F.C Systems</a></li>
-                        </ul>
-                    </li>
 
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="#0">Contact</a>
-                    </li>
-                </ul>                 
-            </div>
-        </div>    
-  
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-  <i class="bi bi-filter-right"></i>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#fullMenu"
+        aria-controls="fullMenu" aria-label="Toggle navigation">
+        <i class="bi bi-filter-right" style="font-size: 2rem; color: #fff;"></i>
       </button>
+
       
-    </nav>
+      <div class="offcanvas offcanvas-top text-white" tabindex="-1" id="fullMenu" aria-labelledby="fullMenuLabel" style="height:100vh; background:#111;">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="fullMenuLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column align-items-center justify-content-center">
+          <ul class="navbar-nav text-center fs-3">
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#0">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#0">Catalog</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#0">Contact Us</a></li>
+
+            <!-- قائمة منسدلة -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#0" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+              <ul class="dropdown-menu dropdown-menu-dark text-center">
+                <li><a class="dropdown-item" href="Automation.html">Automation</a></li>
+                <li><a class="dropdown-item" href="Electrical Measurement.html">Electrical Measurement</a></li>
+                <li><a class="dropdown-item" href="Time Relays.html">Time Relays</a></li>
+                <li><a class="dropdown-item" href="Protection Relays.html">Protection Relays</a></li>
+                <li><a class="dropdown-item" href="Electrical Control Components.html">Electrical Control Components</a></li>
+                <li><a class="dropdown-item" href="Wiring Accessories.html">Wiring Accessories</a></li>
+                <li><a class="dropdown-item" href="Busbar Accessories.html">Busbar Accessories</a></li>
+                <li><a class="dropdown-item" href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
+                <li><a class="dropdown-item" href="Enclosures.html">Enclosures</a></li>
+                <li><a class="dropdown-item" href="Purpose Relays.html">Purpose Relays</a></li>
+                <li><a class="dropdown-item" href="Supply.html">Supply</a></li>
+                <li><a class="dropdown-item" href="Fuses.html">Fuses</a></li>
+                <li><a class="dropdown-item" href="P.F.C Systems.html">P.F.C Systems</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link text-white" href="#0">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </nav>
 </header>
 
 
