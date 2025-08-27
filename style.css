@@ -25,6 +25,25 @@ body {
   justify-content: center;
 }
 
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* طبقة شفافية فوق الفيديو */
+#header_9::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* تظليل أسود شفاف */
+  z-index: 1;
+}
 
 #header_9 nav{
    background-color: #ff0000 ;
