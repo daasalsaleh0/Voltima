@@ -78,7 +78,7 @@ body {
        width: 40px;
        height: 40px;
        background: #ffffff;
-       color: #000;
+       color: #0b00a3;
        text-align: center;
        padding-top: 10px; 
 } 
@@ -100,7 +100,7 @@ body {
        line-height: 30px; 
        font-weight: 600; 
        font-size: 20px; 
-       color: #ffffff; 
+       color: #0b00a3; 
        letter-spacing: 1px; 
        border-bottom: 1px solid rgba(255, 255, 255, .2); 
        margin-bottom: 10px; position: relative; 
