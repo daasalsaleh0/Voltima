@@ -132,11 +132,23 @@ body {
        #header_9 nav .container{ flex: auto; width: fit-content; 
                                }
 }
+/* خلفية بصورة عند فتح القائمة */
 #fullMenu {
-  background: url("PicsOfVoltima/General/Card1.jpg") no-repeat center center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* طبقة غامقة فوق الصورة */
+  background-image: url("PicsOfVoltima/General/1.jpg"); /* غيّر الصورة لمسارك */
   background-size: cover;
-  height: 100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.6s ease-in-out;
+  opacity: 0;
 }
+
+/* عند الفتح */
+#fullMenu.show {
+  opacity: 1;
+}
+
 #fullMenu a {
   transition: all 0.3s ease;
 }
