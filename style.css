@@ -289,7 +289,7 @@ body {
   max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
-  background: radial-gradient(circle, #ffffff 30%, #b30000 100%);
+  background: radial-gradient(circle, #ffffff 20%, #ff0000 100%);
   color: #222;
   line-height: 1.8;
   font-size: 18px;
