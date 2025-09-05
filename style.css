@@ -23,6 +23,7 @@ body {
 } 
  
 #header_9 nav {
+  height: 80px;    
   background: linear-gradient(135deg, #0b00a3, #4b00a3, #8b0000, #ff0000, #111111);
   background-size: 400% 400%;
   animation: gradientMove 12s ease-in-out infinite;
