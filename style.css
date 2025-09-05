@@ -30,12 +30,27 @@ body {
        background: rgba(0,0,0,0.5); /* أسود شفاف */ 
        z-index: 1; 
 } 
-#header_9 nav{ 
-       background-color: background: radial-gradient(circle, #ffffff 20%, #0b00a3 100%);
-       position: relative;
-       width: 100%;
-       border-bottom: 1px solid rgba(0,0,0,0.11);
-} 
+#header_9 nav {
+  background: linear-gradient(135deg, #0b00a3, #8b0000, #111111);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.11);
+}
+
+/* الحركة */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 #header_9 nav .button a{ 
        text-decoration: none;
        color: #0b00a3;
