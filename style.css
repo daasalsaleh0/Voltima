@@ -23,10 +23,10 @@ body {
 } 
  
 #header_9 nav {
-  height: 400px;    
+  height: 200px;    
   background: linear-gradient(135deg, #0b00a3, #4b00a3, #ffffff, #ff2c2c, #111111);
   background-size: 400% 400%;
-  animation: gradientMove 5s ease-in-out infinite;
+  animation: gradientMove 10s ease-in-out infinite;
   position: relative;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.11);
@@ -34,9 +34,7 @@ body {
 
 /* حركة التدرج */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
+
   25% {
     background-position: 50% 50%;
   }
