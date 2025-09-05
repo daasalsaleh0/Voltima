@@ -24,9 +24,9 @@ body {
  
 #header_9 nav {
   height: 80px;    
-  background: linear-gradient(135deg, #0b00a3, #4b00a3, #8b0000, #ff0000, #111111);
+  background: linear-gradient(135deg, #0b00a3, #4b00a3, #000000, #ff2c2c, #111111);
   background-size: 400% 400%;
-  animation: gradientMove 12s ease-in-out infinite;
+  animation: gradientMove 5s ease-in-out infinite;
   position: relative;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.11);
@@ -133,7 +133,7 @@ body {
 #header_9 .collapse > ul > li .dropdown-menu { 
        border-radius: 5px; background-color: #ff0000; 
 } 
-#header_9 .collapse > ul > li .dropdown-menu a{ color: #fff; } 
+#header_9 .collapse > ul > li .dropdown-menu a{ color: #0b00a3; } 
 #header_9 .collapse > ul > li .dropdown-menu a:hover, 
 #header_9 .collapse > ul > li .dropdown-menu a:focus{ color: #000;
                                                      background-color: #ff0000; } 
