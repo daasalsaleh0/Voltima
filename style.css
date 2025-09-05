@@ -297,34 +297,6 @@ body {
 .company-description:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.about-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 12px;
-  margin: 20px auto;
-  max-width: 800px;
-}
-
-.about-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.toggle-icon {
-  font-size: 22px;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.3s;
-}
-
-.about-text {
-  display: none; /* مخفي افتراضياً */
-  margin-top: 10px;
-}
-
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
