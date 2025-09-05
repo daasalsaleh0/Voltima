@@ -22,7 +22,7 @@ body {
 } 
  
 #header_9 nav {
-  height: 200px;    
+  height: 250px;    
   background:radial-gradient(circle, #ff0000 40%,#0b00a3 30%, #ffffff 100%);
   background-size: 400% 400%;
   animation: gradientMove 10s ease-in-out infinite;
@@ -53,7 +53,7 @@ body {
 { 
        color: #0b00a3;
        font-weight: 600;
-       font-size: 30px; } 
+       font-size: 35px; } 
 .navbar-collapse { 
        right: 0; 
        padding-left: 25px; 
