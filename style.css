@@ -23,7 +23,7 @@ body {
  
 #header_9 nav {
   height: 200px;    
-  background: linear-gradient(135deg, #0b00a3, #4b00a3, #ffffff, #ff2c2c, #111111);
+  background:radial-gradient(circle, #ff0000 40%,#0b00a3 30%, #ffffff 100%);
   background-size: 400% 400%;
   animation: gradientMove 10s ease-in-out infinite;
   position: relative;
