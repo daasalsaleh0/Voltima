@@ -23,7 +23,7 @@ body {
  
 #header_9 nav {
   height: 250px;    
-  background:radial-gradient(circle, #AD3830 40%,#949391 30%, #ffffff 100%);
+  background:radial-gradient(circle ,#949391 30%, #ffffff 100%);
   background-size: 400% 400%;
   animation: gradientMove 10s ease-in-out infinite;
   position: relative;
