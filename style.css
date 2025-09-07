@@ -23,10 +23,10 @@ body {
   
  
 #header_9 nav {
-  justify-content: space-between; 
-  align-items: flex-start;       
+  justify-content: space-between;        
   padding: 10px 20px; 
   height: 60px;
+  align-items: center;
   background: linear-gradient(to top, #ff0000 40%, #ffffff 100%);
   background-size: 400% 400%;
   position: relative;
