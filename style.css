@@ -209,7 +209,7 @@ body {
       font-weight: bold;
     }
 
-    /* أزرار التنقل */
+    
     .navigation {
       position: absolute;
       top: 50%;
@@ -235,7 +235,7 @@ body {
       background: rgba(0,0,0,0.8);
     }
 
-    /* ✅ تحسين للموبايل */
+    
     @media (max-width: 600px) {
       .slide img {
         height: 220px;
@@ -275,7 +275,6 @@ body {
   display: flex;
   justify-content: flex-start; 
   align-items: center;
-  min-height: 100vh;
   padding: 60px 40px;
   background-color: #ff0000;
   background: #ff0000;
@@ -355,7 +354,7 @@ body {
 }
 
 
-    /* زر القائمة (hamburger) */
+    
     .menu-toggle {
       font-size: 24px;
       background: none;
@@ -363,14 +362,14 @@ body {
     }
 }
 
-/* Desktop */
+
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
   }
 }
 
-/* Dark mode styles */
+
 @media (prefers-color-scheme: dark) {
   .glass-sidebar {
     --bg-color: rgba(0, 0, 0, 0.25);
