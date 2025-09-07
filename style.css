@@ -277,7 +277,7 @@ body {
   align-items: center;
   min-height: 100vh; /* ياخذ طول الشاشة */
   padding: 60px 40px;
-  background:#ff0000; /* خلفية متدرجة جذابة */
+  background-color: #ff0000;
   color: #fff;
 }
 
