@@ -273,25 +273,32 @@ body {
 }
 .about {
   display: flex;
-  justify-content: flex-start; /* النص يجي على اليسار */
+  justify-content: flex-start; /* النص على اليسار */
   align-items: center;
   min-height: 100vh; /* ياخذ طول الشاشة */
-  padding: 40px;
-  background: #fff; /* تقدر تغير للخلفية اللي تحبها */
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #0b3d91, #c00); /* خلفية متدرجة جذابة */
+  color: #fff;
 }
 
 .about-text {
-  max-width: 400px;
-  color: #222;
+  max-width: 450px;
   line-height: 1.8;
   font-size: 18px;
-  border-left: 4px solid red;  /* لمسة ديكورية */
+  border-left: 5px solid #fff;  /* لمسة ديكورية بيضاء */
   padding-left: 20px;
 }
+
 .about-text h2 {
-  font-size: 28px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-text p {
   margin-bottom: 15px;
-  color: #c00;
 }
 
 
