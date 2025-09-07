@@ -19,6 +19,7 @@ body {
        height: 100%;
        z-index: 1000;
        overflow: visible;
+       display: block;
 } 
   
  
@@ -33,6 +34,7 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0.11);
   overflow: hidden;
   padding: 0;
+  display: block;
 }
 
 
