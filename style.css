@@ -27,7 +27,7 @@ body {
   justify-content: space-between;        
   height: 150px;
   align-items: center;
-  background: linear-gradient(to top, #ff0000 40%, #ffffff 100%);
+  background: linear-gradient(to top, #ff0000 60%, #ffffff 100%);
   background-size: 400% 400%;
   position: relative;
   width: 100%;
@@ -272,7 +272,7 @@ body {
   transform: scale(1.1);
 }
 
-.about1 {
+ .about1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
