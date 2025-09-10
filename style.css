@@ -277,9 +277,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 80px 50px;
-  background: linear-gradient(135deg, #b30000, #ff0000); /* تدرج أنيق بدل الأحمر الصريح */
-  color: #fff;
-  min-height: 100vh; /* ياخذ طول الشاشة */
+  background: #ff0000; 
+  color: #ffffff;
 }
 
 .about1-text {
@@ -292,14 +291,13 @@ body {
   text-align: justify;
 }
 
-.about1-text h2 {
-  font-size: 34px;
+.about1-text h1 {
+  font-size: 30px;
   margin-bottom: 20px;
-  color: #fff;
-  text-transform: uppercase;
+  color: #ffffff;
   letter-spacing: 2px;
   font-weight: 700;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* ظل أنيق للنص */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9); /* ظل أنيق للنص */
   border-bottom: 2px solid rgba(255,255,255,0.3);
   display: inline-block;
   padding-bottom: 8px;
