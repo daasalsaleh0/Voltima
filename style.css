@@ -271,31 +271,43 @@ body {
   box-shadow: 0 0 10px #0b00a3, 0 0 25px #00eeff, 0 0 40px #0b00a3;
   transform: scale(1.1);
 }
+
 .about1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 80px 50px;
+  background: linear-gradient(135deg, #b30000, #ff0000); /* تدرج أنيق بدل الأحمر الصريح */
+  color: #fff;
+  min-height: 100vh; /* ياخذ طول الشاشة */
+}
+
+.about1-text {
   max-width: 500px;
-  margin: 40px auto;
-  padding: 25px;
-  background: #ff0000;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  font-family: "Cairo", "Segoe UI", sans-serif; /* خط عربي + إنجليزي */
   line-height: 1.9;
-  color: #0b00a3;
-}
-
-.about1-text h1 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #0b3d91; /* أزرق أنيق */
-  border-bottom: 2px solid #ddd;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.about-text p {
   font-size: 18px;
-  text-align: justify; /* توزيع النصوص بشكل متساوي */
+  border-left: 5px solid rgba(255, 255, 255, 0.6);
+  padding-left: 25px;
+  font-family: "Cairo", "Segoe UI", sans-serif;
+  text-align: justify;
+}
+
+.about1-text h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* ظل أنيق للنص */
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.about1-text p {
+  margin-bottom: 18px;
+  font-weight: 300;
 }
 
 
