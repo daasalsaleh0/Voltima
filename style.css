@@ -519,7 +519,7 @@ body {
 /* ===== Company Profile ===== */
 .company-profile {
   padding: 80px 40px;
-  background: #0b3d91;
+  background: #0b00a3;
   font-family: "Cairo", "Segoe UI", sans-serif;
   color: #ffffff;
 }
@@ -553,32 +553,32 @@ body {
 
 .profile-text p {
   line-height: 1.9;
-  font-size: 18px;
-  color: #ff0000;
+  font-size: 28px;
+  color: #ffffff;
 }
 
 .profile-image {
   flex: 1;
   text-align: center;
-  padding: 20px;
+  padding: 8px;
 }
 
 .profile-image img {
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 50%;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 /* Cards */
 .profile-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 25px;
 }
 
 .profile-cards .card {
-  background: #fff;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 25px;
   padding: 25px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -586,7 +586,7 @@ body {
 }
 
 .profile-cards .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-15px);
 }
 
 .profile-cards .card h3 {
