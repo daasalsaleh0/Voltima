@@ -515,11 +515,11 @@ body {
         margin-bottom: 30px;
     }
 }
-/* ================= about us  ================= */
+/* ================= About Us ================= */
 /* ===== Company Profile ===== */
 .company-profile {
-  padding: 80px 40px;
-  background: #0b00a3;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0b00a3, #1a1a4f);
   font-family: "Cairo", "Segoe UI", sans-serif;
   color: #ffffff;
 }
@@ -529,76 +529,107 @@ body {
   margin: auto;
 }
 
+/* ===== Profile Section ===== */
 .profile-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 40px;
   margin-bottom: 60px;
 }
 
 .profile-text {
   flex: 1;
+  min-width: 300px;
   padding: 20px;
-  max-width: 600px;
 }
 
 .profile-text h2 {
-  font-size: 28px;
+  font-size: 32px;
   color: #ffffff;
   margin-bottom: 20px;
-  border-left: 10px solid #ff0000;
+  border-left: 8px solid #ff0000;
   padding-left: 15px;
+  line-height: 1.3;
 }
 
 .profile-text p {
-  line-height: 1.9;
-  font-size: 28px;
-  color: #ffffff;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #f0f0f0;
 }
 
 .profile-image {
   flex: 1;
+  min-width: 280px;
   text-align: center;
-  padding: 8px;
 }
 
 .profile-image img {
-  max-width: 100%;
+  max-width: 350px;
+  width: 100%;
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease;
 }
 
-/* Cards */
+.profile-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Cards ===== */
 .profile-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .profile-cards .card {
   background: #ffffff;
-  border-radius: 25px;
-  padding: 25px;
+  border-radius: 20px;
+  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  transition: all 0.35s ease;
 }
 
 .profile-cards .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .profile-cards .card h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  color: #ff0000;
+  color: #0b00a3;
 }
 
 .profile-cards .card p {
   font-size: 16px;
-  color: #666;
-  line-height: 1.8;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-text h2 {
+    font-size: 26px;
+    border-left: none;
+    border-bottom: 4px solid #ff0000;
+    padding-left: 0;
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+
+  .profile-text p {
+    font-size: 16px;
+  }
 }
 
 
