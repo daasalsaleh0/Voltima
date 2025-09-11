@@ -521,7 +521,7 @@ body {
   padding: 80px 40px;
   background: #0b3d91;
   font-family: "Cairo", "Segoe UI", sans-serif;
-  color: #333;
+  color: #ffffff;
 }
 
 .company-profile .container {
@@ -554,7 +554,7 @@ body {
 .profile-text p {
   line-height: 1.9;
   font-size: 18px;
-  color: #0b3d91;
+  color: #ff0000;
 }
 
 .profile-image {
