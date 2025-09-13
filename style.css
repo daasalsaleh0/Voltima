@@ -632,11 +632,6 @@ body {
   }
 }
 
-:root {
-  --easing: cubic-bezier(0.33, 1, 0.68, 1);
-  --easing-2: cubic-bezier(0.61, 1, 0.88, 1);
-}
-
 input[type="checkbox"]:checked {
   & + .box:after {
     transform: translateY(-50%) scale3d(8, 6, 1);
