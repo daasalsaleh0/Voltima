@@ -634,8 +634,8 @@ body {
 
 /* ===== ===== */
 /* العنوان */
-h2 {
-  color: #fff;
+h1 {
+  color: #1100ff;
   text-align: center;
   margin: 20px 0;
   font-size: 28px;
@@ -645,7 +645,7 @@ h2 {
 /* إطار عام للجدول */
 /* الحاوية */
 .zui-wrapper {
-  width: 100%;          /* يملأ عرض الشاشة */
+  width: 80%;          /* يملأ عرض الشاشة */
   max-width: 100vw;     /* لا يتجاوز عرض الشاشة */
   margin: 0 auto;       /* توسيط */
   padding: 10px;
@@ -668,18 +668,18 @@ h2 {
 
 /* رأس الجدول */
 .zui-table thead th {
-  background: #e60000; /* أحمر أغمق للهيدر */
+  background: #ff0000; /* أحمر أغمق للهيدر */
   color: #fff;
-  font-size: 16px;
+  font-size: 10px;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 /* الأعمدة */
 .zui-table tbody td {
   color: #333;
-  font-size: 15px;
-  padding: 12px;
+  font-size: 10px;
+  padding: 10px;
   text-align: center;
   vertical-align: middle;
 }
@@ -701,7 +701,7 @@ h2 {
 /* الصور */
 .product-img {
   height: auto;
-  width: 120px;
+  width: 60px;
   margin-bottom: 8px;
 }
 
@@ -720,20 +720,20 @@ h2 {
 /* الهواتف */
 @media screen and (max-width: 768px) {
   h2 {
-    font-size: 22px;
+    font-size: 14px;
   }
   .product-img {
-    width: 90px;
+    width: 45px;
   }
   .zui-table thead th {
-    font-size: 14px;
+    font-size: 10px;
     padding: 10px;
   }
   .zui-table tbody td {
-    font-size: 13px;
+    font-size: 10px;
     padding: 8px;
   }
   .zui-table .zui-sticky-col {
-    min-width: 120px;
+    min-width: 80px;
   }
 }
