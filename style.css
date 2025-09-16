@@ -667,73 +667,111 @@ h1.page-title::after {
   border-radius: 2px;
 }
 
-/* إطار عام للجدول */
-/* الحاوية */
-    /* تنسيق الجدول */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2.page-title {
+      text-align: center;
+      color: #d60000;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .product-item {
       background: #fff;
-      margin: 0 auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
       border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       overflow: hidden;
     }
 
-    .comparison-table th,
-    .comparison-table td {
-      border: 1px solid #ddd;
-      padding: 12px;
+    .product-header {
+      padding: 15px;
+      background: #d60000;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-header::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+
+    .product-item.active .product-header::after {
+      content: "-";
+    }
+
+    .product-content {
+      display: none;
+      padding: 15px;
+      background: #fafafa;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .product-item.active .product-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product-image {
+      flex: 1 1 200px;
       text-align: center;
     }
 
-    .comparison-table thead th {
-      background: #e60000;
-      color: #fff;
-      font-size: 16px;
-    }
-
-    .comparison-table img {
-      max-width: 120px;
+    .product-image img {
+      max-width: 200px;
       height: auto;
-      display: block;
-      margin: 0 auto;
     }
 
-    /* الهواتف: تحويل الجدول إلى بطاقات */
+    .product-table {
+      flex: 2 1 300px;
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .product-table th,
+    .product-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .product-table th {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* موبايل */
     @media (max-width: 768px) {
-      .comparison-table thead {
-        display: none; /* إخفاء العناوين */
+      .product-item.active .product-content {
+        flex-direction: column;
       }
-      .comparison-table,
-      .comparison-table tbody,
-      .comparison-table tr,
-      .comparison-table td {
-        display: block;
-        width: 100%;
-      }
-      .comparison-table tr {
-        margin-bottom: 20px;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        overflow: hidden;
-      }
-      .comparison-table td {
-        text-align: left;
-        padding: 10px 15px;
-        position: relative;
-      }
-      .comparison-table td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        color: #d60000;
-        display: block;
-        margin-bottom: 5px;
-      }
-      .comparison-table img {
-        max-width: 100px;
-        margin: 10px auto;
+      .product-image img {
+        max-width: 150px;
       }
     }
