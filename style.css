@@ -634,12 +634,37 @@ body {
 
 /* ===== ===== */
 /* العنوان */
-h1 {
-  color: #1100ff;
+h1.page-title {
+  font-size: 40px;
+  font-weight: 700;
   text-align: center;
-  margin: 20px 0;
-  font-size: 28px;
-  letter-spacing: 1px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  /* تأثير تدرج نص */
+  background: linear-gradient(90deg, #ffffff, #ffd700, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* ظل للنص */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+  /* خط سفلي زخرفي */
+  position: relative;
+  display: inline-block;
+}
+
+h1.page-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* إطار عام للجدول */
