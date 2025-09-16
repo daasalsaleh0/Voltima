@@ -669,96 +669,71 @@ h1.page-title::after {
 
 /* إطار عام للجدول */
 /* الحاوية */
-.zui-wrapper {
-      width: 100%;
-      max-width: 100vw;
-      margin: 0 auto;
-      padding: 10px;
-      overflow-x: auto;
-    }
-
-    .zui-table {
+    /* تنسيق الجدول */
+    .comparison-table {
       width: 100%;
       border-collapse: collapse;
       background: #fff;
-      border-radius: 10px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      margin-bottom: 20px;
     }
 
-    .zui-table th,
-    .zui-table td {
+    .comparison-table th,
+    .comparison-table td {
       border: 1px solid #ddd;
       padding: 12px;
       text-align: center;
     }
 
-    .zui-table thead th {
+    .comparison-table thead th {
       background: #e60000;
       color: #fff;
       font-size: 16px;
     }
 
-    .zui-table tbody td {
-      font-size: 15px;
-      color: #333;
-    }
-
-    .product-img {
-      width: 120px;
+    .comparison-table img {
+      max-width: 120px;
       height: auto;
-      margin-bottom: 8px;
+      display: block;
+      margin: 0 auto;
     }
 
-    .product-link {
-      color: #0371BD;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .fa-check-circle { color: #028845; }
-    .fa-plus-circle { color: #2275D3; }
-    .fa-times-circle { color: gray; }
-
-    /* موبايل: تحويل الأعمدة إلى جداول منفصلة */
-    @media screen and (max-width: 768px) {
-      .zui-table thead {
-        display: none; /* إخفاء الهيدر */
+    /* الهواتف: تحويل الجدول إلى بطاقات */
+    @media (max-width: 768px) {
+      .comparison-table thead {
+        display: none; /* إخفاء العناوين */
       }
-
-      .zui-table,
-      .zui-table tbody,
-      .zui-table tr,
-      .zui-table td {
+      .comparison-table,
+      .comparison-table tbody,
+      .comparison-table tr,
+      .comparison-table td {
         display: block;
         width: 100%;
       }
-
-      .zui-table tr {
+      .comparison-table tr {
         margin-bottom: 20px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        overflow: hidden;
         background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
       }
-
-      .zui-table td {
+      .comparison-table td {
         text-align: left;
         padding: 10px 15px;
         position: relative;
       }
-
-      .zui-table td::before {
+      .comparison-table td::before {
         content: attr(data-label);
         font-weight: bold;
+        color: #d60000;
         display: block;
         margin-bottom: 5px;
-        color: #e60000;
       }
-
-      .product-img {
-        width: 100px;
+      .comparison-table img {
+        max-width: 100px;
+        margin: 10px auto;
       }
     }
