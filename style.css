@@ -762,36 +762,31 @@ h1.page-title::after {
         max-width: 150px;
       }
     }
-
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      overflow: hidden;
-      padding: 20px;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.6s ease;
+ /* شبكة المنتجات */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .card {
-      min-width: 280px;
-      max-width: 280px;
-      margin: 0 10px;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       overflow: hidden;
+      cursor: pointer;
       transition: transform 0.3s ease;
-      flex-shrink: 0;
     }
+
+    .card:hover { transform: scale(1.03); }
 
     .card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
+      display: block;
     }
 
     .card .content {
@@ -799,7 +794,7 @@ h1.page-title::after {
     }
 
     .card h3 {
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       font-size: 18px;
       color: #222;
     }
@@ -807,35 +802,63 @@ h1.page-title::after {
     .card p {
       font-size: 14px;
       color: #555;
+      margin: 0;
+    }
+
+    /* المودال */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(2px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 700px;
+      width: 90%;
+      overflow: hidden;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-body h2 {
       margin: 0 0 10px;
+      font-size: 22px;
+      color: #222;
     }
 
-    .card .meta {
-      font-size: 12px;
-      color: #777;
+    .modal-body p {
+      margin: 0;
+      font-size: 15px;
+      color: #444;
     }
 
-    
-
-    /* النقاط */
-    .dots {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      border-radius: 50%;
-      background: #bbb;
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
       cursor: pointer;
+      color: #fff;
     }
 
-    .dot.active { background: #0077b6; }
-    
-    /* استجابة للشاشات الصغيرة */
-    @media (max-width: 600px) {
-      .card { min-width: 220px; max-width: 220px; }
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
+   
