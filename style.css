@@ -762,7 +762,7 @@ h1.page-title::after {
         max-width: 150px;
       }
     }
-    /* الشبكة */
+/* الشبكة */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -776,126 +776,144 @@ h1.page-title::after {
 .card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
-  padding: 15px;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
-
-.card img {
+/* حاوية الصورة */
+.card .img-box {
   width: 100%;
   height: 160px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
 }
 
+.card .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* النصوص */
+.card .content {
+  padding: 15px;
+}
 
 .card a {
   display: block;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  color: #333;
+  color: #222;
   transition: color 0.3s;
+  margin-bottom: 8px;
 }
 
 .card a:hover {
   color: #d62828;
 }
 
-    .card .content {
-      padding: 15px;
-    }
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      color: #222;
-    }
+/* المودال */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
 
-    .card p {
-      font-size: 14px;
-      color: #555;
-      margin: 0;
-    }
+.modal-content {
+  background: #fff;
+  border-radius: 14px;
+  max-width: 800px;
+  width: 95%;
+  overflow: hidden;
+  animation: zoomIn 0.3s ease;
+  position: relative;
+  text-align: center;
+}
 
-    /* المودال */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(3px);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 20px;
-    }
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  background: #fdfdfd;
+}
 
-    .modal-content {
-      background: #fff;
-      border-radius: 12px;
-      max-width: 800px;
-      width: 90%;
-      overflow: hidden;
-      animation: zoomIn 0.3s ease;
-    }
+/* محتوى النص داخل المودال */
+.modal-body {
+  padding: 20px;
+}
 
-    .modal-content img {
-      width: 80%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
+.modal-body h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #222;
+}
 
-    .modal-body {
-      padding: 20px;
-    }
+.modal-body p {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+}
 
-    .modal-body h2 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: #222;
-    }
+/* زر الإغلاق */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+}
 
-    .modal-body p {
-      margin: 0;
-      font-size: 15px;
-      color: #444;
-    }
+.close:hover {
+  background: #ff4444;
+  color: #fff;
+}
 
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 32px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #fff;
-      transition: color 0.2s;
-    }
+/* أنيميشن */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
-    .close:hover { color: #ff4444; }
+/* تحسين الهواتف */
+@media (max-width: 600px) {
+  h1 { font-size: 20px; }
+  .modal-body h2 { font-size: 18px; }
+  .modal-body p { font-size: 14px; }
+}
 
-    @keyframes zoomIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    /* تحسين للهواتف */
-    @media (max-width: 600px) {
-      h1 { font-size: 22px; }
-      .modal-body h2 { font-size: 18px; }
-      .modal-body p { font-size: 14px; }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
    
