@@ -764,36 +764,22 @@ h1.page-title::after {
     }
 
 :root{
-      --card-w: 300px;
-      --card-h: 420px;
-      --gap: 140px; /* المسافة الأفقية بين البطاقات */
-      --depth-step: 100px; /* مدى العمق لكل خطوة */
-      --accent: #06a6df;
-      --bg: #f6f7f9;
+      --card-w: 280px;
+      --card-h: 380px;
+      --gap: 120px;   /* المسافة بين البطاقات */
+      --depth-step: 80px; /* العمق */
+      --accent: #0077b6;
+      --bg: #f0f2f5;
     }
- .stage{
+    *{box-sizing:border-box;margin:0;padding:0;}
+
+    .stage{
       width:100%;
       max-width:1200px;
-      height:560px;
+      height:500px;
       position:relative;
-      perspective:1500px;
-      overflow:visible;
-      padding:40px 20px;
+      perspective:1200px;
     }
-
-    /* الايمن/اليسار (RTL) سنضع الأسهم على الأطراف */
-    .nav-btn1{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:48px;height:48px;border-radius:50%;
-      background:white;border:1px solid rgba(0,0,0,0.06);
-      box-shadow:0 6px 20px rgba(11,22,50,0.08);
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;font-size:20px;user-select:none;
-    }
-    .nav-btn1-left{ left:12px; }
-    .nav-btn1-right{ right:12px; }
 
     .carousel{
       width:100%;
@@ -803,104 +789,55 @@ h1.page-title::after {
       display:flex;
       align-items:center;
       justify-content:center;
-      pointer-events:none; /* تفعيل لكل بطاقة بشكل منفصل */
     }
 
     .card{
-      --i:0;
       width:var(--card-w);
       height:var(--card-h);
       position:absolute;
       left:50%; top:60px;
-      transform-style:preserve-3d;
       border-radius:12px;
-      background:linear-gradient(180deg, #fff, #fafafa);
-      box-shadow:0 8px 30px rgba(17,24,39,0.08);
+      background:white;
+      box-shadow:0 6px 20px rgba(0,0,0,0.12);
       overflow:hidden;
-      transition:transform 700ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms;
+      transition:transform 0.7s ease, box-shadow 0.3s;
       cursor:pointer;
-      pointer-events:auto;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .card img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      display:block;
-      flex-shrink:0;
-    }
-
-    .card .content{
-      padding:18px;
+      display:flex;flex-direction:column;
       text-align:right;
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
     }
-
-    .card h3{
-      margin:0 0 8px 0;
-      font-size:18px;
-      line-height:1.2;
-      color:#111;
+    .card img{
+      width:100%;height:160px;object-fit:cover;
     }
-
-    .card p{
-      margin:0;
-      color:#555;
-      font-size:14px;
-      line-height:1.5;
+    .card .content{
+      padding:14px;
+      display:flex;flex-direction:column;justify-content:space-between;flex:1;
     }
+    .card h3{font-size:18px;margin:0 0 6px;color:#222;}
+    .card p{font-size:14px;color:#555;line-height:1.5;}
+    .card .meta{margin-top:10px;font-size:12px;color:#777;}
 
-    .card .meta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-top:14px;
-      color:#777;
-      font-size:13px;
-    }
-
-    /* التركيز على البطاقة الوسطى */
     .card.active{
-      transform: translateX(-50%) translateZ(180px) scale(1.06);
-      box-shadow:0 30px 60px rgba(11,22,50,0.18);
-      z-index:2000;
+      transform:translateX(-50%) translateZ(160px) scale(1.05);
+      box-shadow:0 12px 40px rgba(0,0,0,0.2);
+      z-index:200;
     }
 
-    /* بطاقة مجاورة تظهر أكبر قليلًا */
-    .card.near{
-      box-shadow:0 18px 40px rgba(11,22,50,0.1);
-      z-index:1000;
+    .nav-btn1{
+      position:absolute;top:50%;transform:translateY(-50%);
+      width:44px;height:44px;border-radius:50%;
+      background:white;border:none;
+      box-shadow:0 3px 10px rgba(0,0,0,0.15);
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;font-size:20px;
     }
+    .nav-btn1-left{left:10px;}
+    .nav-btn1-right{right:10px;}
 
-    /* نقاط تحت */
     .dots{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      bottom:14px;
-      display:flex;
-      gap:10px;
+      position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+      display:flex;gap:8px;
     }
     .dot{
-      width:10px;height:10px;border-radius:50%;
-      background:rgba(0,0,0,0.15);
-      cursor:pointer;
+      width:10px;height:10px;border-radius:50%;background:#bbb;cursor:pointer;
     }
-    .dot.active{ background:var(--accent); transform:scale(1.25); }
-
-    /* استجابة */
-    @media (max-width:900px){
-      :root{ --card-w: 260px; --card-h:380px; --gap:110px; --depth-step:80px; }
-      .stage{ height:520px; padding:20px; }
-    }
-    @media (max-width:560px){
-      :root{ --card-w: 220px; --card-h:340px; --gap:90px; --depth-step:60px; }
-      .stage{ height:500px; padding:18px; }
-      .nav-btn1{ width:40px;height:40px;font-size:18px; }
-    }
-
+    .dot.active{background:var(--accent);}
