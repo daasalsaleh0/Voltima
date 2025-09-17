@@ -87,145 +87,90 @@
   
 <body style="background-color: #ff0000;">
 
-  <div class="stage" aria-label="Carousel">
-    <div class="nav-btn1 nav-btn1-left" id="prevBtn" title="السابق">❮</div>
-    <div class="nav-btn1 nav-btn1-right" id="nextBtn" title="التالي">❯</div>
-
-    <div class="carousel" id="carousel">
-      <!-- البطاقات -->
+<div class="carousel-container">
+  <button class="nav-btn nav-btn-left" id="prev">❮</button>
+  <div class="carousel-track" id="track">
+    <div class="card">
+      <img src="https://picsum.photos/id/1011/600/400" alt="">
+      <div class="content">
+        <h3>منتج 1</h3>
+        <p>وصف قصير للمنتج الأول</p>
+        <div class="meta">Aug 23, 2025</div>
+      </div>
     </div>
-
-    <div class="dots" id="dots"></div>
+    <div class="card">
+      <img src="https://picsum.photos/id/1012/600/400" alt="">
+      <div class="content">
+        <h3>منتج 2</h3>
+        <p>تفاصيل المنتج الثاني</p>
+        <div class="meta">Aug 24, 2025</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/id/1013/600/400" alt="">
+      <div class="content">
+        <h3>منتج 3</h3>
+        <p>معلومات المنتج الثالث</p>
+        <div class="meta">Aug 25, 2025</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/id/1018/600/400" alt="">
+      <div class="content">
+        <h3>منتج 4</h3>
+        <p>الوصف الرابع للمنتج</p>
+        <div class="meta">Aug 26, 2025</div>
+      </div>
+    </div>
   </div>
+  <button class="nav-btn nav-btn-right" id="next">❯</button>
 
-  <script>
-    // بيانات نموذجية - غيّرها إلى بيانات منتجاتك
-    const cardsData = [
-      {img:'https://picsum.photos/id/1011/800/500', title:'منتج 1', text:'وصف قصير عن المنتج الأول', date:'Aug 23, 2025'},
-      {img:'https://picsum.photos/id/1012/800/500', title:'منتج 2', text:'وصف قصير عن المنتج الثاني', date:'Aug 24, 2025'},
-      {img:'https://picsum.photos/id/1013/800/500', title:'منتج 3', text:'وصف قصير عن المنتج الثالث', date:'Aug 25, 2025'},
-      {img:'https://picsum.photos/id/1020/800/500', title:'منتج 4', text:'منتج مميز ذو جودة عالية', date:'Aug 26, 2025'},
-      {img:'https://picsum.photos/id/1018/800/500', title:'منتج 5', text:'الوصف الخامس هنا', date:'Aug 27, 2025'},
-      {img:'https://picsum.photos/id/1027/800/500', title:'منتج 6', text:'معلومات المنتج السادس', date:'Aug 28, 2025'},
-      {img:'https://picsum.photos/id/1035/800/500', title:'منتج 7', text:'وصف المنتج السابع', date:'Aug 29, 2025'}
-    ];
+  <div class="dots" id="dots"></div>
+</div>
 
-    const carousel = document.getElementById('carousel');
-    const dotsEl = document.getElementById('dots');
-    let activeIndex = Math.floor(cardsData.length / 2);
+<script>
+  const track = document.getElementById("track");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const dotsContainer = document.getElementById("dots");
+  const cards = document.querySelectorAll(".card");
 
-    // انشاء العناصر
-    cardsData.forEach((c, idx) => {
-      const el = document.createElement('article');
-      el.className = 'card';
-      el.dataset.index = idx;
-      el.innerHTML = `
-        <img src="${c.img}" alt="${c.title}" />
-        <div class="content">
-          <div>
-            <h3>${c.title}</h3>
-            <p>${c.text}</p>
-          </div>
-          <div class="meta">
-            <span>${c.date}</span>
-            <span>منتج</span>
-          </div>
-        </div>
-      `;
-      carousel.appendChild(el);
+  let index = 0;
+  const visible = 3; // عدد البطاقات الظاهرة
 
-      // نقطة
-      const dot = document.createElement('div');
-      dot.className = 'dot';
-      dot.dataset.index = idx;
-      dotsEl.appendChild(dot);
-      dot.addEventListener('click', () => { setActive(idx); stopAutoRotate(); });
-      // نقرة على البطاقة
-      el.addEventListener('click', (ev) => {
-        const i = Number(el.dataset.index);
-        if(i !== activeIndex) { setActive(i); stopAutoRotate(); }
-      });
-    });
+  // إنشاء النقاط
+  for (let i = 0; i < cards.length - visible + 1; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+    dot.addEventListener("click", () => moveTo(i));
+  }
 
-    const cards = Array.from(document.querySelectorAll('.card'));
-    const dots = Array.from(document.querySelectorAll('.dot'));
+  const dots = document.querySelectorAll(".dot");
 
-    function render(){
-      const mid = activeIndex;
-      cards.forEach((card, i) => {
-        const offset = i - mid; // الفرق من المركز
-        const abs = Math.abs(offset);
-        // حساب التحولات
-        const tx = offset * parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gap'));
-        const tz = -abs * parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--depth-step'));
-        const ry = offset * -18; // دوران حول المحور Y
-        const scale = i === mid ? 1.06 : (abs === 1 ? 1.02 : 0.96);
+  function updateDots() {
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
 
-        card.style.transform = `translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) translateX(-50%)`;
-        card.style.zIndex = 1000 - abs;
-        card.style.opacity = (abs > 4) ? 0 : 1;
-        card.classList.toggle('active', i === mid);
-        card.classList.toggle('near', abs === 1);
-      });
+  function moveTo(i) {
+    index = i;
+    const cardWidth = cards[0].offsetWidth + 20; // عرض البطاقة + الهوامش
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+    updateDots();
+  }
 
-      dots.forEach((d, i) => d.classList.toggle('active', i===mid));
-    }
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) moveTo(index - 1);
+  });
 
-    function setActive(i){
-      if(i < 0) i = 0;
-      if(i > cards.length-1) i = cards.length-1;
-      activeIndex = i;
-      render();
-    }
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - visible) moveTo(index + 1);
+  });
+</script>
 
-    // أسهم
-    document.getElementById('prevBtn').addEventListener('click', ()=>{
-      setActive(activeIndex - 1);
-      stopAutoRotate();
-    });
-    document.getElementById('nextBtn').addEventListener('click', ()=>{
-      setActive(activeIndex + 1);
-      stopAutoRotate();
-    });
-
-    // دعم مفاتيح الأسهم
-    window.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') { setActive(activeIndex - 1); stopAutoRotate(); }
-      if(e.key === 'ArrowRight' || e.key === 'ArrowDown') { setActive(activeIndex + 1); stopAutoRotate(); }
-    });
-
-    // سحب / سوايب (لمسة خفيفة)
-    let startX = null;
-    carousel.addEventListener('pointerdown', (e)=> startX = e.clientX );
-    window.addEventListener('pointerup', (e)=>{
-      if(startX === null) return;
-      const diff = e.clientX - startX;
-      if(diff > 40) { setActive(activeIndex - 1); stopAutoRotate(); }
-      if(diff < -40) { setActive(activeIndex + 1); stopAutoRotate(); }
-      startX = null;
-    });
-
-    // التدوير التلقائي مع إيقاف عند تفاعل المستخدم
-    let autoId = null;
-    function startAutoRotate(){
-      stopAutoRotate();
-      autoId = setInterval(()=> {
-        let next = activeIndex + 1;
-        if(next >= cards.length) next = 0;
-        setActive(next);
-      }, 3500);
-    }
-    function stopAutoRotate(){
-      if(autoId) { clearInterval(autoId); autoId = null; }
-    }
-
-    // بداية
-    setActive(activeIndex);
-    startAutoRotate();
-
-    // تحسين الظهور عند تغيير حجم النافذة
-    window.addEventListener('resize', render);
-  </script>
 
 </body>
  
