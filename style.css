@@ -762,7 +762,7 @@ h1.page-title::after {
         max-width: 150px;
       }
     }
- /* شبكة المنتجات */
+    /* شبكة المنتجات */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -774,17 +774,20 @@ h1.page-title::after {
     .card {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .card:hover { transform: scale(1.03); }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
 
     .card img {
       width: 100%;
-      height: 180px;
+      aspect-ratio: 4 / 3; /* يضمن تناسق الصور */
       object-fit: cover;
       display: block;
     }
@@ -794,7 +797,7 @@ h1.page-title::after {
     }
 
     .card h3 {
-      margin: 0 0 6px;
+      margin: 0 0 8px;
       font-size: 18px;
       color: #222;
     }
@@ -810,25 +813,26 @@ h1.page-title::after {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(2px);
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(3px);
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      padding: 20px;
     }
 
     .modal-content {
       background: #fff;
       border-radius: 12px;
-      max-width: 700px;
-      width: 90%;
+      max-width: 800px;
+      width: 100%;
       overflow: hidden;
       animation: zoomIn 0.3s ease;
     }
 
     .modal-content img {
       width: 100%;
-      height: 350px;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
     }
 
@@ -850,11 +854,27 @@ h1.page-title::after {
 
     .close {
       position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 28px;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      font-weight: bold;
       cursor: pointer;
       color: #fff;
+      transition: color 0.2s;
+    }
+
+    .close:hover { color: #ff4444; }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* تحسين للهواتف */
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .modal-body h2 { font-size: 18px; }
+      .modal-body p { font-size: 14px; }
     }
 
     @keyframes zoomIn {
