@@ -825,13 +825,13 @@ h1.page-title::after {
       background: #fff;
       border-radius: 12px;
       max-width: 800px;
-      width: 100%;
+      width: 90%;
       overflow: hidden;
       animation: zoomIn 0.3s ease;
     }
 
     .modal-content img {
-      width: 100%;
+      width: 80%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
     }
