@@ -786,7 +786,7 @@ h1.page-title::after {
     }
 
     .card img {
-      width: 75%;
+      width: 50%;
       aspect-ratio: 4 / 3; /* يضمن تناسق الصور */
       object-fit: cover;
       display: block;
