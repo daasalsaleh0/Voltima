@@ -86,92 +86,71 @@
 
   
 <body style="background-color: #ff0000;">
+<h1>منتجاتنا</h1>
 
-<div class="carousel-container">
-  <button class="nav-btn nav-btn-left" id="prev">❮</button>
-  <div class="carousel-track" id="track">
-    <div class="card">
-      <img src="https://picsum.photos/id/1011/600/400" alt="">
-      <div class="content">
-        <h3>منتج 1</h3>
-        <p>وصف قصير للمنتج الأول</p>
-        <div class="meta">Aug 23, 2025</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://picsum.photos/id/1012/600/400" alt="">
-      <div class="content">
-        <h3>منتج 2</h3>
-        <p>تفاصيل المنتج الثاني</p>
-        <div class="meta">Aug 24, 2025</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://picsum.photos/id/1013/600/400" alt="">
-      <div class="content">
-        <h3>منتج 3</h3>
-        <p>معلومات المنتج الثالث</p>
-        <div class="meta">Aug 25, 2025</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://picsum.photos/id/1018/600/400" alt="">
-      <div class="content">
-        <h3>منتج 4</h3>
-        <p>الوصف الرابع للمنتج</p>
-        <div class="meta">Aug 26, 2025</div>
-      </div>
+<div class="grid">
+  <div class="card" onclick="openModal('https://picsum.photos/id/1011/800/500','منتج 1','وصف قصير للمنتج الأول')">
+    <img src="https://picsum.photos/id/1011/600/400" alt="منتج 1">
+    <div class="content">
+      <h3>منتج 1</h3>
+      <p>وصف قصير للمنتج الأول</p>
     </div>
   </div>
-  <button class="nav-btn nav-btn-right" id="next">❯</button>
 
-  <div class="dots" id="dots"></div>
+  <div class="card" onclick="openModal('https://picsum.photos/id/1012/800/500','منتج 2','تفاصيل المنتج الثاني')">
+    <img src="https://picsum.photos/id/1012/600/400" alt="منتج 2">
+    <div class="content">
+      <h3>منتج 2</h3>
+      <p>تفاصيل المنتج الثاني</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('https://picsum.photos/id/1013/800/500','منتج 3','معلومات المنتج الثالث')">
+    <img src="https://picsum.photos/id/1013/600/400" alt="منتج 3">
+    <div class="content">
+      <h3>منتج 3</h3>
+      <p>معلومات المنتج الثالث</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('https://picsum.photos/id/1018/800/500','منتج 4','الوصف الرابع للمنتج')">
+    <img src="https://picsum.photos/id/1018/600/400" alt="منتج 4">
+    <div class="content">
+      <h3>منتج 4</h3>
+      <p>الوصف الرابع للمنتج</p>
+    </div>
+  </div>
+</div>
+
+<!-- المودال -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content" id="modal-content">
+    <img id="modal-img" src="">
+    <div class="modal-body">
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
 </div>
 
 <script>
-  const track = document.getElementById("track");
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
-  const dotsContainer = document.getElementById("dots");
-  const cards = document.querySelectorAll(".card");
-
-  let index = 0;
-  const visible = 3; // عدد البطاقات الظاهرة
-
-  // إنشاء النقاط
-  for (let i = 0; i < cards.length - visible + 1; i++) {
-    const dot = document.createElement("span");
-    dot.classList.add("dot");
-    if (i === 0) dot.classList.add("active");
-    dot.dataset.index = i;
-    dotsContainer.appendChild(dot);
-    dot.addEventListener("click", () => moveTo(i));
+  function openModal(img, title, desc){
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-desc").innerText = desc;
+    document.getElementById("modal").style.display = "flex";
   }
-
-  const dots = document.querySelectorAll(".dot");
-
-  function updateDots() {
-    dots.forEach(d => d.classList.remove("active"));
-    dots[index].classList.add("active");
+  function closeModal(){
+    document.getElementById("modal").style.display = "none";
   }
-
-  function moveTo(i) {
-    index = i;
-    const cardWidth = cards[0].offsetWidth + 20; // عرض البطاقة + الهوامش
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-    updateDots();
+  // اغلاق عند الضغط بالخارج
+  window.onclick = function(e){
+    if(e.target.id === "modal"){
+      closeModal();
+    }
   }
-
-  prevBtn.addEventListener("click", () => {
-    if (index > 0) moveTo(index - 1);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    if (index < cards.length - visible) moveTo(index + 1);
-  });
 </script>
-
-
 </body>
  
 <footer id="footer_snippet_2">
