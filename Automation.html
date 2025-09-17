@@ -89,7 +89,7 @@
 <h1>منتجاتنا</h1>
 
 <div class="grid">
-  <div class="card" onclick="openModal('https://picsum.photos/id/1011/800/500','منتج 1','وصف قصير للمنتج الأول')">
+  <div class="card" onclick="openModal('https://picsum.photos/id/1011/1000/600','منتج 1','وصف قصير للمنتج الأول')">
     <img src="https://picsum.photos/id/1011/600/400" alt="منتج 1">
     <div class="content">
       <h3>منتج 1</h3>
@@ -97,7 +97,7 @@
     </div>
   </div>
 
-  <div class="card" onclick="openModal('https://picsum.photos/id/1012/800/500','منتج 2','تفاصيل المنتج الثاني')">
+  <div class="card" onclick="openModal('https://picsum.photos/id/1012/1000/600','منتج 2','تفاصيل المنتج الثاني')">
     <img src="https://picsum.photos/id/1012/600/400" alt="منتج 2">
     <div class="content">
       <h3>منتج 2</h3>
@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  <div class="card" onclick="openModal('https://picsum.photos/id/1013/800/500','منتج 3','معلومات المنتج الثالث')">
+  <div class="card" onclick="openModal('https://picsum.photos/id/1013/1000/600','منتج 3','معلومات المنتج الثالث')">
     <img src="https://picsum.photos/id/1013/600/400" alt="منتج 3">
     <div class="content">
       <h3>منتج 3</h3>
@@ -113,7 +113,7 @@
     </div>
   </div>
 
-  <div class="card" onclick="openModal('https://picsum.photos/id/1018/800/500','منتج 4','الوصف الرابع للمنتج')">
+  <div class="card" onclick="openModal('https://picsum.photos/id/1018/1000/600','منتج 4','الوصف الرابع للمنتج')">
     <img src="https://picsum.photos/id/1018/600/400" alt="منتج 4">
     <div class="content">
       <h3>منتج 4</h3>
@@ -125,7 +125,7 @@
 <!-- المودال -->
 <div class="modal" id="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <div class="modal-content" id="modal-content">
+  <div class="modal-content">
     <img id="modal-img" src="">
     <div class="modal-body">
       <h2 id="modal-title"></h2>
@@ -144,13 +144,13 @@
   function closeModal(){
     document.getElementById("modal").style.display = "none";
   }
-  // اغلاق عند الضغط بالخارج
   window.onclick = function(e){
     if(e.target.id === "modal"){
       closeModal();
     }
   }
 </script>
+
 </body>
  
 <footer id="footer_snippet_2">
