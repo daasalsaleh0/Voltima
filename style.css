@@ -17,7 +17,7 @@ body {
     z-index: 1000;
     display: block;
     position: relative;
-    background: url("PicsOfVoltima/General/photo_2025-08-25_19-35-02.jpg") no-repeat center center;
+    background: url("PicsOfVoltima/General/header.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -398,7 +398,7 @@ body {
 
 
 #footer_snippet_2 {
-    background: url("PicsOfVoltima/General/photo_2025-08-25_19-35-09.jpg") no-repeat center center;
+    background: url("PicsOfVoltima/General/footer.jpg") no-repeat center center;
     background-size: cover;
     color: #fff;
     padding-top: 60px;
