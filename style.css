@@ -67,7 +67,11 @@ body {
 { 
        color: #0b00a3;
        font-weight: 600;
-       font-size: 35px; } 
+       font-size: 35px;
+       position: relative;
+  z-index: 2; /* يطلع فوق الفيديو */
+  color: #fff; /* يوضح فوق الفيديو */
+ } 
 .navbar-collapse { 
        right: 0; 
        padding-left: 25px; 
@@ -80,11 +84,12 @@ body {
        opacity: 0; 
        background-color: #0b00a3; 
        height: 100%; 
-       z-index: 1; } 
+       z-index: 2; } 
 .navbar-collapse.collapsing { 
        height: 100% ; 
        right: 0; 
        transition: all 0.2s ease;
+       
 } 
 .navbar-collapse.show { 
        transform: translateX(0%);
