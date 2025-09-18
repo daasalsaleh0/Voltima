@@ -388,10 +388,26 @@ body {
 
 
 #footer_snippet_2 {
-    background:  #ff0000;
+    background: url("PicsOfVoltima/General/photo_2025-08-25_19-35-09.jpg") no-repeat center center;
+    background-size: cover;
     color: #fff;
-    padding-top: 100px;
+    padding-top: 60px;
+    position: relative;
+    z-index: 1;
 }
+
+/* طبقة شفافة فوق الصورة لزيادة وضوح النص */
+#footer_snippet_2::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* تقدر تغير الشفافية */
+    z-index: -1;
+}
+
 #footer_snippet_2 .about img {
     max-width: 120px;
     margin-bottom: 20px;
