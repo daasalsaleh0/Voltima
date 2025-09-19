@@ -12,8 +12,8 @@ body {
 #header_9 {
   position: relative;
   width: 100%;
-  height: 150px; /* ارتفاع الهيدر */
-  background: url("PicsOfVoltima/General/header5.jpeg") no-repeat center center/cover; /* ✅ صورة الخلفية */
+  height: 150px;
+  background: url("PicsOfVoltima/General/header.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
   z-index: 1;
@@ -28,17 +28,17 @@ body {
   padding: 0 20px;
   position: relative;
   z-index: 2;
-  background: rgba(0,0,0,0.4); /* ✅ طبقة شفافة فوق الصورة */
+  background: rgba(0,0,0,0.2); /* ✅ طبقة شفافة فوق الصورة */
 }
 
-/* اللوغو */
+
 #header_9 .navbar-brand img {
   width: 120px;
   height: auto;
   max-height: 100px;
 }
 
-/* زر القائمة */
+
 #header_9 nav button {
   color: #fff; 
   border-radius: 50%;
