@@ -28,7 +28,7 @@ body {
   padding: 0 20px;
   position: relative;
   z-index: 2;
-  background: rgba(0,0,0,0.2); /* ✅ طبقة شفافة فوق الصورة */
+  background: rgba(0,0,0,0.1); /* ✅ طبقة شفافة فوق الصورة */
 }
 
 
@@ -606,11 +606,13 @@ body {
 }
 
 .profile-image img {
+  background: #ffffff;
   max-width: 350px;
   width: 100%;
   border-radius: 50%;
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   transition: transform 0.4s ease;
+  
 }
 
 .profile-image img:hover {
@@ -675,13 +677,13 @@ body {
 /* العنوان */
 h1.page-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.5rem); /* ✅ متجاوب مع مختلف الشاشات */
+  font-size: clamp(2rem, 5vw, 3.5rem); 
   font-weight: 700;
-  background: linear-gradient(90deg, #0b00a3, #ff0000); /* ✅ أزرق مع أحمر متدرج */
+  background: linear-gradient(90deg, #0b00a3, #ffffff); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* دعم للمتصفحات الحديثة */
-  text-align: center; /* وسط */
+  background-clip: text;
+  text-align: center;
   margin: 20px 0;
   line-height: 1.2;
 }
@@ -867,9 +869,16 @@ h1.page-title::after {
 }
 
 .card p {
-  font-size: 14px;
-  color: #555;
-  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  font-weight: 700;
+  background: linear-gradient(90deg, #0b00a3, #ffffff); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.2;
 }
 
 /* المودال */
