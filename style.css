@@ -672,16 +672,18 @@ body {
 /* ===== ===== */
 /* العنوان */
 h1.page-title {
- 
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 700;
-      background: linear-gradient( #0b00a3, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-      margin: 0;
-    }
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* ✅ متجاوب مع مختلف الشاشات */
+  font-weight: 700;
+  background: linear-gradient(90deg, #0b00a3, #ff0000); /* ✅ أزرق مع أحمر متدرج */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* دعم للمتصفحات الحديثة */
+  text-align: center; /* وسط */
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
   
 
 h1.page-title::after {
@@ -696,10 +698,19 @@ h1.page-title::after {
 
 
     h2.page-title {
-      text-align: center;
-      color: #d60000;
-      font-size: 28px;
-      margin-bottom: 20px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* ✅ متجاوب مع مختلف الشاشات */
+  font-weight: 700;
+  background: linear-gradient(90deg, #0b00a3, #ff0000); /* ✅ أزرق مع أحمر متدرج */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* دعم للمتصفحات الحديثة */
+  text-align: center; /* وسط */
+  margin: 20px 0;
+  line-height: 1.2;
+
+
     }
 
     .product-item {
