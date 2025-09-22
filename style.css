@@ -985,7 +985,7 @@ h1.page-title::after {
       position: absolute;
       bottom: -40px; /* ينزل المربع لأسفل نصف الدائرة */
       background: #fff;
-      width: 80px;
+      width: 100%;
       height: 80px;
       border-radius: 20px;
       display: flex;
