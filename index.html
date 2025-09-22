@@ -13,75 +13,64 @@
 <body style="background-color: #ff0000;">
   <div class="info-bar">
     <p class="m-0 text-center" style="animation: scroll-left 25s linear infinite;">
-      📞 0123456789 - ✉ info@voltima.com - 🌐 www.voltima.com
+      📞 <a>0123456789</a> - ✉ <a>info@voltima.com</a> - 🌐<a> www.voltima.com</a>
     </p>
   </div>
   
 
 
 <header id="header_9">
-  <nav class="navbar ">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand" href="index.html">
+      <img src="PicsOfVoltima/General/Voltima.png" alt="Logo">
+    </a>
 
-   
-      <a class="navbar-brand" href="index.html">
-        <img src="PicsOfVoltima/General/Voltima.png" style="width:100px;   height: 100%; max-height:180px; " alt="Voltima Logo">
+    <!-- زر القائمة -->
+    <button class="navbar-toggler" type="button" id="menuBtn">
+      <i class="bi bi-filter-right"></i>
+    </button>
+
+    <!-- Full Menu -->
+    <div id="fullMenu">
+      <button type="button" class="btn-close btn-close-white" id="closeMenu"></button>
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="#0">Catalog</a>
+
+      <!-- Products Collapse -->
+      <a data-bs-toggle="collapse" href="#productsMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
+        Products <i class="bi bi-chevron-down"></i>
       </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#fullMenu"
-        aria-controls="fullMenu" aria-label="Toggle navigation">
-        <i class="bi bi-filter-right" style="font-size: 2rem; color: #fff;"></i>
-      </button>
-
-      
-     <div class="offcanvas offcanvas-top text-white" tabindex="-1" id="fullMenu" 
-     aria-labelledby="fullMenuLabel">
-
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="fullMenuLabel">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column align-items-center justify-content-center">
-          <ul class="navbar-nav text-center fs-3">
-            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="aboutus.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#0">Catalog</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="ContactUs.html">Contact Us</a></li>
-
-            
-           <li class="nav-item">
-  <a class="nav-link text-white d-flex justify-content-between align-items-center" 
-     data-bs-toggle="collapse" href="#productsMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
-    Products
-    <i class="bi bi-chevron-down"></i>
-  </a>
-  <div class="collapse" id="productsMenu">
-    <ul class="list-unstyled ms-3">
-      <li><a class="dropdown-item text-white" href="Automation.html">Automation</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Measurement.html">Electrical Measurement</a></li>
-      <li><a class="dropdown-item text-white" href="Time Relays.html">Time Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Protection Relays.html">Protection Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Control Components.html">Electrical Control Components</a></li>
-      <li><a class="dropdown-item text-white" href="Wiring Accessories.html">Wiring Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Busbar Accessories.html">Busbar Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Enclosures.html">Enclosures</a></li>
-      <li><a class="dropdown-item text-white" href="Purpose Relays.html">Purpose Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Supply.html">Supply</a></li>
-      <li><a class="dropdown-item text-white" href="Fuses.html">Fuses</a></li>
-      <li><a class="dropdown-item text-white" href="P.F.C Systems.html">P.F.C Systems</a></li>
-    </ul>
-  </div>
-</li>
-
-            <li class="nav-item"><a class="nav-link text-white" href="#0">Contact</a></li>
-          </ul>
-        </div>
+      <div class="collapse" id="productsMenu">
+        <a href="Automation.html">Automation</a>
+        <a href="Electrical Measurement.html">Electrical Measurement</a>
+        <a href="Time Relays.html">Time Relays</a>
+        <a href="Protection Relays.html">Protection Relays</a>
+        <a href="Electrical Control Components.html">Electrical Control Components</a>
+        <a href="Wiring Accessories.html">Wiring Accessories</a>
+        <a href="Busbar Accessories.html">Busbar Accessories</a>
+        <a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a>
+        <a href="Enclosures.html">Enclosures</a>
+        <a href="Purpose Relays.html">Purpose Relays</a>
+        <a href="Supply.html">Supply</a>
+        <a href="Fuses.html">Fuses</a>
+        <a href="P.F.C Systems.html">P.F.C Systems</a>
       </div>
 
+      <a href="ContactUs.html">Contact</a>
     </div>
+
   </nav>
 </header>
+  <script>
+const menuBtn = document.getElementById('menuBtn');
+const fullMenu = document.getElementById('fullMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+menuBtn.addEventListener('click', () => fullMenu.classList.add('show'));
+closeMenu.addEventListener('click', () => fullMenu.classList.remove('show'));
+</script>
+
 
   
 <body style="background-color: #ff0000;">
