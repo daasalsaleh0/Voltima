@@ -33,7 +33,7 @@ body {
   position: relative;
   width: 100%;
   height: 180px;
-  background: url("PicsOfVoltima/General/header-bg.jpg") no-repeat center/cover;
+  background: url("PicsOfVoltima/General/header.jpg") no-repeat center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@ body {
 
 /* الشعار بخلفية شفافة */
 .navbar-brand {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.8);
   padding: 10px 15px;
   border-radius: 15px;
   backdrop-filter: blur(8px);
@@ -58,7 +58,7 @@ body {
 
 /* زر القائمة بخلفية شفافة */
 .navbar-toggler {
-  background: rgba(11, 0, 163, 0.6);
+  background: rgba(111, 0, 100, 0.6);
   border: none;
   border-radius: 50%;
   padding: 12px;
@@ -107,8 +107,8 @@ body {
   left:0;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
   z-index: 0;
 }
 
