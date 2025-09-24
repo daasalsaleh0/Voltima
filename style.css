@@ -145,7 +145,7 @@ body {
 .slide img {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  object-fit: contain;
   border-bottom: 5px solid #300;
   display: block;
   transition: transform 0.3s ease;
