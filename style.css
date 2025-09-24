@@ -11,33 +11,24 @@ body {
 { max-width: 100vw; }
 
 
-/* ======= Header ======= */
 #header_9 {
-  position: relative;
   width: 100%;
-  height: 180px;
-  background: url("PicsOfVoltima/General/header.jpg") no-repeat center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 50px;
-  background: rgba(10, 10, 30, 0.85);
-  backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  background: rgba(10, 10, 25, 0.85);
+  backdrop-filter: blur(8px);
 }
 
-.navbar .logo img {
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.navbar-brand img {
   width: 100px;
 }
 
@@ -52,11 +43,11 @@ body {
   z-index: 1100;
 }
 
-/* القائمة */
+/* القائمة في الشاشات الكبيرة */
 #fullMenu {
   display: flex;
-  align-items: center;
   gap: 30px;
+  align-items: center;
 }
 
 #fullMenu a {
@@ -82,15 +73,16 @@ body {
     left: -100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 10, 30, 0.95);
+    background: rgba(10, 10, 25, 0.95);
     backdrop-filter: blur(10px);
-    gap: 25px;
     transition: left 0.4s ease;
+    gap: 25px;
   }
 
-  #fullMenu.active {
+  #fullMenu.show {
     left: 0;
   }
 
@@ -104,20 +96,6 @@ body {
     color: #fff;
   }
 }
-
-/* ======= Dropdown ======= */
-.dropdown .collapse a {
-  display: block;
-  margin-left: 20px;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.dropdown .collapse a:hover {
-  color: #00e0ff;
-}
-
-
 
 .slider {
       position: relative;
