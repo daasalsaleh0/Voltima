@@ -48,6 +48,7 @@ body {
   font-size: 2rem;
   color: #fff;
   background: none;
+  background-size: cover;
   backdrop-filter: blur(15px);
   border: none;
   display: none;
