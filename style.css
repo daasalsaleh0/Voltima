@@ -36,7 +36,7 @@ body {
 
 /* === Logo === */
 .navbar-brand img.site-logo {
-  height: 25%;
+  height: 50px;
   width: auto;
   object-fit: contain;
  
