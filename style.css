@@ -18,6 +18,7 @@ body {
   left: 0;
   z-index: 1000;
   background: url("PicsOfVoltima/General/1.jpg") no-repeat center center;
+  background-size: cover;
   transition: transform 0.4s ease, background 0.4s ease;
 }
 
