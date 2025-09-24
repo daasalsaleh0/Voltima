@@ -40,6 +40,7 @@ body {
   height: 25%;
   width: auto;
   object-fit: contain;
+  backdrop-filter: blur(15px);
 }
 
 /* === زر القائمة === */
@@ -47,6 +48,7 @@ body {
   font-size: 2rem;
   color: #fff;
   background: none;
+  backdrop-filter: blur(15px);
   border: none;
   display: none;
   cursor: pointer;
