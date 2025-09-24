@@ -64,6 +64,20 @@ menuBtn.addEventListener('click', () => fullMenu.classList.add('show'));
 closeMenu.addEventListener('click', () => fullMenu.classList.remove('show'));
 </script>
 
+<script>
+let lastScroll = 0;
+const header = document.getElementById("header_9");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
+  lastScroll = currentScroll;
+});
+</script>
 
 
 
