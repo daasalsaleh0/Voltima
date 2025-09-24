@@ -138,7 +138,7 @@ body {
 }
 
 .slide {
-  min-width: 90%;
+  min-width: 100%;
   position: relative;
   text-align: center;
 }
@@ -150,7 +150,7 @@ body {
   margin: 0 auto;
   display: block;
   object-fit: contain;
-  border-bottom: 5px solid #300;
+  border-bottom: 10px solid #300;
   display: block;
   transition: transform 0.3s ease;
 }
