@@ -31,7 +31,7 @@ padding: 10px 15px;
 }
 .navbar-brand img {
   width: 160px;
-  max-height: 130px;
+  max-height: 160px;
   object-fit: contain;
   transition: all 0.3s ease;
 }
@@ -48,6 +48,7 @@ padding: 10px 15px;
   cursor: pointer;
   backdrop-filter: blur(8px);
   transition: all 0.3s ease;
+  display: block !important;     
 }
 .navbar-toggler:hover {
   background: rgba(255, 0, 0, 0.7);
@@ -57,7 +58,7 @@ padding: 10px 15px;
   color: #fff;
 }
 
-/* ======= Full Menu Glassmorphism + صورة خلفية + Slide Down ======= */
+
 #fullMenu {
   position: fixed;
   top: -100%;
