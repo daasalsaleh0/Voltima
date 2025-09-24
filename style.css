@@ -28,8 +28,32 @@ body {
   padding: 15px 30px;
 }
 
-.navbar-brand img {
-  width: 100px;
+/* محاذاة الشريط بالكامل */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+/* تنسيق اللوغو */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 150px;        /* ✅ اضبط ارتفاع اللوغو */
+  width: auto;         /* حتى يحافظ على التناسب */
+  object-fit: contain; /* لا يتم قص الصورة */
+  display: block;
+}
+
+/* في الشاشات الصغيرة يمكن تصغيره */
+@media (max-width: 991px) {
+  .site-logo {
+    height: 90px;
+  }
 }
 
 /* زر القائمة */
