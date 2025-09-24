@@ -37,7 +37,7 @@ body {
 
 /* === Logo === */
 .navbar-brand img.site-logo {
-  height: 65px;
+  height: 25%;
   width: auto;
   object-fit: contain;
 }
@@ -125,7 +125,7 @@ body {
 .slider {
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
   margin: auto;
   border-radius: 15px;
@@ -139,14 +139,14 @@ body {
 }
 
 .slide {
-  min-width: 100%;
+  min-width: 90%;
   position: relative;
   text-align: center;
 }
 
 .slide img {
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: contain;
   border-bottom: 5px solid #300;
   display: block;
