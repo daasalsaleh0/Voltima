@@ -10,7 +10,7 @@ body {
 }
  
 { max-width: 100vw; }
-/* الشكل الأساسي للهيدر */
+/* === HEADER === */
 #header_9 {
   width: 100%;
   position: fixed;
@@ -19,10 +19,14 @@ body {
   z-index: 1000;
   background: rgba(10, 10, 25, 0.85);
   backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, background 0.4s ease;
 }
 
+/* عند إخفائه أثناء التمرير */
+#header_9.hide {
+  transform: translateY(-100%);
+}
 
-/* محاذاة الشريط بالكامل */
 .navbar {
   display: flex;
   align-items: center;
@@ -30,28 +34,14 @@ body {
   padding: 15px 40px;
 }
 
-/* تنسيق اللوغو */
-.navbar-brand {
-  display: flex;
-  align-items: center;
+/* === Logo === */
+.navbar-brand img.site-logo {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
 }
 
-.site-logo {
-  height: 60px;        /* ✅ اضبط ارتفاع اللوغو */
-  width: auto;         /* حتى يحافظ على التناسب */
-  object-fit: contain; /* لا يتم قص الصورة */
-  display: block;
-}
-
-/* في الشاشات الصغيرة يمكن تصغيره */
-@media (max-width: 991px) {
-  .site-logo {
-    height: 50px;
-  }
-}
-
-
-/* زر القائمة */
+/* === زر القائمة === */
 .navbar-toggler {
   font-size: 2rem;
   color: #fff;
@@ -62,7 +52,7 @@ body {
   z-index: 1100;
 }
 
-/* القائمة في الشاشات الكبيرة */
+/* === القائمة الأساسية === */
 #fullMenu {
   display: flex;
   gap: 30px;
@@ -80,7 +70,12 @@ body {
   color: #00e0ff;
 }
 
-/* ======= الشاشات الصغيرة ======= */
+/* إخفاء زر الإغلاق في الشاشات الكبيرة */
+#fullMenu .btn-close {
+  display: none;
+}
+
+/* ===== الشاشات الصغيرة ===== */
 @media (max-width: 991px) {
   .navbar-toggler {
     display: block;
@@ -106,6 +101,7 @@ body {
   }
 
   #fullMenu .btn-close {
+    display: block;
     position: absolute;
     top: 30px;
     right: 30px;
@@ -113,6 +109,13 @@ body {
     background: none;
     border: none;
     color: #fff;
+  }
+
+  /* تصحيح collapse للـ Products */
+  #productsMenu.collapse {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
