@@ -46,6 +46,8 @@ body {
   padding: 15px 40px;
 }
 .logo-box {
+  height: 90px;
+  width: auto;
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.15);
