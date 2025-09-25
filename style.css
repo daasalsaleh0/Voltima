@@ -12,11 +12,20 @@ body {
 { max-width: 100vw; }
 /* === HEADER === */
 #header_9 {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(15px);                 /* تأثير الزجاج */
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease;
   background: url("PicsOfVoltima/General/1.jpg") no-repeat center center;
   background-size: cover;
   transition: transform 0.4s ease, background 0.4s ease;
@@ -33,14 +42,27 @@ body {
   justify-content: space-between;
   padding: 15px 40px;
 }
-
-/* === Logo === */
-.navbar-brand img.site-logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
- 
+.logo-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 8px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+  transition: transform 0.3s ease;
 }
+
+.logo-box:hover {
+  transform: scale(1.05);
+}
+
+.logo-box img {
+  width: 120px;
+  height: auto;
+}
+
 
 /* === زر القائمة === */
 .navbar-toggler {
