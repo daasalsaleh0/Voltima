@@ -163,6 +163,29 @@ body {
   }
 }
 
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* إظهار زر الهامبرغر فقط في الشاشات الصغيرة */
+@media (max-width: 991px) {
+  .menu-btn {
+    display: block;
+  }
 
 
 .slider {
