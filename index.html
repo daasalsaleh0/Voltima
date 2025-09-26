@@ -27,30 +27,31 @@
 
     <!-- القائمة الكاملة -->
     <div id="fullMenu">
-      <button type="button" class="btn-close" id="closeMenu">✖</button>
+      <button type="button" class="btn-close" id="closeMenu"></button>
 
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
       <a href="#0">Catalog</a>
 
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link">Products ▼</a>
-        <div id="productsMenu" class="collapse">
-          <a href="Automation.html">Automation</a>
-          <a href="Electrical Measurement.html">Electrical Measurement</a>
-          <a href="Time Relays.html">Time Relays</a>
-          <a href="Protection Relays.html">Protection Relays</a>
-          <a href="Electrical Control Components.html">Electrical Control Components</a>
-          <a href="Wiring Accessories.html">Wiring Accessories</a>
-          <a href="Busbar Accessories.html">Busbar Accessories</a>
-          <a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a>
-          <a href="Enclosures.html">Enclosures</a>
-          <a href="Purpose Relays.html">Purpose Relays</a>
-          <a href="Supply.html">Supply</a>
-          <a href="Fuses.html">Fuses</a>
-          <a href="P.F.C Systems.html">P.F.C Systems</a>
-        </div>
-      </div>
+      <li class="nav-item dropdown">
+            <a href="#" class="nav-link" id="productsLink">Products ▼</a>
+               <ul class="dropdown-menu" id="productsMenu">
+         <li> <a href="Automation.html">Automation</a> </li>
+          <li><a href="Electrical Measurement.html">Electrical Measurement</a> </li>
+         <li> <a href="Time Relays.html">Time Relays</a> </li>
+         <li> <a href="Protection Relays.html">Protection Relays</a> </li>
+          <li><a href="Electrical Control Components.html">Electrical Control Components</a> </li>
+          <li><a href="Wiring Accessories.html">Wiring Accessories</a> </li>
+          <li><a href="Busbar Accessories.html">Busbar Accessories</a> </li>
+          <li><a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a> </li>
+          <li><a href="Enclosures.html">Enclosures</a> </li>
+          <li><a href="Purpose Relays.html">Purpose Relays</a> </li>
+          <li><a href="Supply.html">Supply</a> </li>
+          <li><a href="Fuses.html">Fuses</a> </li>
+          <li><a href="P.F.C Systems.html">P.F.C Systems</a> </li>
+      </ul>
+      </li>
+
 
       <a href="ContactUs.html">Contact</a>
     </div>
@@ -80,12 +81,22 @@
     productsMenu.classList.remove("show"); // إغلاق قائمة المنتجات لو مفتوحة
   });
 
-  // فتح / إغلاق قائمة المنتجات في الشاشات الصغيرة
-  productsLink.addEventListener("click", (e) => {
-    // منع الذهاب إلى صفحة
-    e.preventDefault();
-    productsMenu.classList.toggle("show");
-  });
+const productsLink = document.getElementById("productsLink");
+const productsMenu = document.getElementById("productsMenu");
+
+// فتح / إغلاق القائمة عند الضغط فقط
+productsLink.addEventListener("click", (e) => {
+  e.preventDefault(); // منع الانتقال للرابط
+  productsMenu.classList.toggle("show");
+});
+
+// إغلاق القائمة إذا ضغطت في أي مكان خارجها
+document.addEventListener("click", (e) => {
+  if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
+    productsMenu.classList.remove("show");
+  }
+});
+
 
   // إغلاق القائمة إذا تم تغيير حجم الشاشة إلى كبير
   window.addEventListener("resize", () => {
