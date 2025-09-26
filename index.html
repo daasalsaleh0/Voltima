@@ -113,42 +113,18 @@
    </div>
   </div>
 </section>
-   <script> 
-const slides1 = document.querySelectorAll('.slide1');
-const texts = [
-  " Welcome To Voltima Company ",
-  "Our Partners "
-];
-
+<script> 
+const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
-let charIndex = 0;
-let typingSpeed = 100;
-let pauseTime = 200;
-
-function typeText(slideIndex) {
-  const typingElement = slides1[slideIndex].querySelector('.typing');
-  if (charIndex < texts[slideIndex].length) {
-    typingElement.textContent += texts[slideIndex][charIndex];
-    charIndex++;
-    setTimeout(() => typeText(slideIndex), typingSpeed);
-  } else {
-    setTimeout(() => {
-      charIndex = 0;
-      typingElement.textContent = '';
-      showNextSlide();
-    }, pauseTime);
-  }
-}
 
 function showNextSlide() {
   slides[currentIndex].classList.remove('active');
   currentIndex = (currentIndex + 1) % slides.length;
   slides[currentIndex].classList.add('active');
-  typeText(currentIndex);
 }
 
-// بدء السلايدر
-typeText(currentIndex);
+setInterval(showNextSlide, 5000); // تبديل كل 5 ثواني
+
   </script>
 
   
