@@ -113,9 +113,36 @@ body {
 
 /* ===== الشاشات الصغيرة ===== */
 @media (max-width: 991px) {
-  .navbar-toggler {
-    display: block;
+  #productsMenu.collapse {
+    position: static; /* لا نستخدم absolute */
+    width: 90%;       /* عرض مناسب داخل القائمة */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
   }
+
+  #productsMenu.collapse a {
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  #productsMenu.collapse a:hover {
+    background: rgba(0, 224, 255, 0.2);
+  }
+}
+
 
   #fullMenu {
     position: fixed;
