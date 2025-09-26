@@ -47,6 +47,7 @@ body {
 }
 .logo-box {
   height: 90px;
+  min-width: 160px;
   width: auto;
   display: flex;
   align-items: center;
@@ -64,7 +65,7 @@ body {
 }
 
 .logo-box img {
-  width: 90px;
+  width: auto;
   height: 90px;
 }
 
