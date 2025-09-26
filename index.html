@@ -61,46 +61,40 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const closeMenu = document.getElementById("closeMenu");
   const fullMenu = document.getElementById("fullMenu");
-  const productsLink = document.querySelector(".nav-item.dropdown > .nav-link");
+  const productsLink = document.getElementById("productsLink");
   const productsMenu = document.getElementById("productsMenu");
 
-  // ✅ فتح القائمة
+  // فتح القائمة الرئيسية
   menuBtn.addEventListener("click", () => {
     fullMenu.classList.add("show");
-    menuBtn.style.display = "none"; // إخفاء زر ☰
-    document.body.style.overflow = "hidden";
+    menuBtn.classList.add("hide"); // إخفاء زر القائمة
   });
 
-  // ✅ إغلاق القائمة
+  // إغلاق القائمة الرئيسية
   closeMenu.addEventListener("click", () => {
     fullMenu.classList.remove("show");
-    menuBtn.style.display = "block"; // إظهار زر ☰ مجددًا
-    document.body.style.overflow = "auto";
+    menuBtn.classList.remove("hide"); // إظهار زر القائمة من جديد
+    productsMenu.classList.remove("show"); // إغلاق قائمة المنتجات لو مفتوحة
   });
 
-  // ✅ إغلاق القائمة عند الضغط على أي رابط
-  fullMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+  // فتح / إغلاق قائمة المنتجات في الشاشات الصغيرة
+  productsLink.addEventListener("click", (e) => {
+    // منع الذهاب إلى صفحة
+    e.preventDefault();
+    productsMenu.classList.toggle("show");
+  });
+
+  // إغلاق القائمة إذا تم تغيير حجم الشاشة إلى كبير
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
       fullMenu.classList.remove("show");
-      menuBtn.style.display = "block";
-      document.body.style.overflow = "auto";
-    });
+      menuBtn.classList.remove("hide");
+      productsMenu.classList.remove("show");
+    }
   });
-
-  // ✅ فتح/إغلاق القائمة الفرعية في الموبايل
-  if (productsLink && productsMenu) {
-    productsLink.addEventListener("click", (e) => {
-      if (window.innerWidth <= 991) {
-        e.preventDefault();
-        productsMenu.classList.toggle("open");
-      }
-    });
-  }
-});
 </script>
 
 
