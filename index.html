@@ -13,39 +13,39 @@
 
 <header id="header_9">
   <nav class="navbar container">
-   <div class="logo-box"> 
-<a class="navbar-brand" href="index.html">
-  <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo">
-</a>
-   </div>
-    <!-- زر القائمة -->
+    <div class="logo-box"> 
+      <a class="navbar-brand" href="index.html">
+        <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo">
+      </a>
+    </div>
+
     <button class="navbar-toggler" type="button" id="menuBtn">
       <i class="bi bi-filter-right"></i>
     </button>
 
-    <!-- Full Menu -->
     <div id="fullMenu">
       <button type="button" class="btn-close btn-close-white" id="closeMenu"></button>
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
       <a href="#0">Catalog</a>
 
-        <li class="nav-item dropdown" style="position: relative;">
-         <a href="Products.html" class="nav-link">Products</a>
-           <div id="productsMenu" class="collapse">
-        <a href="Automation.html">Automation</a>
-        <a href="Electrical Measurement.html">Electrical Measurement</a>
-        <a href="Time Relays.html">Time Relays</a>
-        <a href="Protection Relays.html">Protection Relays</a>
-        <a href="Electrical Control Components.html">Electrical Control Components</a>
-        <a href="Wiring Accessories.html">Wiring Accessories</a>
-        <a href="Busbar Accessories.html">Busbar Accessories</a>
-        <a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a>
-        <a href="Enclosures.html">Enclosures</a>
-        <a href="Purpose Relays.html">Purpose Relays</a>
-        <a href="Supply.html">Supply</a>
-        <a href="Fuses.html">Fuses</a>
-        <a href="P.F.C Systems.html">P.F.C Systems</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link">Products</a>
+        <div id="productsMenu" class="collapse">
+          <a href="Automation.html">Automation</a>
+          <a href="Electrical Measurement.html">Electrical Measurement</a>
+          <a href="Time Relays.html">Time Relays</a>
+          <a href="Protection Relays.html">Protection Relays</a>
+          <a href="Electrical Control Components.html">Electrical Control Components</a>
+          <a href="Wiring Accessories.html">Wiring Accessories</a>
+          <a href="Busbar Accessories.html">Busbar Accessories</a>
+          <a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a>
+          <a href="Enclosures.html">Enclosures</a>
+          <a href="Purpose Relays.html">Purpose Relays</a>
+          <a href="Supply.html">Supply</a>
+          <a href="Fuses.html">Fuses</a>
+          <a href="P.F.C Systems.html">P.F.C Systems</a>
+        </div>
       </div>
 
       <a href="ContactUs.html">Contact</a>
@@ -53,30 +53,47 @@
   </nav>
 </header>
 
-<script>
-const menuBtn = document.getElementById('menuBtn');
-const fullMenu = document.getElementById('fullMenu');
-const closeMenu = document.getElementById('closeMenu');
-
-menuBtn.addEventListener('click', () => fullMenu.classList.add('show'));
-closeMenu.addEventListener('click', () => fullMenu.classList.remove('show'));
-</script>
 
 <script>
-let lastScroll = 0;
-const header = document.getElementById("header_9");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const closeMenu = document.getElementById("closeMenu");
+  const fullMenu = document.getElementById("fullMenu");
 
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
+  // ✅ فتح القائمة في الموبايل
+  menuBtn.addEventListener("click", () => {
+    fullMenu.classList.add("show");
+    document.body.style.overflow = "hidden"; // منع تمرير الصفحة بالخلفية
+  });
+
+  // ✅ إغلاق القائمة
+  closeMenu.addEventListener("click", () => {
+    fullMenu.classList.remove("show");
+    document.body.style.overflow = "auto";
+  });
+
+  // ✅ إغلاق القائمة عند الضغط على أي رابط (اختياري)
+  fullMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      fullMenu.classList.remove("show");
+      document.body.style.overflow = "auto";
+    });
+  });
+
+  // ✅ (اختياري) إظهار/إخفاء قائمة المنتجات الفرعية بالضغط في الموبايل فقط
+  const productsLink = document.querySelector(".nav-item.dropdown > .nav-link");
+  const productsMenu = document.getElementById("productsMenu");
+
+  if (productsLink && productsMenu) {
+    productsLink.addEventListener("click", (e) => {
+      if (window.innerWidth <= 991) {
+        e.preventDefault(); // منع الانتقال للرابط
+        productsMenu.classList.toggle("open");
+      }
+    });
   }
-  lastScroll = currentScroll;
 });
 </script>
-
 
 
   
