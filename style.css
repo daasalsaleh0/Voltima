@@ -40,10 +40,16 @@ body {
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 40%;
   padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.06); /* شفافة خفيفة */
+  backdrop-filter: blur(15px); /* تأثير الزجاج */
+  -webkit-backdrop-filter: blur(15px); /* دعم Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed; /* ثابتة بالأعلى */
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .logo-box {
   height: 90px;
@@ -131,22 +137,48 @@ body {
   }
 
   #fullMenu .btn-close {
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  color: #00e0ff;
+  cursor: pointer;
+  transition: transform 0.2s;
   }
 
-  /* تصحيح collapse للـ Products */
-  #productsMenu.collapse {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+#productsMenu.collapse {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.08); /* خلفية شفافة خفيفة */
+  backdrop-filter: blur(12px); /* تأثير الزجاج */
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  width: 220px;
+  position: absolute;
+  top: 100%; /* أسفل العنصر الأب */
+  left: 0;
+  z-index: 1000;
+}
+
+#productsMenu.collapse a {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+#productsMenu.collapse a:hover {
+  background: rgba(0, 224, 255, 0.2);
+}
+
 }
 
 
