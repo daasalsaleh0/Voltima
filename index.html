@@ -13,24 +13,28 @@
 
 <header id="header_9">
   <nav class="navbar container">
+    <!-- شعار -->
     <div class="logo-box"> 
       <a class="navbar-brand" href="index.html">
-        <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo">
+        <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo" />
       </a>
     </div>
 
+    <!-- زر القائمة للموبايل -->
     <button class="navbar-toggler" type="button" id="menuBtn">
-      <i class="bi bi-filter-right"></i>
+      ☰
     </button>
 
+    <!-- القائمة -->
     <div id="fullMenu">
-      <button type="button" class="btn-close btn-close-white" id="closeMenu"></button>
+      <button type="button" class="btn-close" id="closeMenu">✖</button>
+
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
       <a href="#0">Catalog</a>
 
       <div class="nav-item dropdown">
-        <a href="#" class="nav-link">Products</a>
+        <a href="#" class="nav-link">Products ▼</a>
         <div id="productsMenu" class="collapse">
           <a href="Automation.html">Automation</a>
           <a href="Electrical Measurement.html">Electrical Measurement</a>
@@ -54,25 +58,28 @@
 </header>
 
 
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const closeMenu = document.getElementById("closeMenu");
   const fullMenu = document.getElementById("fullMenu");
+  const productsLink = document.querySelector(".nav-item.dropdown > .nav-link");
+  const productsMenu = document.getElementById("productsMenu");
 
-  // ✅ فتح القائمة في الموبايل
+  // فتح القائمة
   menuBtn.addEventListener("click", () => {
     fullMenu.classList.add("show");
-    document.body.style.overflow = "hidden"; // منع تمرير الصفحة بالخلفية
+    document.body.style.overflow = "hidden";
   });
 
-  // ✅ إغلاق القائمة
+  // إغلاق القائمة
   closeMenu.addEventListener("click", () => {
     fullMenu.classList.remove("show");
     document.body.style.overflow = "auto";
   });
 
-  // ✅ إغلاق القائمة عند الضغط على أي رابط (اختياري)
+  // إغلاق القائمة عند الضغط على رابط
   fullMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       fullMenu.classList.remove("show");
@@ -80,14 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ (اختياري) إظهار/إخفاء قائمة المنتجات الفرعية بالضغط في الموبايل فقط
-  const productsLink = document.querySelector(".nav-item.dropdown > .nav-link");
-  const productsMenu = document.getElementById("productsMenu");
-
+  // فتح / إغلاق القائمة الفرعية في الموبايل
   if (productsLink && productsMenu) {
     productsLink.addEventListener("click", (e) => {
       if (window.innerWidth <= 991) {
-        e.preventDefault(); // منع الانتقال للرابط
+        e.preventDefault();
         productsMenu.classList.toggle("open");
       }
     });
@@ -96,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-  
 <body style="background-color: #ff0000;">
   
 <div class="slider">
