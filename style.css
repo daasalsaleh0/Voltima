@@ -43,8 +43,8 @@ body {
   width: 100%;
   padding: 15px 40px;
   background: rgba(255, 255, 255, 0.06); /* شفافة خفيفة */
-  backdrop-filter: blur(15px); /* تأثير الزجاج */
-  -webkit-backdrop-filter: blur(15px); /* دعم Safari */
+  backdrop-filter: blur(5px); /* تأثير الزجاج */
+  -webkit-backdrop-filter: blur(5px); /* دعم Safari */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed; /* ثابتة بالأعلى */
   top: 0;
@@ -58,8 +58,8 @@ body {
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 8px 20px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(255,255,255,0.15);
