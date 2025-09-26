@@ -13,19 +13,19 @@
 
 <header id="header_9">
   <nav class="navbar container">
-    <!-- شعار -->
+    <!-- الشعار -->
     <div class="logo-box"> 
       <a class="navbar-brand" href="index.html">
         <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo" />
       </a>
     </div>
 
-    <!-- زر القائمة للموبايل -->
+    <!-- زر القائمة -->
     <button class="navbar-toggler" type="button" id="menuBtn">
       ☰
     </button>
 
-    <!-- القائمة -->
+    <!-- القائمة الكاملة -->
     <div id="fullMenu">
       <button type="button" class="btn-close" id="closeMenu">✖</button>
 
@@ -59,6 +59,7 @@
 
 
 
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
@@ -67,27 +68,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsLink = document.querySelector(".nav-item.dropdown > .nav-link");
   const productsMenu = document.getElementById("productsMenu");
 
-  // فتح القائمة
+  // ✅ فتح القائمة
   menuBtn.addEventListener("click", () => {
     fullMenu.classList.add("show");
+    menuBtn.style.display = "none"; // إخفاء زر ☰
     document.body.style.overflow = "hidden";
   });
 
-  // إغلاق القائمة
+  // ✅ إغلاق القائمة
   closeMenu.addEventListener("click", () => {
     fullMenu.classList.remove("show");
+    menuBtn.style.display = "block"; // إظهار زر ☰ مجددًا
     document.body.style.overflow = "auto";
   });
 
-  // إغلاق القائمة عند الضغط على رابط
+  // ✅ إغلاق القائمة عند الضغط على أي رابط
   fullMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       fullMenu.classList.remove("show");
+      menuBtn.style.display = "block";
       document.body.style.overflow = "auto";
     });
   });
 
-  // فتح / إغلاق القائمة الفرعية في الموبايل
+  // ✅ فتح/إغلاق القائمة الفرعية في الموبايل
   if (productsLink && productsMenu) {
     productsLink.addEventListener("click", (e) => {
       if (window.innerWidth <= 991) {
@@ -98,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
 
 
 <body style="background-color: #ff0000;">
