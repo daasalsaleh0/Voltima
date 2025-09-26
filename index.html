@@ -1,143 +1,130 @@
 <!DOCTYPE html>
 <html lang="en" lang="ar">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voltima</title>
 
-  
-<link rel="stylesheet" href="style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-<header id="header_9">
-  <nav class="navbar container">
-    <!-- الشعار -->
-    <div class="logo-box"> 
-      <a class="navbar-brand" href="index.html">
-        <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo" />
-      </a>
+<body style="background-color: #ff0000;">
+  <!-- ===== الهيدر ===== -->
+  <header id="header_9">
+    <nav class="navbar container">
+      <!-- الشعار -->
+      <div class="logo-box">
+        <a class="navbar-brand" href="index.html">
+          <img src="PicsOfVoltima/General/Voltima.png" alt="Logo" class="site-logo" />
+        </a>
+      </div>
+
+      <!-- زر القائمة للموبايل -->
+      <button class="navbar-toggler" type="button" id="menuBtn">☰</button>
+
+      <!-- القائمة -->
+      <div id="fullMenu">
+        <button type="button" class="btn-close" id="closeMenu"></button>
+
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="#0">Catalog</a>
+
+        <!-- القائمة الفرعية -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link" id="productsLink">Products ▼</a>
+          <ul class="dropdown-menu" id="productsMenu">
+            <li><a href="Automation.html">Automation</a></li>
+            <li><a href="Electrical Measurement.html">Electrical Measurement</a></li>
+            <li><a href="Time Relays.html">Time Relays</a></li>
+            <li><a href="Protection Relays.html">Protection Relays</a></li>
+            <li><a href="Electrical Control Components.html">Electrical Control Components</a></li>
+            <li><a href="Wiring Accessories.html">Wiring Accessories</a></li>
+            <li><a href="Busbar Accessories.html">Busbar Accessories</a></li>
+            <li><a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
+            <li><a href="Enclosures.html">Enclosures</a></li>
+            <li><a href="Purpose Relays.html">Purpose Relays</a></li>
+            <li><a href="Supply.html">Supply</a></li>
+            <li><a href="Fuses.html">Fuses</a></li>
+            <li><a href="P.F.C Systems.html">P.F.C Systems</a></li>
+          </ul>
+        </li>
+
+        <a href="ContactUs.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== السلايدر ===== -->
+  <section class="hero">
+    <div class="slide1 active" style="background-image: url('PicsOfVoltima/General/header.jpg');">
+      <div class="text1">Welcome To Voltima Company</div>
     </div>
-
-    <!-- زر القائمة -->
-    <button class="navbar-toggler" type="button" id="menuBtn">
-      ☰
-    </button>
-
-    <!-- القائمة الكاملة -->
-    <div id="fullMenu">
-      <button type="button" class="btn-close" id="closeMenu"></button>
-
-      <a href="index.html">Home</a>
-      <a href="aboutus.html">About Us</a>
-      <a href="#0">Catalog</a>
-
-      <li class="nav-item dropdown">
-            <a href="#" class="nav-link" id="productsLink">Products ▼</a>
-               <ul class="dropdown-menu" id="productsMenu">
-         <li> <a href="Automation.html">Automation</a> </li>
-          <li><a href="Electrical Measurement.html">Electrical Measurement</a> </li>
-         <li> <a href="Time Relays.html">Time Relays</a> </li>
-         <li> <a href="Protection Relays.html">Protection Relays</a> </li>
-          <li><a href="Electrical Control Components.html">Electrical Control Components</a> </li>
-          <li><a href="Wiring Accessories.html">Wiring Accessories</a> </li>
-          <li><a href="Busbar Accessories.html">Busbar Accessories</a> </li>
-          <li><a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a> </li>
-          <li><a href="Enclosures.html">Enclosures</a> </li>
-          <li><a href="Purpose Relays.html">Purpose Relays</a> </li>
-          <li><a href="Supply.html">Supply</a> </li>
-          <li><a href="Fuses.html">Fuses</a> </li>
-          <li><a href="P.F.C Systems.html">P.F.C Systems</a> </li>
-      </ul>
-      </li>
-
-
-      <a href="ContactUs.html">Contact</a>
+    <div class="slide1" style="background-image: url('PicsOfVoltima/General/header5.jpeg');">
+      <div class="text1">Our Partners</div>
     </div>
-  </nav>
-</header>
+    <div class="slide1" style="background-image: url('PicsOfVoltima/General/photo_2025-08-25_19-35-02.jpg');">
+      <div class="text1">Quality & Innovation</div>
+    </div>
+  </section>
 
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // فتح / إغلاق القائمة الرئيسية
+    const menuBtn = document.getElementById("menuBtn");
+    const closeMenu = document.getElementById("closeMenu");
+    const fullMenu = document.getElementById("fullMenu");
+    const productsLink = document.getElementById("productsLink");
+    const productsMenu = document.getElementById("productsMenu");
 
+    menuBtn.addEventListener("click", () => {
+      fullMenu.classList.add("show");
+      menuBtn.classList.add("hide");
+    });
 
-
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const closeMenu = document.getElementById("closeMenu");
-  const fullMenu = document.getElementById("fullMenu");
-  const productsLink = document.getElementById("productsLink");
-  const productsMenu = document.getElementById("productsMenu");
-
-  // فتح القائمة الرئيسية
-  menuBtn.addEventListener("click", () => {
-    fullMenu.classList.add("show");
-    menuBtn.classList.add("hide"); // إخفاء زر القائمة
-  });
-
-  // إغلاق القائمة الرئيسية
-  closeMenu.addEventListener("click", () => {
-    fullMenu.classList.remove("show");
-    menuBtn.classList.remove("hide"); // إظهار زر القائمة من جديد
-    productsMenu.classList.remove("show"); // إغلاق قائمة المنتجات لو مفتوحة
-  });
-
-const productsLink = document.getElementById("productsLink");
-const productsMenu = document.getElementById("productsMenu");
-
-// فتح / إغلاق القائمة عند الضغط فقط
-productsLink.addEventListener("click", (e) => {
-  e.preventDefault(); // منع الانتقال للرابط
-  productsMenu.classList.toggle("show");
-});
-
-// إغلاق القائمة إذا ضغطت في أي مكان خارجها
-document.addEventListener("click", (e) => {
-  if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
-    productsMenu.classList.remove("show");
-  }
-});
-
-
-  // إغلاق القائمة إذا تم تغيير حجم الشاشة إلى كبير
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 991) {
+    closeMenu.addEventListener("click", () => {
       fullMenu.classList.remove("show");
       menuBtn.classList.remove("hide");
       productsMenu.classList.remove("show");
+    });
+
+    // فتح / إغلاق القائمة الفرعية بالضغط فقط
+    productsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      productsMenu.classList.toggle("show");
+    });
+
+    // إغلاقها عند الضغط خارجها
+    document.addEventListener("click", (e) => {
+      if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
+        productsMenu.classList.remove("show");
+      }
+    });
+
+    // إعادة تعيين الحالة عند تكبير الشاشة
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 991) {
+        fullMenu.classList.remove("show");
+        menuBtn.classList.remove("hide");
+        productsMenu.classList.remove("show");
+      }
+    });
+
+    // ===== سلايدر الصور =====
+    const slides = document.querySelectorAll('.slide1');
+    let currentIndex = 0;
+
+    function showNextSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
     }
-  });
-</script>
 
-
-
-<body style="background-color: #ff0000;">
-
-<section class="hero">
-  <div class="slides1">
-    <div class="slide1 active" style="background-image: url('PicsOfVoltima/General/header.jpg');">
-      <div class="text1"><span class="typing">Welcome To Voltima Company</span></div>
-    </div>
-    <div class="slide1" style="background-image: url('PicsOfVoltima/General/header5.jpeg');">
-      <div class="text1"><span class="typing">Our Partners</span></div>
-    </div>
-    <div class="slide1" style="background-image: url('PicsOfVoltima/General/photo_2025-08-25_19-35-02.jpg');">
-   </div>
-  </div>
-</section>
-<script> 
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-function showNextSlide() {
-  slides[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % slides.length;
-  slides[currentIndex].classList.add('active');
-}
-
-setInterval(showNextSlide, 5000); // تبديل كل 5 ثواني
-
+    setInterval(showNextSlide, 5000);
   </script>
-
   
 <div class="slider">
 <div class="slides" id="slides">
