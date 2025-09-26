@@ -33,6 +33,7 @@ body {
 /* ===== الشعار ===== */
 .logo-box img {
   height: 90px;
+  min-width:150px;
   width: auto;
   background-size: cover;
   backdrop-filter: blur(10px);
