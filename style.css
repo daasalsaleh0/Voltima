@@ -12,6 +12,7 @@ body {
  
 { max-width: 100vw; }
 /* === HEADER === */
+/* ===== الهيدر الزجاجي ===== */
 #header_9 {
   position: fixed;
   top: 0;
@@ -19,7 +20,7 @@ body {
   width: 100%;
   height: 100px;
   z-index: 1000;
-  backdrop-filter: blur(15px);                 /* تأثير الزجاج */
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
@@ -27,68 +28,43 @@ body {
   justify-content: space-between;
   padding: 10px 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: background 0.3s ease;
   background: url("PicsOfVoltima/General/1.jpg") no-repeat center center;
   background-size: cover;
   transition: transform 0.4s ease, background 0.4s ease;
-  
 }
 
-/* عند إخفائه أثناء التمرير */
 #header_9.hide {
   transform: translateY(-100%);
 }
 
-.navbar {
-  width: 100%;
-  padding: 15px 40px;
-  background: rgba(255, 255, 255, 0.06); /* شفافة خفيفة */
-  backdrop-filter: blur(5px); /* تأثير الزجاج */
-  -webkit-backdrop-filter: blur(5px); /* دعم Safari */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: fixed; /* ثابتة بالأعلى */
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
+/* ===== الشعار ===== */
 .logo-box {
   height: 90px;
   min-width: 100px;
-  width: auto;
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   padding: 8px 20px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
   transition: transform 0.3s ease;
 }
+.logo-box:hover { transform: scale(1.05); }
+.logo-box img { height: 90px; width: auto; }
 
-.logo-box:hover {
-  transform: scale(1.05);
-}
-
-.logo-box img {
-  min-width: 100px;
-  width:auto;
-  height: 90px;
-}
-
-
-/* === زر القائمة === */
+/* ===== زر القائمة ===== */
 .navbar-toggler {
   font-size: 2rem;
-  color: #ffffff;
-  background: none;  
+  color: #fff;
+  background: none;
   border: none;
   display: none;
   cursor: pointer;
   z-index: 1100;
 }
 
-/* === القائمة الأساسية === */
+/* ===== القائمة الأساسية ===== */
 #fullMenu {
   display: flex;
   gap: 30px;
@@ -101,48 +77,42 @@ body {
   font-size: 1.2rem;
   transition: color 0.3s;
 }
+#fullMenu a:hover { color: #00e0ff; }
 
-#fullMenu a:hover {
-  color: #00e0ff;
-}
-
-/* إخفاء زر الإغلاق في الشاشات الكبيرة */
-#fullMenu .btn-close {
+/* ===== القائمة الفرعية (شاشات كبيرة) ===== */
+#productsMenu.collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
   display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
+
+.nav-item.dropdown:hover #productsMenu.collapse {
+  display: flex;
+}
+
+#productsMenu.collapse a {
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+#productsMenu.collapse a:hover { background: rgba(0, 224, 255, 0.2); }
 
 /* ===== الشاشات الصغيرة ===== */
 @media (max-width: 991px) {
-  #productsMenu.collapse {
-    position: static; /* لا نستخدم absolute */
-    width: 90%;       /* عرض مناسب داخل القائمة */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  #productsMenu.collapse a {
-    text-align: center;
-    color: #fff;
-    font-size: 1.1rem;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-  }
-
-  #productsMenu.collapse a:hover {
-    background: rgba(0, 224, 255, 0.2);
-  }
-}
-
+  .navbar-toggler { display: block; }
 
   #fullMenu {
     position: fixed;
@@ -153,60 +123,46 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url("PicsOfVoltima/General/1.jpg") no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url("PicsOfVoltima/General/1.jpg") no-repeat center center;
     background-size: cover;
     transition: left 0.4s ease;
     gap: 25px;
   }
-
-  #fullMenu.show {
-    left: 0;
-  }
+  #fullMenu.show { left: 0; }
 
   #fullMenu .btn-close {
-  display: block;
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 2.2rem;
-  background: none;
-  border: none;
-  color: #00e0ff;
-  cursor: pointer;
-  transition: transform 0.2s;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.2rem;
+    background: none;
+    border: none;
+    color: #00e0ff;
+    cursor: pointer;
   }
 
-#productsMenu.collapse {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.08); /* خلفية شفافة خفيفة */
-  backdrop-filter: blur(12px); /* تأثير الزجاج */
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  width: 220px;
-  position: absolute;
-  top: 100%; /* أسفل العنصر الأب */
-  left: 0;
-  z-index: 1000;
+  /* القائمة الفرعية داخل الموبايل */
+  #productsMenu.collapse {
+    position: static;
+    display: flex !important;
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  #productsMenu.collapse a {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
 }
 
-#productsMenu.collapse a {
-  color: #fff;
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-#productsMenu.collapse a:hover {
-  background: rgba(0, 224, 255, 0.2);
-}
-
-}
 
 
 .slider {
