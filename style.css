@@ -321,7 +321,7 @@ body {
 
 /* متجاوب مع الهواتف */
 @media (max-width: 600px) {
-  .slide11 img { height: 220px; }
+  .slide9 img { height: 220px; }
   .caption { font-size: 14px; padding: 6px 12px; }
   .nav-btn { font-size: 22px; padding: 8px 10px; }
 }
