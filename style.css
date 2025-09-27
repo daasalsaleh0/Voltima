@@ -239,7 +239,7 @@ body {
   }
 }
 
-.slider11 {
+.slider9 {
   margin-top:15px;
   position: relative;
   overflow: hidden;
@@ -251,18 +251,18 @@ body {
 }
 
 /* كل الصور داخل السلايدر */
-#slides11 {
+#slides9 {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.slide11 {
+.slide9 {
   min-width: 100%;
   position: relative;
   text-align: center;
 }
 
-.slide11 img {
+.slide9 img {
  max-height: 350px;
   width: auto;
   height: auto;
@@ -274,7 +274,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.slide11 img:hover {
+.slide9 img:hover {
   transform: scale(1.05);
 }
 
