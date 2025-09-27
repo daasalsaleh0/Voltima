@@ -85,15 +85,36 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   min-width: 250px;
-  transition: all 0.3s ease-in-out;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 1000;
+  overflow: hidden;
 }
 
+/* ✅ عند الفتح */
 .dropdown-menu.show {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr); /* عمودين لجمالية أكثر */
   gap: 8px;
+  transform: translateY(0);
+  opacity: 1;
+  animation: dropdownSlide 0.5s ease forwards;
 }
 
+/* ✨ حركة الانزلاق */
+@keyframes dropdownSlide {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ✅ روابط القائمة الفرعية */
 .dropdown-menu li a {
   display: block;
   padding: 10px 15px;
@@ -101,6 +122,7 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
+  background: rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease-in-out;
 }
 
@@ -110,7 +132,6 @@ body {
   transform: translateX(5px);
   box-shadow: 0 4px 12px rgba(255,0,0,0.4);
 }
-
 /* ===== الموبايل ===== */
 @media (max-width: 991px) {
   .navbar-toggler {
