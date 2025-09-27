@@ -92,15 +92,15 @@ body {
   overflow: hidden;
 }
 
-/* ✅ عند الفتح */
 .dropdown-menu.show {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* عمودين لجمالية أكثر */
-  gap: 8px;
-  transform: translateY(0);
-  opacity: 1;
-  animation: dropdownSlide 0.5s ease forwards;
+  animation: dropdownSlide 0.5s ease forwards, fadeShadow 0.8s ease forwards;
 }
+
+@keyframes fadeShadow {
+  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  100% { box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+}
+
 
 /* ✨ حركة الانزلاق */
 @keyframes dropdownSlide {
