@@ -243,6 +243,7 @@ body {
 }
 
 .slider {
+  margin-top:15px;
   position: relative;
   overflow: hidden;
   width: 80%;
