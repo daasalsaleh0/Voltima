@@ -130,7 +130,7 @@
 <br>
   
 <div class="slider9">
-<div class="slides9" id="slides">
+<div class="slides9" id="slides9">
 
 <div class="slide9">
 <a href="Automation.html">
@@ -239,15 +239,15 @@
 
 <script>
 let currentIndex = 0;
-const slides = document.getElementById('slides9');
-const totalSlides = slides.children.length;
+const slides9 = document.getElementById('slides9');
+const totalSlides = slides9.children.length;
 
 function showSlide(index) {
   if (index >= totalSlides) currentIndex = 0;
   else if (index < 0) currentIndex = totalSlides - 1;
   else currentIndex = index;
 
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  slides9.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 function nextSlide() { showSlide(currentIndex + 1); }
