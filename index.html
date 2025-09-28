@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,7 +57,7 @@
       </div>
     </nav>
   </header>
-
+<section>
   <!-- ===== السلايدر ===== -->
   <section class="hero">
     <div class="slide11 active" style="background-image: url('PicsOfVoltima/General/header.jpg');">
@@ -115,20 +115,20 @@
 
   
     const slides = document.querySelectorAll('.slide11');
-    let currentIndex = 0;
+    let currentIndex1 = 0;
 
     function showNextSlide() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
+      slides[currentIndex1].classList.remove('active');
+      currentIndex1 = (currentIndex1 + 1) % slides.length;
+      slides[currentIndex1].classList.add('active');
     }
 
     setInterval(showNextSlide, 5000);
   </script>
-
+</section>
 <br>
 <br>
- 
+<section>
 <div class="title-boxpru">
   <a href="Products.html">
   <h2 class="moving-titlepru">Products</h2>
@@ -273,7 +273,7 @@ document.querySelector(".slider9").addEventListener("mouseleave", () => {
 });
 </script>
 
-
+</section>
   
 <section class="about1">
   <div class="about1-text">
@@ -290,7 +290,7 @@ CE, ISO, EAC, SABER</p>
   </div>
 </section>
 
-</body>
+
   <!-- ============ footer ============ -->
 <footer id="footer_snippet_2">
         <div class="container">
@@ -353,6 +353,6 @@ CE, ISO, EAC, SABER</p>
     </footer>
 
   
-
+</body>
 
 </html>
