@@ -985,39 +985,50 @@ h1.page-title::after {
   .modal-body p { font-size: 14px; }
 }
 
-.animated-title {
+
+.title-box {
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px solid #ff0000; /* لون الإطار */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.moving-title {
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
-  text-align: center;
-  position: relative;
-  opacity: 0;
-  transform: translateX(-100px);
-  animation: slideIn 1.5s ease-out forwards;
-  letter-spacing: 2px;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  display: inline-block;
+  animation: slide-text 3s ease-in-out infinite alternate;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-/* ✨ حركة الانزلاق */
-@keyframes slideIn {
+/* 🔁 حركة مستمرة يمين ⇄ يسار */
+@keyframes slide-text {
   0% {
-    opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-20px);
   }
-  60% {
-    opacity: 1;
+  50% {
     transform: translateX(20px);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-20px);
   }
 }
 
-/* ✨ تأثير نبضة بسيطة بعد الدخول */
-.animated-title:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+/* 🖱️ تأثير عند المرور */
+.moving-title:hover {
+  color: #ff0000;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+  transition: 0.4s;
 }
 
    
