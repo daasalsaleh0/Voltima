@@ -990,12 +990,12 @@ h1.page-title::after {
   width: 80%;
   margin: 50px auto;
   padding: 20px;
-  border: 4px solid #ff0000; /* لون الإطار */
+  border: 4px solid #ffffff; 
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   overflow: hidden;
   position: relative;
 }
@@ -1004,7 +1004,7 @@ h1.page-title::after {
 .moving-titlepru {
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
+  color: #0011ffff;
   display: inline-block;
   animation: slide-text 3s ease-in-out infinite alternate;
   letter-spacing: 3px;
