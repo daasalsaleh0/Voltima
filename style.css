@@ -986,7 +986,7 @@ h1.page-title::after {
 }
 
 
-.title-box {
+.title-boxpru {
   width: 80%;
   margin: 50px auto;
   padding: 20px;
@@ -1001,7 +1001,7 @@ h1.page-title::after {
 }
 
 
-.moving-title {
+.moving-titlepru {
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
@@ -1012,7 +1012,7 @@ h1.page-title::after {
 }
 
 /* 🔁 حركة مستمرة يمين ⇄ يسار */
-@keyframes slide-text {
+@keyframes slide-textpru {
   0% {
     transform: translateX(-20px);
   }
@@ -1025,7 +1025,7 @@ h1.page-title::after {
 }
 
 /* 🖱️ تأثير عند المرور */
-.moving-title:hover {
+.moving-titlepru:hover {
   color: #ff0000;
   text-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
   transition: 0.4s;
