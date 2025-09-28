@@ -985,6 +985,39 @@ h1.page-title::after {
   .modal-body p { font-size: 14px; }
 }
 
+.animated-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideIn 1.5s ease-out forwards;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
 
+/* ✨ حركة الانزلاق */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ✨ تأثير نبضة بسيطة بعد الدخول */
+.animated-title:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 
    
