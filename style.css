@@ -245,7 +245,7 @@ body {
   overflow: hidden;
   width: 90%;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 30px auto;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   background: #fff;
@@ -275,24 +275,25 @@ body {
   transform: scale(1.05);
 }
 
-.caption {
+.caption9 {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 10px 0;
   color: #333;
 }
 
-.navigation {
+.navigation9 {
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
-.nav-btn {
-  background: rgba(0,0,0,0.5);
+.nav-btn9 {
+  background: rgba(0,0,0,0.6);
   border: none;
   color: #fff;
   font-size: 2rem;
@@ -300,17 +301,18 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s;
+  pointer-events: all;
 }
 
-.nav-btn:hover {
-  background: rgba(0,0,0,0.8);
+.nav-btn9:hover {
+  background: rgba(0,0,0,0.85);
 }
 
 /* متجاوب مع الهواتف */
 @media (max-width: 600px) {
   .slide9 img { height: 220px; }
-  .caption { font-size: 14px; padding: 6px 12px; }
-  .nav-btn { font-size: 22px; padding: 8px 10px; }
+  .caption9 { font-size: 14px; padding: 6px 12px; }
+  .nav-btn9 { font-size: 22px; padding: 8px 10px; }
 }
 
  .about1 {
@@ -722,13 +724,13 @@ h1.page-title::after {
     h2.page-title {
 
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.5rem); /* ✅ متجاوب مع مختلف الشاشات */
+  font-size: clamp(2rem, 5vw, 3.5rem); 
   font-weight: 700;
-  background: linear-gradient(90deg, #0b00a3, #ff0000); /* ✅ أزرق مع أحمر متدرج */
+  background: linear-gradient(90deg, #0b00a3, #ff0000); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* دعم للمتصفحات الحديثة */
-  text-align: center; /* وسط */
+  background-clip: text;
+  text-align: center; 
   margin: 20px 0;
   line-height: 1.2;
 
