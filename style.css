@@ -240,37 +240,34 @@ body {
 }
 
 .slider9 {
-  margin-top:15px;
+  margin-top: 20px;
   position: relative;
   overflow: hidden;
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: #fff;
 }
 
-/* كل الصور داخل السلايدر */
 #slides9 {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .slide9 {
   min-width: 100%;
-  position: relative;
   text-align: center;
 }
 
 .slide9 img {
- max-height: 350px;
+  max-height: 350px;
   width: auto;
-  height: auto;
   margin: 0 auto;
   display: block;
   object-fit: contain;
-  border-bottom: 10px solid #300;
-  display: block;
+  border-bottom: 6px solid #900;
   transition: transform 0.3s ease;
 }
 
@@ -278,21 +275,13 @@ body {
   transform: scale(1.05);
 }
 
-/* الكابتشن */
 .caption {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(11,0,163,0.7);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: bold;
+  margin: 10px 0;
+  color: #333;
 }
 
-/* أسهم التنقل */
 .navigation {
   position: absolute;
   top: 50%;
@@ -300,23 +289,21 @@ body {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  padding: 0 10px;
 }
 
 .nav-btn {
-  background: rgba(11,0,163,0.7);
-  color: #fff;
+  background: rgba(0,0,0,0.5);
   border: none;
-  font-size: 28px;
-  cursor: pointer;
-  padding: 12px 16px;
+  color: #fff;
+  font-size: 2rem;
+  padding: 5px 15px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .nav-btn:hover {
-  background: rgba(0,238,255,0.9);
-  transform: scale(1.2);
+  background: rgba(0,0,0,0.8);
 }
 
 /* متجاوب مع الهواتف */
