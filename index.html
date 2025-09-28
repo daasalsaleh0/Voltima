@@ -91,20 +91,20 @@
       productsMenu.classList.remove("show");
     });
 
-    // فتح / إغلاق القائمة الفرعية بالضغط فقط
+  
     productsLink.addEventListener("click", (e) => {
       e.preventDefault();
       productsMenu.classList.toggle("show");
     });
 
-    // إغلاقها عند الضغط خارجها
+   
     document.addEventListener("click", (e) => {
       if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
         productsMenu.classList.remove("show");
       }
     });
 
-    // إعادة تعيين الحالة عند تكبير الشاشة
+
     window.addEventListener("resize", () => {
       if (window.innerWidth > 991) {
         fullMenu.classList.remove("show");
@@ -113,7 +113,7 @@
       }
     });
 
-    // ===== سلايدر الصور =====
+  
     const slides = document.querySelectorAll('.slide11');
     let currentIndex = 0;
 
@@ -240,18 +240,18 @@
 <script>
 let currentIndex = 0;
 const slides9 = document.getElementById('slides9');
-const totalSlides = slides9.children.length;
+const totalSlides9 = slides9.children.length;
 
-function showSlide(index) {
-  if (index >= totalSlides) currentIndex = 0;
-  else if (index < 0) currentIndex = totalSlides - 1;
+function showSlide9(index) {
+  if (index >= totalSlides9) currentIndex = 0;
+  else if (index < 0) currentIndex = totalSlides9 - 1;
   else currentIndex = index;
 
   slides9.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-function nextSlide() { showSlide(currentIndex + 1); }
-function prevSlide() { showSlide(currentIndex - 1); }
+function nextSlide() { showSlide9(currentIndex + 1); }
+function prevSlide() { showSlide9(currentIndex - 1); }
 
 let autoSlide = setInterval(nextSlide, 3000);
 
