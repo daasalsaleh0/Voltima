@@ -75,7 +75,7 @@ body {
 
 .dropdown-menu {
   display: none;
-   position: fixed;
+  position: fixed;
   background: #fff;
   margin-top: 10px;
   list-style: none;
@@ -86,13 +86,11 @@ body {
   opacity: 0;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  overflow-y: auto;
-  overflow: hidden; 
-  max-height: calc(100vh - 150px); /* لتجنب تجاوز ارتفاع الشاشة */
-  padding: 10px 0;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  overflow-y: auto; 
+  max-height: calc(100vh - 150px);
   padding: 0 20px;    
 }
+
 
 .dropdown-menu.show {
   animation: dropdownSlide 0.5s ease forwards, fadeShadow 0.8s ease forwards;
@@ -158,17 +156,19 @@ body {
     right: 0;
   }
 
-  #fullMenu .btn-close {
-    display: block;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 2.5rem;
-    color: #ff0000;
-    background: none;
-    border: none;
-    z-index: 2000; 
-  }
+ #fullMenu .btn-close {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 2.5rem;
+  color: #ff0000;
+  background: none;
+  border: none;
+  z-index: 2000; 
+  cursor: pointer;
+}
+
 
   .dropdown-menu {
     position: static;
