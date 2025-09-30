@@ -191,18 +191,14 @@ body {
 
 
 .slide11 {
-  position: absolute; 
-  width: 100%; 
-  height: 100%; 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1s ease-in-out, transform 6s ease-in-out;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
 }
 
 
@@ -226,7 +222,7 @@ body {
 
 .text11.top-left { top: 20px; left: 20px; }
 .text11.bottom-right { bottom: 20px; right: 20px; }
-.text11.center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.text11.center { top: 0%; transform: translate(-50%, -50%); }
 @keyframes fadeInText {
   0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
