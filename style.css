@@ -220,7 +220,11 @@ body {
   backdrop-filter: blur(6px);
   animation: fadeInText 1.2s ease forwards;
 }
-
+.slide11 .text11.top {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 @keyframes fadeInText {
   0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
