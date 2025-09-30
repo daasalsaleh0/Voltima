@@ -164,6 +164,7 @@ body {
     color: #ff0000;
     background: none;
     border: 10px;
+    z-index: 2000; 
   }
 
   .dropdown-menu {
