@@ -86,7 +86,8 @@ body {
   opacity: 0;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  overflow: hidden;       /* تمنع أي ظهور خارج الحد */
+  overflow-y: auto;
+  overflow: hidden;      
   transition: max-height 0.4s ease, padding 0.4s ease;
   padding: 0 20px;    
 }
