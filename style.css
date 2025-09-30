@@ -77,7 +77,6 @@ body {
   display: none;
   position: absolute;
   background: #fff;
-  padding: 15px;
   margin-top: 10px;
   list-style: none;
   border-radius: 15px;
@@ -87,7 +86,10 @@ body {
   opacity: 0;
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  overflow: hidden;
+  max-height: 0;          /* تختفي */
+  overflow: hidden;       /* تمنع أي ظهور خارج الحد */
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;    
 }
 
 .dropdown-menu.show {
