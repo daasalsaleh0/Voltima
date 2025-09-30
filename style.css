@@ -223,7 +223,7 @@ body {
   width: 100%;
   height: 150px; /* ارتفاع الفاصل */
   background: #fff; /* لون القسم التالي أسفل السلايدر */
-  clip-path: polygon(0 100%, 100% 0, 100% 100%); /* شكل الزاوية المائلة */
+  clip-path: polygon(0 100%, 100% 0, 100% 80%); /* شكل الزاوية المائلة */
   z-index: 2;
 }
 
@@ -269,7 +269,7 @@ body {
 
 .text11.top-left { top: 20px; left: 20px; }
 .text11.bottom-right { bottom: 20px; right: 20px; }
-.text11.center { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+.text11.center { top: 10%; transform: translate(-50%, -50%); }
 
 @keyframes fadeInText {
   0% { opacity: 0; transform: translateY(40px); }
@@ -1038,7 +1038,7 @@ h1.page-title::after {
 
 
 .title-boxpru {
-  width: 80%;
+  width: 60%;
   margin: 50px auto;
   padding: 25px;
   border: 4px solid #ffffff;
@@ -1099,7 +1099,7 @@ h1.page-title::after {
 
 /* 🖱️ تأثير تفاعلي عند المرور */
 .moving-titlepru:hover {
-  color: #ff0000;
+  color: #00074A;
   text-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
   transform: scale(1.1) rotate(2deg);
   transition: 0.5s;
