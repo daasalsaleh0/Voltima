@@ -194,6 +194,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  object-fit: contain; /* تظهر الصورة كاملة بدون قص */
   opacity: 0;
   display: flex;
   justify-content: center;
