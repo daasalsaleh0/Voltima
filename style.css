@@ -75,7 +75,7 @@ body {
 
 .dropdown-menu {
   display: none;
-  position: absolute;
+   position: fixed;
   background: #fff;
   margin-top: 10px;
   list-style: none;
@@ -159,14 +159,14 @@ body {
   }
 
   #fullMenu .btn-close {
- 
+    display: block;
     position: absolute;
     top: 25px;
     right: 25px;
     font-size: 2.5rem;
     color: #ff0000;
     background: none;
-    border: 10px;
+    border: none;
     z-index: 2000; 
   }
 
@@ -190,15 +190,14 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  opacity: 1;
 }
 
 
 .slide11 {
 position: absolute; 
   width: 100%;
-  height: 100%;
-  opacity: 0; 
+  height: 100%; 
   transform: scale(1.05);
   transition: opacity 1s ease-in-out, transform 6s ease-in-out;
   display: flex; justify-content: center;
