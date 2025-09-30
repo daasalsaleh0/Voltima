@@ -209,8 +209,10 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* ملء الشاشة */
+  height: 100vh; /* ملء الشاشة بالكامل */
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .slide11 {
@@ -236,8 +238,8 @@ body {
 .slide11-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ملء الخلفية */
-  object-position: center;
+  object-fit: cover;        /* تملأ الشاشة تمامًا */
+  object-position: center;  /* تبقى الصورة في المنتصف */
 }
 
 .text11 {
@@ -255,7 +257,8 @@ body {
 
 .text11.top-left { top: 20px; left: 20px; }
 .text11.bottom-right { bottom: 20px; right: 20px; }
-.text11.center { top: 0%; transform: translate(-50%, -50%); }
+.text11.center { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+
 @keyframes fadeInText {
   0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
