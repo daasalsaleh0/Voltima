@@ -162,9 +162,9 @@ body {
     top: 25px;
     right: 25px;
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #ff0000;
     background: none;
-    border: none;
+    border: 10px;
   }
 
   .dropdown-menu {
