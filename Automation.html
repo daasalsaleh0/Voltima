@@ -61,6 +61,59 @@
       </div>
     </nav>
   </header>
+    <script>
+    // فتح / إغلاق القائمة الرئيسية
+    const menuBtn = document.getElementById("menuBtn");
+    const closeMenu = document.getElementById("closeMenu");
+    const fullMenu = document.getElementById("fullMenu");
+    const productsLink = document.getElementById("productsLink");
+    const productsMenu = document.getElementById("productsMenu");
+
+    menuBtn.addEventListener("click", () => {
+      fullMenu.classList.add("show");
+      menuBtn.classList.add("hide");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      fullMenu.classList.remove("show");
+      menuBtn.classList.remove("hide");
+      productsMenu.classList.remove("show");
+    });
+
+  
+    productsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      productsMenu.classList.toggle("show");
+    });
+
+   
+    document.addEventListener("click", (e) => {
+      if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
+        productsMenu.classList.remove("show");
+      }
+    });
+
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 991) {
+        fullMenu.classList.remove("show");
+        menuBtn.classList.remove("hide");
+        productsMenu.classList.remove("show");
+      }
+    });
+
+  
+    const slides = document.querySelectorAll('.slide11');
+    let currentIndex1 = 0;
+
+    function showNextSlide() {
+      slides[currentIndex1].classList.remove('active');
+      currentIndex1 = (currentIndex1 + 1) % slides.length;
+      slides[currentIndex1].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 5000);
+  </script>
 <section>
 <h1 class="page-title">Automation</h1>
 
