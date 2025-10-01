@@ -762,6 +762,734 @@
 </html>  
 
 
+</html>          <ul class="dropdown-menu" id="productsMenu">
+            <li><a href="Automation.html">Automation</a></li>
+            <li><a href="Electrical Measurement.html">Electrical Measurement</a></li>
+            <li><a href="Time Relays.html">Time Relays</a></li>
+            <li><a href="Protection Relays.html">Protection Relays</a></li>
+            <li><a href="Electrical Control Components.html">Electrical Control Components</a></li>
+            <li><a href="Wiring Accessories.html">Wiring Accessories</a></li>
+            <li><a href="Busbar Accessories.html">Busbar Accessories</a></li>
+            <li><a href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
+            <li><a href="Enclosures.html">Enclosures</a></li>
+            <li><a href="Purpose Relays.html">Purpose Relays</a></li>
+            <li><a href="Supply.html">Supply</a></li>
+            <li><a href="Fuses.html">Fuses</a></li>
+            <li><a href="P.F.C Systems.html">P.F.C Systems</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link" id="productsLink">Brands ▼</a>
+          <ul class="dropdown-menu" id="productsMenu">
+            <li><a href="Brands.html">.....</a></li>
+
+          </ul>
+        </li>
+        <a href="ContactUs.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+    <script>
+    // فتح / إغلاق القائمة الرئيسية
+    const menuBtn = document.getElementById("menuBtn");
+    const closeMenu = document.getElementById("closeMenu");
+    const fullMenu = document.getElementById("fullMenu");
+    const productsLink = document.getElementById("productsLink");
+    const productsMenu = document.getElementById("productsMenu");
+
+    menuBtn.addEventListener("click", () => {
+      fullMenu.classList.add("show");
+      menuBtn.classList.add("hide");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      fullMenu.classList.remove("show");
+      menuBtn.classList.remove("hide");
+      productsMenu.classList.remove("show");
+    });
+
+  
+    productsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      productsMenu.classList.toggle("show");
+    });
+
+   
+    document.addEventListener("click", (e) => {
+      if (!productsLink.contains(e.target) && !productsMenu.contains(e.target)) {
+        productsMenu.classList.remove("show");
+      }
+    });
+
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 991) {
+        fullMenu.classList.remove("show");
+        menuBtn.classList.remove("hide");
+        productsMenu.classList.remove("show");
+      }
+    });
+
+  
+    const slides = document.querySelectorAll('.slide11');
+    let currentIndex1 = 0;
+
+    function showNextSlide() {
+      slides[currentIndex1].classList.remove('active');
+      currentIndex1 = (currentIndex1 + 1) % slides.length;
+      slides[currentIndex1].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 5000);
+  </script>
+<section>
+<h1 class="page-title">Process Controllers</h1>
+  <!-- المنتج 1 -->
+  <div class="product-item">
+    <div class="product-header">Ammeters</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.1.png" alt="Ammeters">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+  <!-- المنتج 2 -->
+  <div class="product-item">
+    <div class="product-header">Modular</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.2.png" alt="Modular">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Modular</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.3.png" alt="Modular">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+   <div class="product-item">
+    <div class="product-header">Modular</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.4.png" alt="Modular">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Motorized Valve</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.5.png" alt="Motorized Valve">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+   <div class="product-item">
+    <div class="product-header">Motorized Valve</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.6.png" alt="Motorized Valve">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div> 
+    <div class="product-item">
+    <div class="product-header">Motorized Valve</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.7.png" alt="Motorized Valve">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Motorized Valve</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.8.png" alt="Motorized Valve">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Motorized Valve</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.9.png" alt="Motorized Valve">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Profile</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.10.png" alt="Profile">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Profile</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.11.png" alt="Profile">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Profile</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.12.png" alt="Profile">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Profile</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.13.jpg" alt="Profile">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Profile</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.14.jpeg" alt="Profile">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.15.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.16.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.17.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.18.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.19.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.20.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="product-item">
+    <div class="product-header">Universal</div>
+    <div class="product-content">
+      <div class="product-image">
+        <img src="PicsOfVoltima/Automation/1PCon/1.21.png" alt="Universal">
+      </div>
+      <table class="product-table">
+        <tr><th>Standards</th><td>....</td></tr>
+        <tr><th>CT Ratio</th><td>....</td></tr>
+        <tr><th>Rated Power</th><td>....</td></tr>
+        <tr><th>Accuracy class</th><td>....</td></tr>
+        <tr><th>Terminal</th><td>....</td></tr>
+        <tr><th>Case</th><td>....</td></tr>
+        <tr><th>Mounting</th><td>....</td></tr>
+        <tr><th>Ambient temperature (operation)</th><td>....</td></tr>
+        <tr><th>Primary conductor</th><td>....</td></tr>
+        <tr><th>Round conductor</th><td>....</td></tr>
+        <tr><th>Number of input</th><td>....</td></tr>
+        <tr><th>Thermal rated short-time current</th><td>....</td></tr>
+        <tr><th>Thermal rated continuous current</th><td>....</td></tr>
+        <tr><th>Rated frequency</th><td>....</td></tr>
+        <tr><th>Surge current limitation factor</th><td>....</td></tr>
+        <tr><th>Test voltage</th><td>....</td></tr>
+        <tr><th>Max system voltage</th><td>....</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const products = document.querySelectorAll(".product-item");
+
+    products.forEach(item => {
+      item.querySelector(".product-header").addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+</section>
+<footer id="footer_snippet_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="about">
+                        <img src="PicsOfVoltima/General/Voltima _ White.png" alt="">
+                        <ul>
+                            <li><a href="https://wa.me/+963982804327" target="_blank" rel="noopener" class=""><i class="bi bi-whatsapp"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61580811572629" class=""><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="#0" class=""><i class="bi bi-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="column">
+                        <h4>Usefull Link</h4>
+                        <ul>
+                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                            <li><a href="aboutus.html"><i class="bi bi-chevron-right"></i> About</a></li>
+                            <li><a href="ContactUs.html"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="column">
+                        <h4>Sister Company</h4>
+                        <ul>
+                            <li><a href="https://www.vteke.com.tr/tr/anasayfa/"><i class="bi bi-chevron-right"></i>VETEKE</a></li>
+                            <li><a href="https://powerandcontrol.sa/"><i class="bi bi-chevron-right"></i>Power And Control</a></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="column">
+                        <h4>Support Desk</h4>
+                        <ul>
+                            <li><a href="Help.html"><i class="bi bi-chevron-right"></i> Help & FAQ</a></li>
+                            <li><a href="Catalog.html"><i class="bi bi-chevron-right"></i>Catalog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="contact_info">
+                        <h4>Subscribe</h4>
+                        <ul>
+                            <li><a href="tel:+963 982804327" class=""><i class="bi bi-telephone"></i>+963 982804327</a></li>
+                            <li><a href="mailto:Info@Voltima.sy" class=""><i class="bi bi-envelope"></i>Info@Voltima.sy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p class="text-center">© 2025 Voltima. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  
+</body>
+
+</html>  
+
+
 </html>        </div>
         <div class="offcanvas-body d-flex flex-column align-items-center justify-content-center">
           <ul class="navbar-nav text-center fs-3">
