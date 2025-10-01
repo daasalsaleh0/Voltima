@@ -3,404 +3,221 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>عرض المنتجات — Carousel مع شرح</title>
+<title>عرض المنتجات</title>
 
 <style>
-  :root{
-    --width-max: 1100px;
-    --gap: 28px;
-    --accent: #2b8cf3;
-    --duration: 500ms;
-    --easing: cubic-bezier(.22,.9,.36,1);
+  :root {
+    --main: #ff0000;
+    --dark: #111;
+    --light: #fff;
+    --gray: #f7f7f7;
+    --duration: 600ms;
   }
 
-  /* الصفحة شفافة قدر الإمكان */
-  html,body{
-    height:100%;
-    margin:0;
-    background: transparent;
-    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    direction: rtl; /* لاتجاه النص العربي */
-    color:#111;
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    direction: rtl;
   }
 
-  /* مركز المحتوى */
-  .container{
-    max-width:var(--width-max);
-    margin:24px auto;
-    padding:20px;
-    box-sizing:border-box;
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
   }
 
-  /* الإطار الرئيسي */
   .product-view {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:var(--gap);
-    align-items:center;
-    position:relative;
-    min-height: 380px;
+    gap: 30px;
+    align-items: center;
+    position: relative;
   }
 
-  /* صندوق العرض (صورة) */
   .image-wrap {
-    position: relative;
-    overflow: hidden;
-    height:420px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:14px;
-    /* لا خلفية: transparent */
-    background: rgba(255,255,255,0.02); /* خفيف جداً ليبقى شفافا - يمكن إزالة */
-    box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
   }
 
   .product-image {
-    width:80%;
-    height:85%;
-    object-fit:contain;
-    transform: translateX(0);
-    transition: transform var(--duration) var(--easing), opacity var(--duration) var(--easing);
-    will-change: transform, opacity;
-    user-select:none;
-    pointer-events:none;
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform var(--duration) ease, opacity var(--duration) ease;
   }
 
-  /* صناديق الشرح */
+  /* تأثيرات 3D */
+  .rotate-out-left { transform: rotateY(-90deg); opacity: 0; }
+  .rotate-out-right { transform: rotateY(90deg); opacity: 0; }
+  .rotate-in-left { transform: rotateY(0deg); opacity: 1; }
+  .rotate-in-right { transform: rotateY(0deg); opacity: 1; }
+
   .info {
-    padding:18px;
-    border-radius:12px;
-    min-height:320px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    padding: 20px;
   }
 
   .title {
-    font-size:26px;
-    font-weight:700;
-    margin:0 0 8px 0;
-  }
-
-  .subtitle {
-    color:#555;
-    font-size:14px;
-    margin-bottom:14px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--main);
   }
 
   .desc {
-    line-height:1.6;
-    color:#222;
-    opacity:0;
-    transform: translateY(12px);
-    transition: opacity 420ms var(--easing), transform 420ms var(--easing);
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
   }
 
-  .desc.visible{
-    opacity:1;
-    transform: translateY(0);
-  }
-
-  /* مواصفات صغيرة */
-  .meta {
-    margin-top:18px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-  .chip {
-    padding:6px 10px;
-    border-radius:999px;
-    background: rgba(0,0,0,0.06);
-    font-size:13px;
-  }
-
-  /* أزرار الأسهم */
-  .controls {
-    position:absolute;
-    left:calc(100% + 8px); /* على يمين البلوك (RTL) */
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+  .actions {
+    display: flex;
+    gap: 12px;
   }
 
   .btn {
-    width:48px;
-    height:48px;
-    border-radius:10px;
-    display:inline-grid;
-    place-items:center;
-    cursor:pointer;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
     border: none;
-    background: rgba(255,255,255,0.04);
-    box-shadow:0 6px 18px rgba(8,12,32,0.06);
-    transition: transform 150ms ease, background 180ms;
-    font-size:20px;
-  }
-  .btn:hover{ transform: translateY(-4px); background: rgba(43,140,243,0.12); }
-
-  /* علامات الترقيم (دائرة صغيرة تعرض رقم المنتج) */
-  .pager {
-    position:absolute;
-    right:0;
-    bottom:-40px;
-    left:0;
-    text-align:center;
-    font-size:13px;
-    color:#666;
+    font-size: 15px;
+    transition: background 0.3s;
   }
 
-  /* حالة أثناء الانتقال */
-  .anim-out-left .product-image { transform: translateX(-120%); opacity:0; }
-  .anim-out-right .product-image { transform: translateX(120%); opacity:0; }
-  .anim-in-left .product-image { transform: translateX(0); opacity:1; }
-  .anim-in-right .product-image { transform: translateX(0); opacity:1; }
+  .btn.primary {
+    background: var(--main);
+    color: var(--light);
+  }
+  .btn.primary:hover { background: #cc0000; }
 
-  /* استجابة للشاشات الصغيرة: اجعل العمود عمودي */
-  @media (max-width:860px){
+  .btn.ghost {
+    background: transparent;
+    border: 1px solid #ccc;
+  }
+  .btn.ghost:hover { border-color: var(--main); color: var(--main); }
+
+  /* الأسهم */
+  .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .arrow {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: var(--main);
+    color: var(--light);
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+  }
+  .arrow:hover { background: #cc0000; }
+
+  /* متجاوب */
+  @media (max-width: 768px) {
     .product-view {
       grid-template-columns: 1fr;
-      gap:14px;
+      text-align: center;
     }
-    .controls{ left:auto; right:10px; top:auto; bottom:10px; flex-direction:row; }
-    .image-wrap{ height:300px; }
-    .info{ padding:12px; }
-    .pager{ bottom:-28px; }
+    .controls {
+      position: static;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    .image-wrap { height: 300px; }
   }
-
-  /* تأثير بسيط على النص */
-  .logo {
-    font-weight:700;
-    color:var(--accent);
-    margin-bottom:12px;
-  }
-
-  /* زر شراء/تفاصيل */
-  .actions {
-    margin-top:18px;
-    display:flex;
-    gap:12px;
-  }
-  .primary {
-    background:var(--accent);
-    color:#fff;
-    padding:10px 14px;
-    border-radius:10px;
-    border:none;
-    cursor:pointer;
-  }
-  .ghost {
-    background:transparent;
-    border:1px solid rgba(0,0,0,0.06);
-    padding:10px 14px;
-    border-radius:10px;
-    cursor:pointer;
-  }
-
 </style>
 </head>
 <body>
 
-<div class="container" aria-live="polite">
-
-  <div class="product-view" id="productView">
-    <div class="image-wrap" id="imageWrap">
-      <img src="" alt="صورة المنتج" class="product-image" id="productImage" draggable="false">
+<div class="container">
+  <div class="product-view">
+    <div class="image-wrap">
+      <img src="" alt="المنتج" id="productImage" class="product-image">
     </div>
-
-    <div class="info" id="infoBox">
-      <div class="logo">متجر تجريبي</div>
-      <h2 class="title" id="productTitle">عنوان المنتج</h2>
-      <div class="subtitle" id="productSubtitle">فئة المنتج • موديل</div>
-      <p class="desc" id="productDesc">شرح المنتج هنا. سيظهر بعد حركة الصورة بطريقة سلسة واحترافية.</p>
-
-      <div class="meta" id="productMeta">
-        <!-- شارات المواصفات -->
-      </div>
-
+    <div class="info">
+      <h2 class="title" id="productTitle">اسم المنتج</h2>
+      <p class="desc" id="productDesc">شرح قصير عن المنتج.</p>
       <div class="actions">
-        <button class="primary" id="buyBtn">اشترِ الآن</button>
-        <button class="ghost" id="moreBtn">مزيد من التفاصيل</button>
+        <button class="btn primary">شراء الآن</button>
+        <button class="btn ghost">تفاصيل المنتج</button>
       </div>
     </div>
-
-    <!-- أزرار التحكم -->
-    <div class="controls" id="controls">
-      <button class="btn" id="prevBtn" aria-label="المنتج السابق">◀</button>
-      <button class="btn" id="nextBtn" aria-label="المنتج التالي">▶</button>
+    <div class="controls">
+      <button class="arrow" id="prevBtn">◀</button>
+      <button class="arrow" id="nextBtn">▶</button>
     </div>
-
-    <div class="pager" id="pager">1 / 3</div>
   </div>
-
 </div>
 
 <script>
-/*
-  منتجات مثال - استبدل الصور والنصوص حسب حاجتك
-  يمكن أن تكون الصور روابط خارجية أو مسارات محلية.
-*/
 const products = [
   {
     title: "سماعات AirPods Pro",
-    subtitle: "سماعات لاسلكية • GHTK",
-    img: "https://images.unsplash.com/photo-1606813902891-7ea11b4b2b79?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6f7bb1e0df0a9a7c6da5f1a4b0a8d0",
-    desc: "سماعات بتقنية إلغاء الضوضاء، عمر بطارية طويل، جودة صوت عالية. تصميم مريح وخفيف للاستخدام اليومي.",
-    meta: ["بلوتوث 5.2","عمر البطارية 6ساعات","شحن سريع"]
+    img: "https://images.unsplash.com/photo-1606813902891-7ea11b4b2b79?q=80&w=800",
+    desc: "سماعات لاسلكية بتقنية إلغاء الضوضاء مع صوت فائق الجودة وتصميم مريح."
   },
   {
-    title: "سماعة رأس Studio X",
-    subtitle: "سماعة احترافية • Studio",
-    img: "https://images.unsplash.com/photo-1516110833967-57819c4f64e1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1bd04c3a1d1a6b6d8c3a9981f0c2a8ee",
-    desc: "موجهة للمحترفين: استجابة ترددية واسعة، عزل صوتي ممتاز، وخامات فاخرة لراحة الاستخدام لساعات طويلة.",
-    meta: ["استجابة 20Hz-20kHz","عزل صوتي","مقبض قابل للطي"]
+    title: "سماعة Studio X",
+    img: "https://images.unsplash.com/photo-1516110833967-57819c4f64e1?q=80&w=800",
+    desc: "سماعة رأس احترافية لعشاق الموسيقى مع عزل صوتي وخامات فاخرة."
   },
   {
-    title: "سماعة رياضية FitBeats",
-    subtitle: "مقاومة للماء • رياضة",
-    img: "https://images.unsplash.com/photo-1600195077902-5f5a6f66b2a4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b7f7d2c0f6b2a5f9f2d3ba8c9b0c01a",
-    desc: "مناسبة للجري والتمارين، وثبة ممتازة وثبات أثناء الحركة، ومقاومة للعرق والمطر.",
-    meta: ["مقاومة ماء IPX7","ثبات أثناء الجري","وزن خفيف"]
+    title: "سماعة FitBeats",
+    img: "https://images.unsplash.com/photo-1600195077902-5f5a6f66b2a4?q=80&w=800",
+    desc: "سماعة رياضية مقاومة للماء بتصميم خفيف وثبات مثالي أثناء التمارين."
   }
 ];
 
 let idx = 0;
-const productImage = document.getElementById("productImage");
-const productTitle = document.getElementById("productTitle");
-const productSubtitle = document.getElementById("productSubtitle");
-const productDesc = document.getElementById("productDesc");
-const productMeta = document.getElementById("productMeta");
-const pager = document.getElementById("pager");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const productView = document.getElementById("productView");
-const imageWrap = document.getElementById("imageWrap");
-const infoBox = document.getElementById("infoBox");
+const imgEl = document.getElementById("productImage");
+const titleEl = document.getElementById("productTitle");
+const descEl = document.getElementById("productDesc");
 
-/* إعداد أولي */
-function renderImmediate(i) {
-  const p = products[i];
-  productImage.src = p.img;
-  productImage.alt = p.title;
-  productTitle.textContent = p.title;
-  productSubtitle.textContent = p.subtitle;
-  productDesc.textContent = p.desc;
-  productMeta.innerHTML = "";
-  p.meta.forEach(m => {
-    const span = document.createElement("span");
-    span.className = "chip";
-    span.textContent = m;
-    productMeta.appendChild(span);
-  });
-  pager.textContent = (i+1) + " / " + products.length;
-  // اجعل الوصف مخفيًا ثم أظهره بعد فترة صغيرة (للـ animation)
-  productDesc.classList.remove("visible");
-  setTimeout(()=> productDesc.classList.add("visible"), 180);
-}
+function showProduct(i, direction="left") {
+  const product = products[i];
 
-/* انتقال احترافي */
-let isAnimating = false;
-function goTo(nextIndex, direction = 'left') {
-  if (isAnimating || nextIndex === idx) return;
-  isAnimating = true;
-  productDesc.classList.remove("visible"); // أخفي الشرح أثناء الحركة
+  // حركة خروج
+  imgEl.classList.remove("rotate-in-left","rotate-in-right");
+  imgEl.classList.add(direction === "left" ? "rotate-out-left" : "rotate-out-right");
 
-  // نضيف صنف للعرض ليعمل الانيميشن (تتحكم CSS)
-  if (direction === 'left') {
-    productView.classList.add("anim-out-left");
-  } else {
-    productView.classList.add("anim-out-right");
-  }
-
-  // بعد انتهاء حركة الصورة نغير الصورة ونشغل حركة الدخول
-  const onTransitionEnd = (e) => {
-    // فقط نريد الاستجابة عندما تنتهي صورة العنصر (لتفادي تكرار)
-    if (e.target !== productImage) return;
-    productImage.removeEventListener('transitionend', onTransitionEnd);
-
+  imgEl.addEventListener("transitionend", function handler() {
+    imgEl.removeEventListener("transitionend", handler);
     // تحديث المحتوى
-    idx = nextIndex;
-    const p = products[idx];
-    productImage.src = p.img;
-    productImage.alt = p.title;
-    productTitle.textContent = p.title;
-    productSubtitle.textContent = p.subtitle;
-    productDesc.textContent = p.desc;
-    productMeta.innerHTML = "";
-    p.meta.forEach(m => {
-      const span = document.createElement("span");
-      span.className = "chip";
-      span.textContent = m;
-      productMeta.appendChild(span);
-    });
-    pager.textContent = (idx+1) + " / " + products.length;
-
-    // إزالة حالة الخروج وإضافة حالة الدخول (CSS يعيد تعيين التحويلات)
-    if (direction === 'left') {
-      productView.classList.remove("anim-out-left");
-      productView.classList.add("anim-in-right");
-    } else {
-      productView.classList.remove("anim-out-right");
-      productView.classList.add("anim-in-left");
-    }
-
-    // عندما تنتهي حركة الدخول نرجع الحالة الطبيعية
-    const onInEnd = (ev) => {
-      if (ev.target !== productImage) return;
-      productImage.removeEventListener('transitionend', onInEnd);
-      productView.classList.remove("anim-in-right","anim-in-left");
-      // اظهر الوصف بعد الدخول
-      setTimeout(()=> productDesc.classList.add("visible"), 80);
-      isAnimating = false;
-    };
-    productImage.addEventListener('transitionend', onInEnd);
-  };
-
-  productImage.addEventListener('transitionend', onTransitionEnd);
+    imgEl.src = product.img;
+    titleEl.textContent = product.title;
+    descEl.textContent = product.desc;
+    // حركة دخول
+    imgEl.classList.remove("rotate-out-left","rotate-out-right");
+    imgEl.classList.add(direction === "left" ? "rotate-in-right" : "rotate-in-left");
+  });
 }
 
-/* زر السابق/التالي */
-prevBtn.addEventListener('click', ()=> {
-  const next = (idx - 1 + products.length) % products.length;
-  goTo(next, 'right'); // العنصر يخرج لليمين ويدخل من اليسار => direction 'right'
-});
-nextBtn.addEventListener('click', ()=> {
-  const next = (idx + 1) % products.length;
-  goTo(next, 'left');
-});
+document.getElementById("nextBtn").onclick = () => {
+  idx = (idx + 1) % products.length;
+  showProduct(idx, "left");
+};
+document.getElementById("prevBtn").onclick = () => {
+  idx = (idx - 1 + products.length) % products.length;
+  showProduct(idx, "right");
+};
 
-/* stöd keyboard left/right */
-document.addEventListener('keydown', (ev) => {
-  if (ev.key === "ArrowLeft" || ev.key === "ArrowUp") {
-    prevBtn.click();
-  } else if (ev.key === "ArrowRight" || ev.key === "ArrowDown") {
-    nextBtn.click();
-  }
-});
-
-/* منع السحب على الاندرويد/ios من تحريك الصورة افتراضياً */
-productImage.addEventListener('dragstart', e => e.preventDefault());
-
-/* تحميل أولي */
-renderImmediate(idx);
-
-/* (اختياري) تفعيل التمرير التلقائي:
-let autoplay = setInterval(()=> nextBtn.click(), 6000);
-productView.addEventListener('mouseenter', ()=> clearInterval(autoplay));
-productView.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> nextBtn.click(), 6000));
-*/
+// عرض أول منتج
+showProduct(idx);
 </script>
 
 </body>
-</html>
-
-
-  
-
-
 </html>
