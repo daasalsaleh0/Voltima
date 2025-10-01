@@ -1,149 +1,404 @@
-<!DOCTYPE html>
-<html lang="en" lang="ar">
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>عرض المنتجات — Carousel مع شرح</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voltima</title>
+<style>
+  :root{
+    --width-max: 1100px;
+    --gap: 28px;
+    --accent: #2b8cf3;
+    --duration: 500ms;
+    --easing: cubic-bezier(.22,.9,.36,1);
+  }
 
-  
-<link rel="stylesheet" href="style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  /* الصفحة شفافة قدر الإمكان */
+  html,body{
+    height:100%;
+    margin:0;
+    background: transparent;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    direction: rtl; /* لاتجاه النص العربي */
+    color:#111;
+  }
 
+  /* مركز المحتوى */
+  .container{
+    max-width:var(--width-max);
+    margin:24px auto;
+    padding:20px;
+    box-sizing:border-box;
+  }
 
+  /* الإطار الرئيسي */
+  .product-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:var(--gap);
+    align-items:center;
+    position:relative;
+    min-height: 380px;
+  }
 
-<header id="header_9">
-  <nav class="navbar ">
-    <div class="container-fluid">
+  /* صندوق العرض (صورة) */
+  .image-wrap {
+    position: relative;
+    overflow: hidden;
+    height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    /* لا خلفية: transparent */
+    background: rgba(255,255,255,0.02); /* خفيف جداً ليبقى شفافا - يمكن إزالة */
+    box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  }
 
-   
-      <a class="navbar-brand" href="index.html">
-        <img src="PicsOfVoltima/General/Voltima.png" style="width:100px;   height: 100%; max-height:180px; " alt="Voltima Logo">
-      </a>
+  .product-image {
+    width:80%;
+    height:85%;
+    object-fit:contain;
+    transform: translateX(0);
+    transition: transform var(--duration) var(--easing), opacity var(--duration) var(--easing);
+    will-change: transform, opacity;
+    user-select:none;
+    pointer-events:none;
+  }
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#fullMenu"
-        aria-controls="fullMenu" aria-label="Toggle navigation">
-        <i class="bi bi-filter-right" style="font-size: 2rem; color: #fff;"></i>
-      </button>
+  /* صناديق الشرح */
+  .info {
+    padding:18px;
+    border-radius:12px;
+    min-height:320px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
 
-      
-     <div class="offcanvas offcanvas-top text-white" tabindex="-1" id="fullMenu" 
-     aria-labelledby="fullMenuLabel">
+  .title {
+    font-size:26px;
+    font-weight:700;
+    margin:0 0 8px 0;
+  }
 
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="fullMenuLabel">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column align-items-center justify-content-center">
-          <ul class="navbar-nav text-center fs-3">
-            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#0">About Us</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#0">Catalog</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#0">Contact Us</a></li>
+  .subtitle {
+    color:#555;
+    font-size:14px;
+    margin-bottom:14px;
+  }
 
-            
-           <li class="nav-item">
-  <a class="nav-link text-white d-flex justify-content-between align-items-center" 
-     data-bs-toggle="collapse" href="#productsMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
-    Products
-    <i class="bi bi-chevron-down"></i>
-  </a>
-  <div class="collapse" id="productsMenu">
-    <ul class="list-unstyled ms-3">
-      <li><a class="dropdown-item text-white" href="Automation.html">Automation</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Measurement.html">Electrical Measurement</a></li>
-      <li><a class="dropdown-item text-white" href="Time Relays.html">Time Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Protection Relays.html">Protection Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Control Components.html">Electrical Control Components</a></li>
-      <li><a class="dropdown-item text-white" href="Wiring Accessories.html">Wiring Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Busbar Accessories.html">Busbar Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Electrical Panels Accessories.html">Electrical Panels Accessories</a></li>
-      <li><a class="dropdown-item text-white" href="Enclosures.html">Enclosures</a></li>
-      <li><a class="dropdown-item text-white" href="Purpose Relays.html">Purpose Relays</a></li>
-      <li><a class="dropdown-item text-white" href="Supply.html">Supply</a></li>
-      <li><a class="dropdown-item text-white" href="Fuses.html">Fuses</a></li>
-      <li><a class="dropdown-item text-white" href="P.F.C Systems.html">P.F.C Systems</a></li>
-    </ul>
-  </div>
-</li>
+  .desc {
+    line-height:1.6;
+    color:#222;
+    opacity:0;
+    transform: translateY(12px);
+    transition: opacity 420ms var(--easing), transform 420ms var(--easing);
+  }
 
-            <li class="nav-item"><a class="nav-link text-white" href="#0">Contact</a></li>
-          </ul>
-        </div>
+  .desc.visible{
+    opacity:1;
+    transform: translateY(0);
+  }
+
+  /* مواصفات صغيرة */
+  .meta {
+    margin-top:18px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .chip {
+    padding:6px 10px;
+    border-radius:999px;
+    background: rgba(0,0,0,0.06);
+    font-size:13px;
+  }
+
+  /* أزرار الأسهم */
+  .controls {
+    position:absolute;
+    left:calc(100% + 8px); /* على يمين البلوك (RTL) */
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .btn {
+    width:48px;
+    height:48px;
+    border-radius:10px;
+    display:inline-grid;
+    place-items:center;
+    cursor:pointer;
+    border: none;
+    background: rgba(255,255,255,0.04);
+    box-shadow:0 6px 18px rgba(8,12,32,0.06);
+    transition: transform 150ms ease, background 180ms;
+    font-size:20px;
+  }
+  .btn:hover{ transform: translateY(-4px); background: rgba(43,140,243,0.12); }
+
+  /* علامات الترقيم (دائرة صغيرة تعرض رقم المنتج) */
+  .pager {
+    position:absolute;
+    right:0;
+    bottom:-40px;
+    left:0;
+    text-align:center;
+    font-size:13px;
+    color:#666;
+  }
+
+  /* حالة أثناء الانتقال */
+  .anim-out-left .product-image { transform: translateX(-120%); opacity:0; }
+  .anim-out-right .product-image { transform: translateX(120%); opacity:0; }
+  .anim-in-left .product-image { transform: translateX(0); opacity:1; }
+  .anim-in-right .product-image { transform: translateX(0); opacity:1; }
+
+  /* استجابة للشاشات الصغيرة: اجعل العمود عمودي */
+  @media (max-width:860px){
+    .product-view {
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    .controls{ left:auto; right:10px; top:auto; bottom:10px; flex-direction:row; }
+    .image-wrap{ height:300px; }
+    .info{ padding:12px; }
+    .pager{ bottom:-28px; }
+  }
+
+  /* تأثير بسيط على النص */
+  .logo {
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:12px;
+  }
+
+  /* زر شراء/تفاصيل */
+  .actions {
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+  }
+  .primary {
+    background:var(--accent);
+    color:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+  }
+  .ghost {
+    background:transparent;
+    border:1px solid rgba(0,0,0,0.06);
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container" aria-live="polite">
+
+  <div class="product-view" id="productView">
+    <div class="image-wrap" id="imageWrap">
+      <img src="" alt="صورة المنتج" class="product-image" id="productImage" draggable="false">
+    </div>
+
+    <div class="info" id="infoBox">
+      <div class="logo">متجر تجريبي</div>
+      <h2 class="title" id="productTitle">عنوان المنتج</h2>
+      <div class="subtitle" id="productSubtitle">فئة المنتج • موديل</div>
+      <p class="desc" id="productDesc">شرح المنتج هنا. سيظهر بعد حركة الصورة بطريقة سلسة واحترافية.</p>
+
+      <div class="meta" id="productMeta">
+        <!-- شارات المواصفات -->
       </div>
 
+      <div class="actions">
+        <button class="primary" id="buyBtn">اشترِ الآن</button>
+        <button class="ghost" id="moreBtn">مزيد من التفاصيل</button>
+      </div>
     </div>
-  </nav>
-</header>
 
+    <!-- أزرار التحكم -->
+    <div class="controls" id="controls">
+      <button class="btn" id="prevBtn" aria-label="المنتج السابق">◀</button>
+      <button class="btn" id="nextBtn" aria-label="المنتج التالي">▶</button>
+    </div>
 
-  
-<body style="background-color: #ff0000;">
-  
+    <div class="pager" id="pager">1 / 3</div>
+  </div>
 
+</div>
+
+<script>
+/*
+  منتجات مثال - استبدل الصور والنصوص حسب حاجتك
+  يمكن أن تكون الصور روابط خارجية أو مسارات محلية.
+*/
+const products = [
+  {
+    title: "سماعات AirPods Pro",
+    subtitle: "سماعات لاسلكية • GHTK",
+    img: "https://images.unsplash.com/photo-1606813902891-7ea11b4b2b79?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6f7bb1e0df0a9a7c6da5f1a4b0a8d0",
+    desc: "سماعات بتقنية إلغاء الضوضاء، عمر بطارية طويل، جودة صوت عالية. تصميم مريح وخفيف للاستخدام اليومي.",
+    meta: ["بلوتوث 5.2","عمر البطارية 6ساعات","شحن سريع"]
+  },
+  {
+    title: "سماعة رأس Studio X",
+    subtitle: "سماعة احترافية • Studio",
+    img: "https://images.unsplash.com/photo-1516110833967-57819c4f64e1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1bd04c3a1d1a6b6d8c3a9981f0c2a8ee",
+    desc: "موجهة للمحترفين: استجابة ترددية واسعة، عزل صوتي ممتاز، وخامات فاخرة لراحة الاستخدام لساعات طويلة.",
+    meta: ["استجابة 20Hz-20kHz","عزل صوتي","مقبض قابل للطي"]
+  },
+  {
+    title: "سماعة رياضية FitBeats",
+    subtitle: "مقاومة للماء • رياضة",
+    img: "https://images.unsplash.com/photo-1600195077902-5f5a6f66b2a4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b7f7d2c0f6b2a5f9f2d3ba8c9b0c01a",
+    desc: "مناسبة للجري والتمارين، وثبة ممتازة وثبات أثناء الحركة، ومقاومة للعرق والمطر.",
+    meta: ["مقاومة ماء IPX7","ثبات أثناء الجري","وزن خفيف"]
+  }
+];
+
+let idx = 0;
+const productImage = document.getElementById("productImage");
+const productTitle = document.getElementById("productTitle");
+const productSubtitle = document.getElementById("productSubtitle");
+const productDesc = document.getElementById("productDesc");
+const productMeta = document.getElementById("productMeta");
+const pager = document.getElementById("pager");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const productView = document.getElementById("productView");
+const imageWrap = document.getElementById("imageWrap");
+const infoBox = document.getElementById("infoBox");
+
+/* إعداد أولي */
+function renderImmediate(i) {
+  const p = products[i];
+  productImage.src = p.img;
+  productImage.alt = p.title;
+  productTitle.textContent = p.title;
+  productSubtitle.textContent = p.subtitle;
+  productDesc.textContent = p.desc;
+  productMeta.innerHTML = "";
+  p.meta.forEach(m => {
+    const span = document.createElement("span");
+    span.className = "chip";
+    span.textContent = m;
+    productMeta.appendChild(span);
+  });
+  pager.textContent = (i+1) + " / " + products.length;
+  // اجعل الوصف مخفيًا ثم أظهره بعد فترة صغيرة (للـ animation)
+  productDesc.classList.remove("visible");
+  setTimeout(()=> productDesc.classList.add("visible"), 180);
+}
+
+/* انتقال احترافي */
+let isAnimating = false;
+function goTo(nextIndex, direction = 'left') {
+  if (isAnimating || nextIndex === idx) return;
+  isAnimating = true;
+  productDesc.classList.remove("visible"); // أخفي الشرح أثناء الحركة
+
+  // نضيف صنف للعرض ليعمل الانيميشن (تتحكم CSS)
+  if (direction === 'left') {
+    productView.classList.add("anim-out-left");
+  } else {
+    productView.classList.add("anim-out-right");
+  }
+
+  // بعد انتهاء حركة الصورة نغير الصورة ونشغل حركة الدخول
+  const onTransitionEnd = (e) => {
+    // فقط نريد الاستجابة عندما تنتهي صورة العنصر (لتفادي تكرار)
+    if (e.target !== productImage) return;
+    productImage.removeEventListener('transitionend', onTransitionEnd);
+
+    // تحديث المحتوى
+    idx = nextIndex;
+    const p = products[idx];
+    productImage.src = p.img;
+    productImage.alt = p.title;
+    productTitle.textContent = p.title;
+    productSubtitle.textContent = p.subtitle;
+    productDesc.textContent = p.desc;
+    productMeta.innerHTML = "";
+    p.meta.forEach(m => {
+      const span = document.createElement("span");
+      span.className = "chip";
+      span.textContent = m;
+      productMeta.appendChild(span);
+    });
+    pager.textContent = (idx+1) + " / " + products.length;
+
+    // إزالة حالة الخروج وإضافة حالة الدخول (CSS يعيد تعيين التحويلات)
+    if (direction === 'left') {
+      productView.classList.remove("anim-out-left");
+      productView.classList.add("anim-in-right");
+    } else {
+      productView.classList.remove("anim-out-right");
+      productView.classList.add("anim-in-left");
+    }
+
+    // عندما تنتهي حركة الدخول نرجع الحالة الطبيعية
+    const onInEnd = (ev) => {
+      if (ev.target !== productImage) return;
+      productImage.removeEventListener('transitionend', onInEnd);
+      productView.classList.remove("anim-in-right","anim-in-left");
+      // اظهر الوصف بعد الدخول
+      setTimeout(()=> productDesc.classList.add("visible"), 80);
+      isAnimating = false;
+    };
+    productImage.addEventListener('transitionend', onInEnd);
+  };
+
+  productImage.addEventListener('transitionend', onTransitionEnd);
+}
+
+/* زر السابق/التالي */
+prevBtn.addEventListener('click', ()=> {
+  const next = (idx - 1 + products.length) % products.length;
+  goTo(next, 'right'); // العنصر يخرج لليمين ويدخل من اليسار => direction 'right'
+});
+nextBtn.addEventListener('click', ()=> {
+  const next = (idx + 1) % products.length;
+  goTo(next, 'left');
+});
+
+/* stöd keyboard left/right */
+document.addEventListener('keydown', (ev) => {
+  if (ev.key === "ArrowLeft" || ev.key === "ArrowUp") {
+    prevBtn.click();
+  } else if (ev.key === "ArrowRight" || ev.key === "ArrowDown") {
+    nextBtn.click();
+  }
+});
+
+/* منع السحب على الاندرويد/ios من تحريك الصورة افتراضياً */
+productImage.addEventListener('dragstart', e => e.preventDefault());
+
+/* تحميل أولي */
+renderImmediate(idx);
+
+/* (اختياري) تفعيل التمرير التلقائي:
+let autoplay = setInterval(()=> nextBtn.click(), 6000);
+productView.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+productView.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> nextBtn.click(), 6000));
+*/
+</script>
 
 </body>
- 
-<footer id="footer_snippet_2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="about">
-                        <img src="PicsOfVoltima/General/Voltima _ White.png" alt="">
-                        <ul>
-                            <li><a href="#0" class=""><i class="bi bi-whatsapp"></i></a></li>
-                            <li><a href="#0" class=""><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#0" class=""><i class="bi bi-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="column">
-                        <h4>Usefull Link</h4>
-                        <ul>
-                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-                            <li><a href="aboutus.html"><i class="bi bi-chevron-right"></i> About</a></li>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i> Contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="column">
-                        <h4>Sister Company</h4>
-                        <ul>
-                            <li><a href="https://www.vteke.com.tr/tr/anasayfa/"><i class="bi bi-chevron-right"></i>VETEKE</a></li>
-                            <li><a href="https://powerandcontrol.sa/"><i class="bi bi-chevron-right"></i>Power And Control</a></li>
-                        
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="column">
-                        <h4>Support Desk</h4>
-                        <ul>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i> Help & FAQ</a></li>
-                            <li><a href="#0"><i class="bi bi-chevron-right"></i>Catalog</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="contact_info">
-                        <h4>Subscribe</h4>
-                        <ul>
-                            <li><a href="#0" class=""><i class="bi bi-telephone"></i>+963 982804327</a></li>
-                            <li><a href="index.html" class=""><i class="bi bi-envelope"></i> voltima.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <p class="text-center">© 2025 Voltima. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+</html>
+
 
   
 
