@@ -29,8 +29,8 @@ body {
 .logo-box {
   display: flex;
   align-items: center;
-  height: 100%;
-  width:150px;
+  height: 150%%;
+  width:auto;
 }
 
 .site-logo {
@@ -46,7 +46,7 @@ body {
 
 @media (max-width: 768px) {
   .site-logo {
-    height: 100px;  
+    height: 100%;  
   }
 }
 
