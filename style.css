@@ -250,8 +250,6 @@ body {
 .slide11-img {
   width: 100%;
   height: 100vh;
-   
-  display: block;
   object-fit: contain;
 }
 
