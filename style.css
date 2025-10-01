@@ -242,19 +242,21 @@ body {
 }
 
 .slide11.active {
+   width: 100%;
+            height: 100%;
   opacity: 1;
   transform: scale(1);
-  z-index: 1;
+  z-index: -1;
 }
 
 .slide11-img {
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+  position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+object-fit: cover;
+object-position: center;
    
 }
 
