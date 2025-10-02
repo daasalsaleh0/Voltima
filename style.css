@@ -486,14 +486,14 @@ object-position: center;
 
 
 
-/* ===== Footer Style ===== */
+/* خلفية بتدرج لوني وموجة علوية */
 #footer_snippet_2 {
-  position: relative;
-  background: linear-gradient(135deg, #ff0000, #8b0000); /* تدرج من أحمر فاتح إلى أحمر غامق */
+  background: linear-gradient(135deg, #ff0000, #8b0000);
   color: #fff;
-  padding-top: 100px; /* مساحة كافية أسفل الموجة */
-  overflow: hidden;
+  padding-top: 100px;
+  position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* 🌊 موجة علوية متداخلة */
@@ -510,51 +510,34 @@ object-position: center;
   z-index: 2;
 }
 
-/* محتوى الفوتر */
-#footer_snippet_2 .about img {
-  max-width: 120px;
-  margin-bottom: 20px;
-}
-
+/* تحسين النصوص */
 #footer_snippet_2 .about p {
   color: #fff;
-  opacity: 0.8;
-  margin-bottom: 30px;
+  opacity: 0.85;
   font-size: 16px;
   line-height: 1.6;
 }
 
-#footer_snippet_2 .about ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-}
-
+/* تحسين الأيقونات */
 #footer_snippet_2 .about ul li a {
-  width: 42px;
-  height: 42px;
-  line-height: 42px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
   border-radius: 50%;
-  margin-right: 10px;
-  transition: all 0.3s;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  transition: 0.3s;
 }
-
 #footer_snippet_2 .about ul li a:hover {
   background: #fff;
   color: #ff0000;
 }
 
-/* عناوين الأعمدة */
+/* تحسين العناوين */
 #footer_snippet_2 .column h4,
 #footer_snippet_2 .contact_info h4 {
   font-size: 22px;
   margin-bottom: 25px;
   position: relative;
 }
-
 #footer_snippet_2 .column h4::after,
 #footer_snippet_2 .contact_info h4::after {
   content: "";
@@ -567,65 +550,30 @@ object-position: center;
   border-radius: 3px;
 }
 
-/* روابط القوائم */
-#footer_snippet_2 .column ul,
-#footer_snippet_2 .contact_info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
+/* تحسين الروابط */
 #footer_snippet_2 .column ul li a,
 #footer_snippet_2 .contact_info ul li a {
-  color: #fff;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: all 0.3s;
   font-size: 16px;
+  opacity: 0.8;
+  transition: 0.3s;
 }
-
 #footer_snippet_2 .column ul li a:hover,
 #footer_snippet_2 .contact_info ul li a:hover {
-  opacity: 1;
   color: #ffe600;
+  opacity: 1;
 }
 
 /* نموذج الاشتراك */
-#footer_snippet_2 form {
-  position: relative;
-  margin-top: 20px;
-}
-
 #footer_snippet_2 form input {
-  width: 100%;
-  padding: 15px;
   border-radius: 30px;
-  border: none;
-  outline: none;
   background: rgba(255, 255, 255, 0.15);
-  color: #fff;
 }
-
-#footer_snippet_2 form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 #footer_snippet_2 form button {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
+  border-radius: 50%;
   background: #fff;
   color: #ff0000;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 20px;
-  cursor: pointer;
   transition: 0.3s;
 }
-
 #footer_snippet_2 form button:hover {
   background: #ffe600;
   color: #000;
@@ -634,11 +582,10 @@ object-position: center;
 /* حقوق النشر */
 #footer_snippet_2 .copyright {
   background: rgba(255, 255, 255, 0.08);
-  text-align: center;
   padding: 25px 0;
   margin-top: 60px;
+  text-align: center;
   font-size: 14px;
-  letter-spacing: 0.5px;
 }
 
 /* 📱 تحسين التوافق */
